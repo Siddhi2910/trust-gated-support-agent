@@ -55,7 +55,8 @@ class LeakageSafeRetriever:
             score = (overlap * 1.5) + (tag_overlap * 2.0)
 
             # Boost if intent matches
-            if predicted_intent and item.get("intent") == predicted_intent:
+            is_intent_match = bool(predicted_intent and item.get("intent") == predicted_intent)
+            if is_intent_match:
                 score += 5.0
 
             # Boost for historical AppleSupport interaction (primary grounding requirement)
@@ -70,12 +71,24 @@ class LeakageSafeRetriever:
                     "body": item["body"],
                     "source_reference": item["source_reference"],
                     "source_type": item["source_type"],
-                    "score": round(score, 2)
+                    "score": round(score, 2),
+                    "is_intent_match": is_intent_match
                 })
 
-        # Sort descending by score
-        scored_candidates.sort(key=lambda x: x["score"], reverse=True)
-        top_results = scored_candidates[:top_k]
+        # Aligned ranking: when a specific intent is predicted, prioritize candidates matching
+        # that intent so that unrelated evidence does not create avoidable cross-intent conflicts
+        if predicted_intent and predicted_intent != "UNKNOWN_INSUFFICIENT_CONTEXT":
+            matching = [c for c in scored_candidates if c["is_intent_match"]]
+            non_matching = [c for c in scored_candidates if not c["is_intent_match"]]
+            matching.sort(key=lambda x: x["score"], reverse=True)
+            non_matching.sort(key=lambda x: x["score"], reverse=True)
+            if matching:
+                top_results = matching[:top_k]
+            else:
+                top_results = non_matching[:top_k]
+        else:
+            scored_candidates.sort(key=lambda x: x["score"], reverse=True)
+            top_results = scored_candidates[:top_k]
 
         return {
             "query": query_text,

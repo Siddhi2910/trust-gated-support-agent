@@ -150,6 +150,70 @@ class TestSafetyIntegration(unittest.TestCase):
         self.assertIsInstance(receipt["retrieved_evidence"], list)
         self.assertIn("excluded_untrusted_candidates_count", receipt)
 
+    def test_battery_drain_regression_classification(self):
+        """Verify demonstrated battery-drain query is correctly classified as BATTERY_DRAIN_POWER_CONSUMPTION."""
+        query = "@AppleSupport My iPhone 8 battery drains from 100% to 20% in two hours after updating to iOS 11. Is there a fix?"
+        intent_res = self.pipeline.classifier.classify(query)
+        self.assertEqual(intent_res["intent"], "BATTERY_DRAIN_POWER_CONSUMPTION")
+        self.assertGreaterEqual(intent_res["confidence"], 0.85)
+        self.assertFalse(intent_res["ambiguity_flag"])
+
+    def test_retrieval_intent_alignment_prevents_avoidable_conflict(self):
+        """Verify retrieval aligns with predicted intent and avoids irrelevant cross-intent candidates."""
+        query = "@AppleSupport My iPhone 8 battery drains from 100% to 20% in two hours after updating to iOS 11. Is there a fix?"
+        retrieval = self.retriever.search(
+            query_text=query,
+            predicted_intent="BATTERY_DRAIN_POWER_CONSUMPTION",
+            top_k=3
+        )
+        self.assertGreater(len(retrieval["results"]), 0)
+        # All returned candidates must match the predicted intent when available
+        for item in retrieval["results"]:
+            self.assertEqual(item["intent"], "BATTERY_DRAIN_POWER_CONSUMPTION")
+        
+        # Ensure full pipeline does not produce avoidable consistency conflict
+        pipeline_res = self.pipeline.process(query)
+        self.assertFalse(pipeline_res["gates"]["consistency"]["conflict_detected"])
+        self.assertEqual(pipeline_res["decision"]["decision"], "AUTO_RESOLVE")
+        self.assertTrue(pipeline_res["decision"]["can_auto_resolve"])
+
+    def test_multi_symptom_arbitration_case_2_battery_drain(self):
+        """Case #2: Battery drain with reboot attempt correctly arbitrated to BATTERY_DRAIN_POWER_CONSUMPTION."""
+        query = "@AppleSupport I’ve done 2 hard resets and update the software. I can’t go anywhere without an extra battery but even that can’t reboot"
+        res = self.pipeline.process(query)
+        self.assertEqual(res["intent"]["intent"], "BATTERY_DRAIN_POWER_CONSUMPTION")
+        self.assertGreaterEqual(res["intent"]["confidence"], 0.85)
+
+    def test_multi_symptom_arbitration_case_4_battery_connectivity(self):
+        """Case #4: Battery drain + cellular/wifi correctly classified and escalated due to multi-symptom ambiguity."""
+        query = "@AppleSupport My battery is draining quickly on my iPhone 6s when I use 3G. I lose like 5% a minute. But it’s better when I use my WiFi."
+        res = self.pipeline.process(query)
+        self.assertEqual(res["intent"]["intent"], "BATTERY_DRAIN_POWER_CONSUMPTION")
+        # Multi-symptom comparison escalates safely to human
+        self.assertEqual(res["decision"]["decision"], "ESCALATE_TO_HUMAN")
+        self.assertFalse(res["decision"]["can_auto_resolve"])
+
+    def test_multi_symptom_arbitration_case_9_freeze_slowdown(self):
+        """Case #9: Freeze/crash + slow to open apps arbitrated to DEVICE_FREEZE_CRASH_REBOOT."""
+        query = "@AppleSupport absolutely hate the new update. I don't even want to use my iPhone. Keeps freezing and very slow to open apps. Fix ASAP plz!"
+        res = self.pipeline.process(query)
+        self.assertEqual(res["intent"]["intent"], "DEVICE_FREEZE_CRASH_REBOOT")
+        self.assertGreaterEqual(res["intent"]["confidence"], 0.85)
+
+    def test_multi_symptom_arbitration_case_130_freeze_glitch(self):
+        """Case #130: System freeze + glitch arbitrated to DEVICE_FREEZE_CRASH_REBOOT."""
+        query = "@116333 the the most recent update is so bad I sold my @115858 stock. Slow/ glitch/ freezing. Please stop running company into ground!!!!!"
+        res = self.pipeline.process(query)
+        self.assertEqual(res["intent"]["intent"], "DEVICE_FREEZE_CRASH_REBOOT")
+        self.assertGreaterEqual(res["intent"]["confidence"], 0.85)
+
+    def test_multi_symptom_arbitration_case_137_login_data_loss(self):
+        """Case #137: iCloud login failure + lost contacts arbitrated to DATA_LOSS_RECOVERY."""
+        query = "Hello @AppleSupport , I can't login to my iCloud account [with right password], I also can't backup my contacts and I've lost them."
+        res = self.pipeline.process(query)
+        self.assertEqual(res["intent"]["intent"], "DATA_LOSS_RECOVERY")
+        self.assertGreaterEqual(res["intent"]["confidence"], 0.85)
+
 
 if __name__ == "__main__":
     unittest.main()

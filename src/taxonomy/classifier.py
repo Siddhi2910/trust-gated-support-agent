@@ -73,13 +73,13 @@ INTENT_PATTERNS = {
         r"\b(?:shipping|delivery|track(?:ing)?\s+number|order\s+status|order\s+number|carrier|dispatched|courier|ups|fedex|shipment|store\s+pickup|when\s+will\s+it\s+arrive)\b"
     ],
     "DATA_LOSS_RECOVERY": [
-        r"\b(?:lost\s+all\s+(?:my\s+)?(?:photos|contacts|data|notes|messages)|photos\s+disappeared|recover\s+(?:my\s+)?(?:data|photos|deleted)|how\s+do\s+i\s+recover|restore\s+backup|backup\s+recovery)\b"
+        r"\b(?:lost\s+all\s+(?:my\s+)?(?:photos|contacts|data|notes|messages)|photos\s+disappeared|recover\s+(?:my\s+)?(?:data|photos|deleted)|how\s+do\s+i\s+recover|restore\s+backup|backup\s+recovery|can'?t\s+backup\s+(?:my\s+)?(?:contacts|photos|data)|lost\s+them)\b"
     ],
     "HARDWARE_CHARGING_POWER_CABLE": [
         r"\b(?:won'?t\s+charge|not\s+charging|stops?\s+charging|charging\s+port|charger|lightning\s+cable|cable\s+frayed|wireless\s+charger|magsafe|plugged\s+in\s+but\s+not)\b"
     ],
     "BATTERY_DRAIN_POWER_CONSUMPTION": [
-        r"\b(?:battery(?:\s+\w+){0,2}\s+(?:drain|draining|drained|dies|dying|dead|low|percentage|capacity|consumption|dropping|issue|problem)|overheating|phone\s+gets\s+hot|battery\s+health)\b"
+        r"\b(?:battery(?:\s+\w+){0,2}\s+(?:drains?|draining|drained|dies|dying|dead|low|percentage|capacity|consumption|dropping|issue|problem)|overheating|phone\s+gets\s+hot|battery\s+health|extra\s+battery)\b"
     ],
     "KEYBOARD_TYPING_AUTOCORRECT_ISSUE": [
         r"\b(?:keyboard|autocorrect|auto\s*correct|typing|predictive\s+text|symbol\s+appears|letter\s+i\b|capital\s+a\b|\ba\s*\[\?\]|\bi\s*\[\?\]|dictation)\b"
@@ -91,10 +91,10 @@ INTENT_PATTERNS = {
         r"\b(?:speaker|microphone|mic\b|volume|sound|audio|earpiece|crackling|distorted\s+sound|no\s+sound|ringer|alarm\s+too\s+quiet|can'?t\s+hear\s+call)\b"
     ],
     "CONNECTIVITY_WIFI_BLUETOOTH": [
-        r"\b(?:wi-?fi|wifi|bluetooth|airdrop|cellular|no\s+service|searching\.\.\.|lte|hotspot|personal\s+hotspot|network\s+settings|disconnects?\s+from\s+wi-?fi)\b"
+        r"\b(?:wi-?fi|wifi|bluetooth|airdrop|cellular|3g|4g|5g|no\s+service|searching\.\.\.|lte|hotspot|personal\s+hotspot|network\s+settings|disconnects?\s+from\s+wi-?fi)\b"
     ],
     "DEVICE_FREEZE_CRASH_REBOOT": [
-        r"\b(?:freezes?|frozen|crashing|reboot(?:s|ing)?|boot\s*loop|stuck\s+on\s+apple\s+logo|randomly\s+restarts?|bricked|black\s+screen\s+of\s+death|spinning\s+wheel)\b"
+        r"\b(?:freez(?:e|es|ing)|frozen|crash(?:es|ing)?|reboot(?:s|ing)?|boot\s*loop|stuck\s+on\s+apple\s+logo|randomly\s+restarts?|bricked|black\s+screen\s+of\s+death|spinning\s+wheel)\b"
     ],
     "PERFORMANCE_SLOWDOWN_LATENCY": [
         r"\b(?:lag|lagging|laggy|slow|sluggish|latency|delayed|unresponsive\s+phone|takes\s+forever\s+to\s+open|stutters?)\b"
@@ -164,18 +164,52 @@ class IntentClassifier:
                 primary = "BATTERY_DRAIN_POWER_CONSUMPTION"
             matched = [(primary, 5)] + [m for m in matched if m[0] != primary]
 
-        # 2. Crash vs Performance
+        # 2. Crash vs Performance (Freeze/crash + slow)
         if any(m[0] == "DEVICE_FREEZE_CRASH_REBOOT" for m in matched) and any(m[0] == "PERFORMANCE_SLOWDOWN_LATENCY" for m in matched):
-            if re.search(r"\b(?:freeze|frozen|reboot|restart|crash)\b", lower):
+            if re.search(r"\b(?:freez(?:e|es|ing)|frozen|crash(?:es|ing)?|reboot(?:s|ing)?|restart)\b", lower) and not re.search(r"\bkeyboard\s+freezes\b", lower):
                 primary = "DEVICE_FREEZE_CRASH_REBOOT"
             else:
                 primary = "PERFORMANCE_SLOWDOWN_LATENCY"
             matched = [(primary, 5)] + [m for m in matched if m[0] != primary]
 
-        # 3. Data Loss vs Others
+        # 3. Battery vs Connectivity
+        if any(m[0] == "BATTERY_DRAIN_POWER_CONSUMPTION" for m in matched) and any(m[0] == "CONNECTIVITY_WIFI_BLUETOOTH" for m in matched):
+            if re.search(r"\b(?:wifi\s+turning|turning\s+on|searching|wifi\s+problem)\b", lower) and re.search(r"\b(?:wasting|draining)\s+my\s+battery\b", lower):
+                primary = "CONNECTIVITY_WIFI_BLUETOOTH"
+            elif re.search(r"\b(?:battery(?:\s+\w+){0,2}\s+(?:drains?|draining)|lose\s+\d+%\s+a\s+minute)\b", lower):
+                primary = "BATTERY_DRAIN_POWER_CONSUMPTION"
+            else:
+                primary = "CONNECTIVITY_WIFI_BLUETOOTH"
+            matched = [(primary, 5)] + [m for m in matched if m[0] != primary]
+
+        # 4. Battery vs Freeze/Crash/Reboot (Case #2: extra battery is primary grievance)
+        if any(m[0] == "BATTERY_DRAIN_POWER_CONSUMPTION" for m in matched) and any(m[0] == "DEVICE_FREEZE_CRASH_REBOOT" for m in matched):
+            if re.search(r"\b(?:extra\s+battery|battery\s+drains?)\b", lower):
+                primary = "BATTERY_DRAIN_POWER_CONSUMPTION"
+                matched = [(primary, 5)] + [m for m in matched if m[0] != primary]
+
+        # 5. Login/Account vs Data Loss
+        if any(m[0] == "DATA_LOSS_RECOVERY" for m in matched) and any(m[0] == "ACCOUNT_APPLE_ID_ACCESS" for m in matched):
+            if re.search(r"\b(?:lost\s+(?:all\s+)?(?:my\s+)?(?:photos|contacts|data|notes|messages|them)|disappeared|can'?t\s+backup)\b", lower):
+                primary = "DATA_LOSS_RECOVERY"
+            else:
+                primary = "ACCOUNT_APPLE_ID_ACCESS"
+            matched = [(primary, 6)] + [m for m in matched if m[0] != primary]
+
+        # 6. Data Loss vs Others
         if any(m[0] == "DATA_LOSS_RECOVERY" for m in matched):
             if re.search(r"\b(?:recover|lost\s+all|disappeared|how\s+can\s+i\s+get\s+back)\b", lower):
                 matched = [("DATA_LOSS_RECOVERY", 6)] + [m for m in matched if m[0] != "DATA_LOSS_RECOVERY"]
+
+        # 7. Battery Drain vs Performance/Lag (Order-based focal grievance resolution)
+        if any(m[0] == "BATTERY_DRAIN_POWER_CONSUMPTION" for m in matched) and any(m[0] == "PERFORMANCE_SLOWDOWN_LATENCY" for m in matched):
+            perf_m = re.search(r"\b(?:slow|lag|lagging|sluggish|latency|delayed)\b", lower)
+            batt_m = re.search(r"\bbattery\b", lower)
+            if perf_m and batt_m and perf_m.start() < batt_m.start():
+                primary = "PERFORMANCE_SLOWDOWN_LATENCY"
+            else:
+                primary = "BATTERY_DRAIN_POWER_CONSUMPTION"
+            matched = [(primary, 5)] + [m for m in matched if m[0] != primary]
 
         # If no patterns matched: determine if UNKNOWN
         if not matched:

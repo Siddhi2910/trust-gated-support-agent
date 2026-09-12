@@ -13,6 +13,8 @@ class DecisionArbiter:
     # Thresholds
     MIN_INTENT_CONFIDENCE = 0.85
     MIN_GROUNDEDNESS_SCORE = 0.90
+    MIN_QUALITY_SCORE = 7.0
+    MIN_ANSWERABILITY_SCORE = 0.85
 
     @classmethod
     def arbitrate(
@@ -52,17 +54,36 @@ class DecisionArbiter:
             reasons.append("Multi-symptom ambiguity detected; tie-breaker priority required")
 
         # 3. Evidence Quality, Consistency, and Answerability Gates
+        quality_score = gates_result.get("quality", {}).get("score", 0.0)
+        consistency_passed = gates_result.get("consistency", {}).get("passed", True)
+        conflict_detected = gates_result.get("consistency", {}).get("conflict_detected", False)
+        answerability = gates_result.get("answerability", {})
+        answerable = answerability.get("answerable", True)
+        answerability_score = answerability.get("answerability_score", 1.0)
+
         if not gates_result.get("all_passed", False):
-            if not gates_result.get("quality", {}).get("passed", True):
-                reasons.append("Retrieved evidence failed quality threshold")
-            if not gates_result.get("consistency", {}).get("passed", True):
+            if not gates_result.get("quality", {}).get("passed", True) or quality_score < cls.MIN_QUALITY_SCORE:
+                reasons.append(f"Retrieved evidence failed quality threshold (score: {quality_score} < {cls.MIN_QUALITY_SCORE})")
+            if not consistency_passed or conflict_detected:
                 reasons.append("Retrieved evidence contains conflicting recommendations")
-            if not gates_result.get("answerability", {}).get("answerable", True):
+            if not answerable or answerability_score < cls.MIN_ANSWERABILITY_SCORE:
                 reasons.append("Retrieved evidence cannot answer customer's specific question")
+        else:
+            # Stricter checks even if all_passed was marked
+            if quality_score < cls.MIN_QUALITY_SCORE:
+                reasons.append(f"Evidence quality score ({quality_score}) below safety threshold ({cls.MIN_QUALITY_SCORE})")
+            if conflict_detected:
+                reasons.append("Retrieved evidence contains conflicting recommendations")
+            if not answerable or answerability_score < cls.MIN_ANSWERABILITY_SCORE:
+                reasons.append(f"Answerability score ({answerability_score}) below safety threshold ({cls.MIN_ANSWERABILITY_SCORE})")
 
         # 4. Claim Verification & Groundedness Gate
+        groundedness_score = claim_result.get("groundedness_score", 0.0)
         if not claim_result.get("verified", False):
             reasons.append(f"Response failed claim verification ({len(claim_result.get('unsupported_claims', []))} unsupported claims)")
+
+        if groundedness_score < cls.MIN_GROUNDEDNESS_SCORE:
+            reasons.append(f"Groundedness score ({groundedness_score}) below required threshold ({cls.MIN_GROUNDEDNESS_SCORE})")
 
         if claim_result.get("hallucination_detected", False):
             reasons.append("Potential hallucination detected in generated response")

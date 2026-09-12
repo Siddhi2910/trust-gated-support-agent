@@ -1,9 +1,9 @@
 # Customer Support Dual-Track System: Benchmark & Evaluation Report
 
-**Evaluation Timestamp:** `2026-09-12T20:01:17Z`  
+**Evaluation Timestamp:** `2026-09-12T20:54:30Z`  
 **Evaluation Scope:** Canonical 170 Inquiries Benchmark Pack  
 **Human Ground Truth N:** `1 / 170` (Zero fabricated human labels)  
-**Elapsed Runtime:** `0.2s`  
+**Elapsed Runtime:** `0.21s`  
 
 ---
 
@@ -13,10 +13,10 @@ Human ground-truth evaluation is strictly restricted to genuinely recovered huma
 
 - **Genuinely Recovered Human Cases:** `1`
 - **Unadjudicated Remaining Cases:** `169`
-- **Accuracy on Genuinely Recovered Human Set:** `1.0`
+- **Accuracy on Genuinely Recovered Human Set:** `0.0`
 
 ### Case-by-Case Recovered Audit
-- **Case #5:** Ground Truth: `BATTERY_DRAIN_POWER_CONSUMPTION` | Predicted: `BATTERY_DRAIN_POWER_CONSUMPTION` | Correct: `True` | Decision: `ESCALATE_TO_HUMAN` (Conf: `0.33`)
+- **Case #5:** Ground Truth: `BATTERY_DRAIN_POWER_CONSUMPTION` | Predicted: `PERFORMANCE_SLOWDOWN_LATENCY` | Correct: `False` | Decision: `AUTO_RESOLVE` (Conf: `0.95`)
 
 ---
 
@@ -25,9 +25,9 @@ Human ground-truth evaluation is strictly restricted to genuinely recovered huma
 | Metric | Baseline 1 (Naive Keyword) | Baseline 2 (Standard RAG) | Trust-Gated Dual-Track (Production) |
 | :--- | :---: | :---: | :---: |
 | **Total Inquiries Tested** | 170 | 170 | 170 |
-| **Auto-Resolved Count** | 170 (100.0%) | 170 (100.0%) | 33 (19.4%) |
-| **Safely Escalated to Human** | 0 (0.0%) | 0 (0.0%) | 137 (80.6%) |
-| **Part 1 Candidate Agreement** | 55 / 120 | 55 / 120 | 55 / 120 |
+| **Auto-Resolved Count** | 170 (100.0%) | 170 (100.0%) | 79 (46.5%) |
+| **Safely Escalated to Human** | 0 (0.0%) | 0 (0.0%) | 91 (53.5%) |
+| **Part 1 Candidate Agreement** | 58 / 120 | 58 / 120 | 58 / 120 |
 | **Part 2 Boundary Resolution** | Unhandled (0 flags) | Unhandled (0 flags) | **3 / 35** flagged for priority tie-break |
 | **Part 3 Abstention / UNKNOWN** | 15 / 15 | 15 / 15 | **15 / 15** properly clarified / abstained |
 | **Mean Groundedness Score** | N/A (unverified) | N/A (unverified) | **1.0** |
