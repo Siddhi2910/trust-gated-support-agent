@@ -214,6 +214,71 @@ class TestSafetyIntegration(unittest.TestCase):
         self.assertEqual(res["intent"]["intent"], "DATA_LOSS_RECOVERY")
         self.assertGreaterEqual(res["intent"]["confidence"], 0.85)
 
+    def test_case_17_keyboard_autocorrect_letter_i(self):
+        """Case #17: Capital I autocorrecting to symbol belongs to KEYBOARD_TYPING_AUTOCORRECT_ISSUE."""
+        query = "@AppleSupport why is a capital i autocorrecting to the weird A and question mark every time now?????"
+        res = self.pipeline.process(query)
+        self.assertEqual(res["intent"]["intent"], "KEYBOARD_TYPING_AUTOCORRECT_ISSUE")
+        self.assertGreaterEqual(res["intent"]["confidence"], 0.85)
+
+    def test_case_21_keyboard_autocorrect_substitution(self):
+        """Case #21: Autocorrect changing 'it' to 'I.t' belongs to KEYBOARD_TYPING_AUTOCORRECT_ISSUE."""
+        query = "@AppleSupport there's another glitch whenever I try to type 'it' autocorrect changes to I.t next glitch I want a new phone"
+        res = self.pipeline.process(query)
+        self.assertEqual(res["intent"]["intent"], "KEYBOARD_TYPING_AUTOCORRECT_ISSUE")
+        self.assertGreaterEqual(res["intent"]["confidence"], 0.85)
+
+    def test_case_24_keyboard_freezes_vs_slowdown_latency(self):
+        """Case #24: PAIR_02 typing latency/lag + apps take time to open arbitrated to PERFORMANCE_SLOWDOWN_LATENCY."""
+        query = "@115858 @AppleSupport your #iOS11 just screwed up my #iPhone 6Plus #NotHappy way too slow, keyboard freezes apps take time to open"
+        res = self.pipeline.process(query)
+        self.assertEqual(res["intent"]["intent"], "PERFORMANCE_SLOWDOWN_LATENCY")
+        self.assertGreaterEqual(res["intent"]["confidence"], 0.85)
+
+    def test_case_28_keyboard_lag_performance_slowdown(self):
+        """Case #28: PAIR_02 keyboard lag without character corruption belongs to PERFORMANCE_SLOWDOWN_LATENCY."""
+        query = "@AppleSupport hoping the keyboard lag on iP6 will be fixed in a coming release. Is this the case? Gets worse everyday!"
+        res = self.pipeline.process(query)
+        self.assertEqual(res["intent"]["intent"], "PERFORMANCE_SLOWDOWN_LATENCY")
+        self.assertGreaterEqual(res["intent"]["confidence"], 0.85)
+
+    def test_case_48_app_specific_music_crashing(self):
+        """Case #48: PAIR_03 isolated single app crash belongs to APP_SPECIFIC_MALFUNCTION."""
+        query = "@AppleSupport again the music app keeps crashing without any reason.Tried restarting and no use.See the video.iPhone 6 plus - iOS11.0.3"
+        res = self.pipeline.process(query)
+        self.assertEqual(res["intent"]["intent"], "APP_SPECIFIC_MALFUNCTION")
+        self.assertGreaterEqual(res["intent"]["confidence"], 0.85)
+
+    def test_case_131_app_specific_mail_crash(self):
+        """Case #131: PAIR_03 Mail app crash belongs to APP_SPECIFIC_MALFUNCTION despite reboot mention."""
+        query = "@AppleSupport - Is there an iOS 11.0.3 out soon or something? My Mail app crashes and needs a phone reboot twice daily at the moment. PITA."
+        res = self.pipeline.process(query)
+        self.assertEqual(res["intent"]["intent"], "APP_SPECIFIC_MALFUNCTION")
+        self.assertGreaterEqual(res["intent"]["confidence"], 0.65)
+        # Multi-symptom query safely escalates to human
+        self.assertEqual(res["decision"]["decision"], "ESCALATE_TO_HUMAN")
+
+    def test_case_151_app_specific_text_messages_slow(self):
+        """Case #151: PAIR_07 latency isolated to text messages app belongs to APP_SPECIFIC_MALFUNCTION."""
+        query = "@AppleSupport my phone is so slow so the new iOS update? Only on text messages though? Why is this?"
+        res = self.pipeline.process(query)
+        self.assertEqual(res["intent"]["intent"], "APP_SPECIFIC_MALFUNCTION")
+        self.assertGreaterEqual(res["intent"]["confidence"], 0.85)
+
+    def test_case_153_app_specific_app_store_downloads_slow(self):
+        """Case #153: PAIR_07 App Store downloads being slow belongs to APP_SPECIFIC_MALFUNCTION."""
+        query = "@AppleSupport app store downloads have been impossibly slow for the last week since iOS11 & I mean impossible"
+        res = self.pipeline.process(query)
+        self.assertEqual(res["intent"]["intent"], "APP_SPECIFIC_MALFUNCTION")
+        self.assertGreaterEqual(res["intent"]["confidence"], 0.85)
+
+    def test_case_132_whole_device_unresponsive_freeze(self):
+        """Case #132: PAIR_03 whole phone becoming unresponsive belongs to DEVICE_FREEZE_CRASH_REBOOT."""
+        query = "@AppleSupport updated my 7plus to 11.0.2 - cannot run more than one non-system app at a time. Apps crash, phone becomes unresponsive"
+        res = self.pipeline.process(query)
+        self.assertEqual(res["intent"]["intent"], "DEVICE_FREEZE_CRASH_REBOOT")
+        self.assertGreaterEqual(res["intent"]["confidence"], 0.85)
+
 
 if __name__ == "__main__":
     unittest.main()

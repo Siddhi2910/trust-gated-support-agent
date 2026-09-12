@@ -1,9 +1,9 @@
 # Customer Support Dual-Track System: Benchmark & Evaluation Report
 
-**Evaluation Timestamp:** `2026-09-12T20:54:30Z`  
+**Evaluation Timestamp:** `2026-09-12T21:06:18Z`  
 **Evaluation Scope:** Canonical 170 Inquiries Benchmark Pack  
 **Human Ground Truth N:** `1 / 170` (Zero fabricated human labels)  
-**Elapsed Runtime:** `0.21s`  
+**Elapsed Runtime:** `0.23s`  
 
 ---
 
@@ -25,10 +25,10 @@ Human ground-truth evaluation is strictly restricted to genuinely recovered huma
 | Metric | Baseline 1 (Naive Keyword) | Baseline 2 (Standard RAG) | Trust-Gated Dual-Track (Production) |
 | :--- | :---: | :---: | :---: |
 | **Total Inquiries Tested** | 170 | 170 | 170 |
-| **Auto-Resolved Count** | 170 (100.0%) | 170 (100.0%) | 79 (46.5%) |
-| **Safely Escalated to Human** | 0 (0.0%) | 0 (0.0%) | 91 (53.5%) |
-| **Part 1 Candidate Agreement** | 58 / 120 | 58 / 120 | 58 / 120 |
-| **Part 2 Boundary Resolution** | Unhandled (0 flags) | Unhandled (0 flags) | **3 / 35** flagged for priority tie-break |
+| **Auto-Resolved Count** | 170 (100.0%) | 170 (100.0%) | 80 (47.1%) |
+| **Safely Escalated to Human** | 0 (0.0%) | 0 (0.0%) | 90 (52.9%) |
+| **Part 1 Candidate Agreement** | 62 / 120 | 62 / 120 | 62 / 120 |
+| **Part 2 Boundary Resolution** | Unhandled (0 flags) | Unhandled (0 flags) | **4 / 35** flagged for priority tie-break |
 | **Part 3 Abstention / UNKNOWN** | 15 / 15 | 15 / 15 | **15 / 15** properly clarified / abstained |
 | **Mean Groundedness Score** | N/A (unverified) | N/A (unverified) | **1.0** |
 | **Hallucinations Detected** | Unmonitored | Unmonitored | **0** |

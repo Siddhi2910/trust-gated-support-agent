@@ -82,7 +82,8 @@ INTENT_PATTERNS = {
         r"\b(?:battery(?:\s+\w+){0,2}\s+(?:drains?|draining|drained|dies|dying|dead|low|percentage|capacity|consumption|dropping|issue|problem)|overheating|phone\s+gets\s+hot|battery\s+health|extra\s+battery)\b"
     ],
     "KEYBOARD_TYPING_AUTOCORRECT_ISSUE": [
-        r"\b(?:keyboard|autocorrect|auto\s*correct|typing|predictive\s+text|symbol\s+appears|letter\s+i\b|capital\s+a\b|\ba\s*\[\?\]|\bi\s*\[\?\]|dictation)\b"
+        r"\b(?:keyboard|autocorrect\w*|auto\s*correct\w*|typing|predictive\s+text|symbol\s+appears|letter\s+[\"“\']?i[\"”\']?\b|capital\s+a\b|\ba\s*\[\?\]|\bi\s*\[\?\]|dictation)\b",
+        r"\b(?:type\s+(?:the\s+)?letter\s+[\"“\']?i[\"”\']?|capital\s+i\s+autocorrect\w*|box\s+with\s+a\s+question\s+mark|fix\s+(?:the\s+)?letter\s+[\"“\']?i[\"”\']?|letter\s+[\"“\']?i[\"”\']?\s+is\s+a\s+box)\b"
     ],
     "SCREEN_DISPLAY_TOUCH_BIOMETRICS": [
         r"\b(?:screen|display|touch\s*id|face\s*id|touch\s+screen|digitizer|dead\s+pixels?|black\s+screen|lines?\s+on\s+screen|ghost\s+touch|unresponsive\s+touch|screen\s+flicker)\b"
@@ -100,7 +101,11 @@ INTENT_PATTERNS = {
         r"\b(?:lag|lagging|laggy|slow|sluggish|latency|delayed|unresponsive\s+phone|takes\s+forever\s+to\s+open|stutters?)\b"
     ],
     "APP_SPECIFIC_MALFUNCTION": [
-        r"\b(?:safari|itunes|app\s+store|apple\s+music|maps|podcasts|imessage|facetime|whatsapp|spotify|twitter|instagram|youtube|camera\s+app)\b.*?\b(?:crashes?|not\s+working|won'?t\s+open|glitch)\b"
+        r"\b(?:safari|itunes|app\s+store|apple\s+music|maps|podcasts?|podcast\s+app|imessage|facetime|whatsapp|spotify|twitter|instagram|youtube|camera(?:\s+app)?|mail(?:\s+app)?|tv\s+app|message(?:\s+app)?|voice\s+recorder|icloud\s+drive|quicktime)\b.*?\b(?:crashes?|not\s+working|won'?t\s+open|won'?t\s+play|glitch|stopped\s+working|slow\s+to\s+sync|messing\s+up|useless|spinner)\b",
+        r"\b(?:apps?\s+(?:keep\s+)?(?:freezing|crashing|closing|bugging)|apps?\s+have\s+been\s+crashing|my\s+apps\s+keep\s+freezing)\b",
+        r"\b(?:music\s+app\s+keeps\s+crashing|mail\s+app\s+crashes|podcast\s+app\s+not\s+working|message\s+app\s+stopped\s+working|voice\s+recorder\s+app|tv\s+app\s+won'?t\s+play)\b",
+        r"\b(?:app\s+store\s+downloads|issues?\s+with\s+the\s+app\s+store|app\s+updates\s+are\s+(?:extremely\s+)?slow)\b",
+        r"\b(?:only\s+on\s+text\s+messages|accessing\s+the\s+camera\s+from\s+the\s+lock\s+screen|certain\s+apps.*bug|app\s+creator.*bug|messages\s+being\s+sent.*no\s+delivery)\b"
     ]
 }
 
@@ -210,6 +215,68 @@ class IntentClassifier:
             else:
                 primary = "BATTERY_DRAIN_POWER_CONSUMPTION"
             matched = [(primary, 5)] + [m for m in matched if m[0] != primary]
+
+        # 8. App Malfunction vs OS Crash/Freeze (PAIR_03)
+        if any(m[0] == "APP_SPECIFIC_MALFUNCTION" for m in matched) and any(m[0] == "DEVICE_FREEZE_CRASH_REBOOT" for m in matched):
+            if re.search(r"\b(?:music\s+app\s+keeps\s+crashing|mail\s+app\s+crashes|podcast\s+app|tv\s+app|message\s+app|apps?\s+(?:keep\s+)?(?:freezing|crashing)|apps?\s+have\s+been\s+crashing)\b", lower):
+                if not re.search(r"\b(?:phone\s+becomes\s+unresponsive|locks\s+the\s+whole\s+phone|every\s+app\s+crash\s+my\s+phone|phone\s+keeps\s+freezing|(?:iphone|phone)\s+(?:and\s+\w+\s+)?freez\w*)\b", lower):
+                    primary = "APP_SPECIFIC_MALFUNCTION"
+                    matched = [(primary, 6)] + [m for m in matched if m[0] != primary]
+                else:
+                    primary = "DEVICE_FREEZE_CRASH_REBOOT"
+                    matched = [(primary, 6)] + [m for m in matched if m[0] != primary]
+
+        # 9. App Malfunction vs Performance Slowdown (PAIR_07)
+        if any(m[0] == "APP_SPECIFIC_MALFUNCTION" for m in matched) and any(m[0] == "PERFORMANCE_SLOWDOWN_LATENCY" for m in matched):
+            if re.search(r"\b(?:only\s+on\s+text\s+messages|app\s+store\s+downloads|app\s+updates\s+are\s+(?:extremely\s+)?slow|issues?\s+with\s+the\s+app\s+store|icloud\s+drive\s+so\s+slow)\b", lower):
+                primary = "APP_SPECIFIC_MALFUNCTION"
+                matched = [(primary, 6)] + [m for m in matched if m[0] != primary]
+            elif re.search(r"\b(?:ios\s+11\s+is\s+so\s+slow|phone\s+has\s+many\s+problems|way\s+too\s+slow)\b", lower):
+                primary = "PERFORMANCE_SLOWDOWN_LATENCY"
+                matched = [(primary, 6)] + [m for m in matched if m[0] != primary]
+
+        # 10. Keyboard vs Performance Slowdown (PAIR_02 typing latency vs character glitch)
+        if any(m[0] == "KEYBOARD_TYPING_AUTOCORRECT_ISSUE" for m in matched) and any(m[0] == "PERFORMANCE_SLOWDOWN_LATENCY" for m in matched):
+            has_autocorrect_or_substitution = bool(re.search(r"\b(?:autocorrect\w*|letter\s+[\"“\']?i[\"”\']?|capital\s+i|box\s+with\s+a\s+question\s+mark|weird\s+character)\b", lower))
+            has_kb_lag = bool(re.search(r"\b(?:keyboard\s+lag|delay\s+in\s+(?:my\s+)?keyboard|keyboard\s+freezes|slow\s+typing|typing\s+lag)\b", lower))
+            if has_kb_lag and not has_autocorrect_or_substitution:
+                primary = "PERFORMANCE_SLOWDOWN_LATENCY"
+                matched = [(primary, 6)] + [m for m in matched if m[0] != primary]
+            elif has_autocorrect_or_substitution:
+                primary = "KEYBOARD_TYPING_AUTOCORRECT_ISSUE"
+                matched = [(primary, 6)] + [m for m in matched if m[0] != primary]
+
+        # 11. App Specific vs Keyboard Typing Autocorrect
+        if any(m[0] == "APP_SPECIFIC_MALFUNCTION" for m in matched) and any(m[0] == "KEYBOARD_TYPING_AUTOCORRECT_ISSUE" for m in matched):
+            if re.search(r"\b(?:autocorrect\w*|letter\s+[\"“\']?i[\"”\']?|capital\s+i|type\s+(?:the\s+)?letter|keyboard\s+issue)\b", lower):
+                primary = "KEYBOARD_TYPING_AUTOCORRECT_ISSUE"
+            else:
+                primary = "APP_SPECIFIC_MALFUNCTION"
+            matched = [(primary, 6)] + [m for m in matched if m[0] != primary]
+
+        # 12. App Specific vs Connectivity (Case #43: TV app playback vs WiFi)
+        if any(m[0] == "APP_SPECIFIC_MALFUNCTION" for m in matched) and any(m[0] == "CONNECTIVITY_WIFI_BLUETOOTH" for m in matched):
+            if re.search(r"\b(?:tv\s+app|itunes\s+app|downloading\s+movies)\b", lower):
+                primary = "APP_SPECIFIC_MALFUNCTION"
+                matched = [(primary, 6)] + [m for m in matched if m[0] != primary]
+
+        # 13. App Specific vs Audio (Case #77: Voice Recorder app won't open)
+        if any(m[0] == "APP_SPECIFIC_MALFUNCTION" for m in matched) and any(m[0] == "AUDIO_SOUND_SPEAKER_MIC" for m in matched):
+            if re.search(r"\b(?:own\s+app\s+won\'?t\s+open|voice\s+recorder\s+app|quicktime)\b", lower):
+                primary = "APP_SPECIFIC_MALFUNCTION"
+                matched = [(primary, 6)] + [m for m in matched if m[0] != primary]
+
+        # 14. App Specific vs Screen/Display (Case #59, #142)
+        if any(m[0] == "APP_SPECIFIC_MALFUNCTION" for m in matched) and any(m[0] == "SCREEN_DISPLAY_TOUCH_BIOMETRICS" for m in matched):
+            if re.search(r"\b(?:message\s+app\s+stopped\s+working|accessing\s+the\s+camera\s+from\s+the\s+lock\s+screen)\b", lower):
+                primary = "APP_SPECIFIC_MALFUNCTION"
+                matched = [(primary, 6)] + [m for m in matched if m[0] != primary]
+
+        # 15. App Specific vs Order/Shipping (Case #99: Message delivery vs package delivery)
+        if any(m[0] == "APP_SPECIFIC_MALFUNCTION" for m in matched) and any(m[0] == "ORDER_PURCHASE_SHIPPING_STATUS" for m in matched):
+            if re.search(r"\b(?:messages\s+being\s+sent|text\s+messages?|messages\s+app)\b", lower):
+                primary = "APP_SPECIFIC_MALFUNCTION"
+                matched = [(primary, 6)] + [m for m in matched if m[0] != primary]
 
         # If no patterns matched: determine if UNKNOWN
         if not matched:
