@@ -160,9 +160,16 @@ function evaluateTrustHeuristics(
 
 // API Routes FIRST
 
-// Health check
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', time: new Date().toISOString(), aiAvailable: !!process.env.GEMINI_API_KEY });
+// Health check - production contract for GET /health and GET /api/health
+app.get(['/health', '/health/', '/api/health', '/api/health/'], (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+  res.json({
+    status: 'ok',
+    system: 'trust-gated-dual-track-support',
+    version: '1.0.0',
+    timestamp: new Date().toISOString(),
+    aiAvailable: !!process.env.GEMINI_API_KEY
+  });
 });
 
 // ==========================================
@@ -285,10 +292,14 @@ app.get(['/api/review/status', '/api/review/status/'], (req, res) => {
 
 // Core human review submit handler supporting safe atomic write and read-after-write verification
 function processReviewSubmit(filePath: string, body: any, isTestStore: boolean = false) {
-  const { case_id, human_decision, human_intent, focal_grievance, reviewer_notes } = body;
+  const case_id = body?.case_id ?? body?.caseId ?? body?.id ?? body?.case?.case_id ?? body?.case?.id;
+  const human_decision = body?.human_decision ?? body?.decision;
+  const human_intent = body?.human_intent ?? body?.intent ?? body?.corrected_intent;
+  const focal_grievance = body?.focal_grievance ?? body?.grievance;
+  const reviewer_notes = body?.reviewer_notes ?? body?.notes;
 
   // 1. Validate case ID
-  if (case_id === undefined || case_id === null) {
+  if (case_id === undefined || case_id === null || String(case_id).trim() === '') {
     throw { status: 400, message: 'case_id is required' };
   }
   const numericId = Number(case_id);
@@ -718,9 +729,13 @@ function executePythonPipeline(payload: {
   in_response_to_tweet_id?: number | string;
 }): Promise<any> {
   return new Promise((resolve, reject) => {
-    const py = spawn('python3', ['scripts/run_pipeline_cli.py']);
+    const py = spawn('python3', ['scripts/run_pipeline_cli.py'], { cwd: process.cwd() });
     let stdout = '';
     let stderr = '';
+
+    py.on('error', (err) => {
+      reject(new Error(`Failed to execute pipeline process: ${err.message}`));
+    });
 
     py.stdout.on('data', d => stdout += d.toString());
     py.stderr.on('data', d => stderr += d.toString());
@@ -859,12 +874,67 @@ app.post(['/api/pipeline/process', '/api/pipeline/process/'], async (req, res) =
   }
 });
 
+// POST /api/support/handle - Production API contract endpoint
+app.post(['/api/support/handle', '/api/support/handle/'], async (req, res) => {
+  try {
+    res.setHeader('Content-Type', 'application/json');
+    const text = req.body?.message ?? req.body?.text ?? req.body?.query;
+    if (!text || typeof text !== 'string' || !text.trim()) {
+      return res.status(400).json({ error: 'message or text is required and must be non-empty' });
+    }
+
+    const conversation_id = req.body?.conversation_id ?? req.body?.conversationId ?? req.body?.session_id ?? req.body?.sessionId;
+    const tweet_id = req.body?.tweet_id ?? req.body?.tweetId;
+    const in_response_to_tweet_id = req.body?.in_response_to_tweet_id ?? req.body?.inResponseToTweetId ?? req.body?.parent_tweet_id;
+
+    const pipelineResult = await executePythonPipeline({
+      text: text.trim(),
+      conversation_id,
+      tweet_id,
+      in_response_to_tweet_id
+    });
+
+    const decision = pipelineResult.decision?.decision || 'ESCALATE_TO_HUMAN';
+    const canAutoResolve = pipelineResult.decision?.can_auto_resolve ?? false;
+    const targetQueue = pipelineResult.decision?.target_queue || 'HUMAN_REVIEW_QUEUE';
+
+    res.json({
+      status: 'success',
+      decision,
+      can_auto_resolve: canAutoResolve,
+      confidence_score: pipelineResult.decision?.confidence_score ?? 0.0,
+      response: pipelineResult.generation?.response_text || '',
+      is_abstention: pipelineResult.generation?.is_abstention ?? false,
+      abstention_reason: pipelineResult.generation?.abstention_reason || null,
+      intent: pipelineResult.intent?.intent || 'UNKNOWN',
+      intent_confidence: pipelineResult.intent?.confidence ?? 0.0,
+      ambiguity_flag: pipelineResult.intent?.ambiguity_flag ?? false,
+      target_queue: targetQueue,
+      risk_level: pipelineResult.risk?.risk_level || 'LOW',
+      risk_category: pipelineResult.risk?.risk_category || null,
+      requires_immediate_escalation: pipelineResult.risk?.requires_immediate_escalation ?? false,
+      evidence: pipelineResult.generation?.evidence_used || [],
+      groundedness_score: pipelineResult.claims?.groundedness_score ?? 0.0,
+      hallucination_detected: pipelineResult.claims?.hallucination_detected ?? false,
+      unsupported_claims: pipelineResult.claims?.unsupported_claims || [],
+      receipt: pipelineResult.trust_receipt || pipelineResult.receipt || null,
+      metadata: {
+        taxonomy_version: '1.0.0-frozen',
+        model_version: 'trust-gated-v1',
+        timestamp: new Date().toISOString()
+      }
+    });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message || 'Internal pipeline processing error' });
+  }
+});
+
 // GET /api/conversations/:id - retrieve stored conversation session state
 app.get('/api/conversations/:id', (req, res) => {
   try {
     res.setHeader('Content-Type', 'application/json');
     const cid = req.params.id;
-    const sessionPath = path.join(__dirname, 'artifacts', 'conversation_sessions.json');
+    const sessionPath = path.join(process.cwd(), 'artifacts', 'conversation_sessions.json');
     if (!fs.existsSync(sessionPath)) {
       return res.status(404).json({ error: 'No active sessions found' });
     }
@@ -884,7 +954,7 @@ app.delete('/api/conversations/:id', (req, res) => {
   try {
     res.setHeader('Content-Type', 'application/json');
     const cid = req.params.id;
-    const sessionPath = path.join(__dirname, 'artifacts', 'conversation_sessions.json');
+    const sessionPath = path.join(process.cwd(), 'artifacts', 'conversation_sessions.json');
     if (fs.existsSync(sessionPath)) {
       const data = JSON.parse(fs.readFileSync(sessionPath, 'utf-8'));
       if (data.sessions && data.sessions[cid]) {

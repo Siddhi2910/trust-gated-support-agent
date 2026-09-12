@@ -56,8 +56,11 @@ interface IntentInfo {
 }
 
 // Safe JSON fetch helper that strictly guards against non-JSON (HTML/Vite fallback) responses
+const API_BASE = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, '');
+
 async function safeFetchJson<T = any>(url: string, init?: RequestInit): Promise<T> {
-  const res = await fetch(url, {
+  const fullUrl = url.startsWith('/') ? `${API_BASE}${url}` : url;
+  const res = await fetch(fullUrl, {
     ...init,
     cache: 'no-store',
     headers: {
@@ -166,6 +169,11 @@ export function HumanReviewWorkspace() {
 
   // Handle Save
   const handleSaveDecision = async (overrideDecision?: 'ACCEPT' | 'REJECT' | 'UNCERTAIN') => {
+    if (!currentCase || currentCase.case_id === undefined || currentCase.case_id === null) {
+      setFeedbackMsg({ type: 'error', text: 'No active case loaded for review. Please select a case.' });
+      return;
+    }
+
     const dec = overrideDecision || decision;
     if (!dec) {
       setFeedbackMsg({ type: 'error', text: 'Please select a decision: ACCEPT, REJECT, or UNCERTAIN.' });

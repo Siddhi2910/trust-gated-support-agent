@@ -14,6 +14,12 @@ import {
 } from './types';
 import { initialEvidenceBase, initialTickets, defaultConfig } from './mockData';
 
+const API_BASE = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, '');
+const apiFetch = (url: string, init?: RequestInit) => {
+  const fullUrl = url.startsWith('/') ? `${API_BASE}${url}` : url;
+  return fetch(fullUrl, init);
+};
+
 export default function App() {
   const [currentTab, setCurrentTab] = useState<AppTab>('golden-review');
   const [tickets, setTickets] = useState<CustomerTicket[]>(initialTickets);
@@ -45,9 +51,9 @@ export default function App() {
   const fetchAllData = async () => {
     try {
       const [ticketsRes, evidenceRes, configRes] = await Promise.all([
-        fetch('/api/tickets').then(r => r.ok ? r.json() : null),
-        fetch('/api/evidence').then(r => r.ok ? r.json() : null),
-        fetch('/api/config').then(r => r.ok ? r.json() : null)
+        apiFetch('/api/tickets').then(r => r.ok ? r.json() : null),
+        apiFetch('/api/evidence').then(r => r.ok ? r.json() : null),
+        apiFetch('/api/config').then(r => r.ok ? r.json() : null)
       ]);
 
       if (ticketsRes?.tickets) {
@@ -103,7 +109,7 @@ export default function App() {
   }): Promise<CustomerTicket | null> => {
     setIsLoading(true);
     try {
-      const res = await fetch('/api/tickets', {
+      const res = await apiFetch('/api/tickets', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(ticketData)
@@ -145,7 +151,7 @@ export default function App() {
   }) => {
     setIsLoading(true);
     try {
-      const res = await fetch(`/api/tickets/${reviewData.ticketId}/review`, {
+      const res = await apiFetch(`/api/tickets/${reviewData.ticketId}/review`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(reviewData)
@@ -185,7 +191,7 @@ export default function App() {
   }) => {
     setIsLoading(true);
     try {
-      const res = await fetch('/api/evidence', {
+      const res = await apiFetch('/api/evidence', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newEvidence)
@@ -207,7 +213,7 @@ export default function App() {
   // Delete evidence
   const handleDeleteEvidence = async (id: string) => {
     try {
-      const res = await fetch(`/api/evidence/${id}`, { method: 'DELETE' });
+      const res = await apiFetch(`/api/evidence/${id}`, { method: 'DELETE' });
       if (res.ok) {
         const data = await res.json();
         setEvidenceList(data.allEvidence);
@@ -222,7 +228,7 @@ export default function App() {
   // Update Trust Gate configuration
   const handleUpdateConfig = async (newConfig: Partial<TrustGateConfig>) => {
     try {
-      const res = await fetch('/api/config', {
+      const res = await apiFetch('/api/config', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newConfig)
@@ -241,7 +247,7 @@ export default function App() {
   const handleSimulateQuery = async (queryData: any) => {
     setIsLoading(true);
     try {
-      const res = await fetch('/api/simulate-query', {
+      const res = await apiFetch('/api/simulate-query', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(queryData)
@@ -261,7 +267,7 @@ export default function App() {
   const handleResetDemo = async () => {
     setIsResetting(true);
     try {
-      const res = await fetch('/api/reset-demo', { method: 'POST' });
+      const res = await apiFetch('/api/reset-demo', { method: 'POST' });
       if (res.ok) {
         const data = await res.json();
         setTickets(data.tickets);
