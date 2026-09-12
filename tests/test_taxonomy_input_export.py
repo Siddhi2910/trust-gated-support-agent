@@ -54,6 +54,8 @@ def test_sample_csv_no_duplicate_tweet_ids_or_conversations():
 
 def test_sample_csv_text_fidelity():
     """Verify that sample text matches customer_inquiry_text in conversations parquet exactly."""
+    if not os.path.exists(CONV_PARQUET_PATH):
+        pytest.skip(f"Missing {CONV_PARQUET_PATH} (raw dataset omitted from git)")
     conv_df = pd.read_parquet(CONV_PARQUET_PATH)
     conv_lookup = dict(zip(conv_df["conversation_id"], conv_df["customer_inquiry_text"]))
 
@@ -66,6 +68,8 @@ def test_sample_csv_text_fidelity():
 
 def test_sample_seed_reproducibility(tmp_path):
     """Verify that re-running export_taxonomy_sample with seed 42 produces identical output."""
+    if not os.path.exists(CONV_PARQUET_PATH):
+        pytest.skip(f"Missing {CONV_PARQUET_PATH} (raw dataset omitted from git)")
     test_csv = str(tmp_path / "test_sample.csv")
     stats = export_taxonomy_sample(
         conversations_parquet_path=CONV_PARQUET_PATH,
@@ -127,5 +131,7 @@ def test_length_stats_validity():
 
 def test_immutability_of_raw_and_phase2_artifacts():
     """Verify that data/raw/twcs.csv and conversations.parquet were not modified."""
+    if not os.path.exists(RAW_TWCS_PATH) or not os.path.exists(CONV_PARQUET_PATH):
+        pytest.skip("Raw TWCS or conversations parquet omitted from git")
     assert compute_file_sha256(RAW_TWCS_PATH) == EXPECTED_RAW_SHA256, "Raw TWCS modified!"
     assert compute_file_sha256(CONV_PARQUET_PATH) == EXPECTED_CONV_SHA256, "Conversations Parquet modified!"

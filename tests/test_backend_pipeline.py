@@ -13,6 +13,9 @@ Verifies:
 10. End-to-End Pipeline Execution
 """
 
+import os
+import shutil
+import tempfile
 import unittest
 from src.taxonomy.classifier import IntentClassifier
 from src.retrieval.evidence_store import EvidenceStore
@@ -30,10 +33,21 @@ from src.trust.pipeline import TrustGatedPipeline
 class TestBackendPipeline(unittest.TestCase):
 
     def setUp(self):
-        self.pipeline = TrustGatedPipeline()
-        self.classifier = IntentClassifier()
-        self.store = EvidenceStore()
+        self.temp_dir = tempfile.mkdtemp()
+        self.temp_store_path = os.path.join(self.temp_dir, "test_evidence_store.json")
+        self.temp_audit_path = os.path.join(self.temp_dir, "test_evidence_promotion_audit.json")
+        
+        # Copy production evidence store to isolated temp file if present
+        if os.path.exists("artifacts/evidence_store.json"):
+            shutil.copyfile("artifacts/evidence_store.json", self.temp_store_path)
+            
+        self.store = EvidenceStore(persistence_path=self.temp_store_path)
         self.retriever = LeakageSafeRetriever(self.store)
+        self.pipeline = TrustGatedPipeline(evidence_store=self.store, retriever=self.retriever)
+        self.classifier = IntentClassifier()
+
+    def tearDown(self):
+        shutil.rmtree(self.temp_dir, ignore_errors=True)
 
     def test_intent_classifier_battery_drain(self):
         res = self.classifier.classify("My iPhone battery is dying after 2 hours")
@@ -123,7 +137,7 @@ class TestBackendPipeline(unittest.TestCase):
         self.assertTrue(res["generation"]["is_abstention"])
 
     def test_evidence_promotion_workflow(self):
-        promo = EvidencePromotionManager(self.store)
+        promo = EvidencePromotionManager(self.store, audit_log_path=self.temp_audit_path)
         cand_id = promo.submit_candidate(
             intent="CONNECTIVITY_WIFI_BLUETOOTH",
             title="Bluetooth Audio Stutter Fix",

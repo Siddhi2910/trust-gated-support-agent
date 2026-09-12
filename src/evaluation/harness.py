@@ -264,3 +264,10 @@ class EvaluationHarness:
         os.makedirs("reports", exist_ok=True)
         with open("reports/evaluation_benchmark_report.md", "w", encoding="utf-8") as f:
             f.write(md)
+
+
+if __name__ == "__main__":
+    harness = EvaluationHarness()
+    results = harness.run_benchmark()
+    print("Benchmark complete. Total evaluated cases:", results["metadata"]["total_benchmark_cases"])
+

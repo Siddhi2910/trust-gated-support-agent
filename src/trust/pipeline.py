@@ -10,6 +10,8 @@ Orchestrates:
 7. Dual-Track AUTO vs HUMAN Decision Arbitration
 """
 
+import time
+from datetime import datetime
 from typing import Dict, Any, Optional
 from src.taxonomy.classifier import IntentClassifier
 from src.retrieval.evidence_store import EvidenceStore
@@ -89,6 +91,51 @@ class TrustGatedPipeline:
             claim_result=claim_result
         )
 
+        # Step 8: Trust Receipt Assembly
+        total_in_store = len(getattr(self.evidence_store, "items", []))
+        verified_in_store = len(self.evidence_store.get_all(only_verified=True))
+        excluded_untrusted = max(0, total_in_store - verified_in_store)
+
+        receipt = {
+            "receipt_id": f"RCPT-{int(time.time() * 1000)}",
+            "timestamp": datetime.utcnow().isoformat() + "Z",
+            "input_query": query_text,
+            "context": {
+                "conversation_id": conversation_id,
+                "tweet_id": tweet_id
+            },
+            "taxonomy_version": "1.0.0-frozen",
+            "model_versions": {
+                "intent_classifier": "focal_grievance_v1",
+                "risk_gate": "keyword_safety_v1",
+                "generator": "grounded_synthesis_v1",
+                "claim_verifier": "token_overlap_verifier_v1"
+            },
+            "predicted_intent": predicted_intent,
+            "intent_confidence": intent_result.get("confidence", 0.0),
+            "risk_flags": [risk_result.get("reason")] if risk_result.get("requires_immediate_escalation") else [],
+            "retrieved_evidence": [
+                {
+                    "evidence_id": e.get("evidence_id"),
+                    "source_type": e.get("source_type"),
+                    "verification_status": e.get("verification_status", "TRUSTED"),
+                    "is_human_approved": e.get("source_type") == "HUMAN_APPROVED" or e.get("verification_status") == "VERIFIED"
+                }
+                for e in retrieved_evidence
+            ],
+            "evidence_quality_score": gates_result.get("quality", {}).get("score", 0.0),
+            "conflict_indicators": gates_result.get("consistency", {}).get("conflict_detected", False),
+            "answerability_score": gates_result.get("answerability", {}).get("answerability_score", 0.0),
+            "decision": arbiter_result.get("decision"),
+            "target_queue": arbiter_result.get("target_queue"),
+            "can_auto_resolve": arbiter_result.get("can_auto_resolve", False),
+            "escalation_reasons": arbiter_result.get("reasons", []),
+            "claims_verified": claim_result.get("verified", False),
+            "groundedness_score": claim_result.get("groundedness_score", 0.0),
+            "hallucination_detected": claim_result.get("hallucination_detected", False),
+            "excluded_untrusted_candidates_count": excluded_untrusted
+        }
+
         return {
             "query": query_text,
             "conversation_id": conversation_id,
@@ -103,5 +150,6 @@ class TrustGatedPipeline:
             "gates": gates_result,
             "generation": gen_result,
             "claims": claim_result,
-            "decision": arbiter_result
+            "decision": arbiter_result,
+            "trust_receipt": receipt
         }

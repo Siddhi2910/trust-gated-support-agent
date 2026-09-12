@@ -10,7 +10,8 @@ import pandas as pd
 def load_conversations():
     """Load conversations dataset for verbatim verification."""
     path = "data/processed/applesupport_conversations.parquet"
-    assert os.path.exists(path), f"Missing {path}"
+    if not os.path.exists(path):
+        pytest.skip(f"Missing {path} (raw dataset omitted from git)")
     df = pd.read_parquet(path)
     lookup = dict(zip(df["root_tweet_id"], df["customer_inquiry_text"]))
     conv_lookup = dict(zip(df["root_tweet_id"], df["conversation_id"]))

@@ -710,21 +710,94 @@ app.post('/api/config', (req, res) => {
   res.json({ config });
 });
 
-// POST Simulate Query (Sandbox)
-app.post('/api/simulate-query', (req, res) => {
-  const { query, category, transactionAmount, companyTier } = req.body;
-  if (!query) {
-    return res.status(400).json({ error: 'Query is required for simulation' });
+// Helper to execute customer inquiries through real Python Trust-Gated Pipeline
+function executePythonPipeline(payload: { text: string; conversation_id?: number; tweet_id?: number }): Promise<any> {
+  return new Promise((resolve, reject) => {
+    const py = spawn('python3', ['scripts/run_pipeline_cli.py']);
+    let stdout = '';
+    let stderr = '';
+
+    py.stdout.on('data', d => stdout += d.toString());
+    py.stderr.on('data', d => stderr += d.toString());
+
+    py.on('close', code => {
+      if (code !== 0) {
+        return reject(new Error(stderr || `Pipeline exited with code ${code}`));
+      }
+      try {
+        resolve(JSON.parse(stdout));
+      } catch (e: any) {
+        reject(new Error(`Failed to parse pipeline output: ${stdout}`));
+      }
+    });
+
+    py.stdin.write(JSON.stringify(payload));
+    py.stdin.end();
+  });
+}
+
+// POST Simulate Query (Sandbox) - Connected to Real Python Trust-Gated Pipeline
+app.post('/api/simulate-query', async (req, res) => {
+  try {
+    const { query, category, transactionAmount, companyTier } = req.body;
+    if (!query) {
+      return res.status(400).json({ error: 'Query is required for simulation' });
+    }
+
+    const pipelineResult = await executePythonPipeline({ text: query });
+
+    const isAuto = pipelineResult.decision?.can_auto_resolve ?? false;
+    const gateDecision = isAuto
+      ? 'Auto-Dispatch'
+      : (pipelineResult.risk?.requires_immediate_escalation ? 'Hard-Gated Escrow' : 'Hold for Review');
+    const trustScore = Math.round((pipelineResult.decision?.confidence_score ?? 0.5) * 100);
+
+    const riskFlags: string[] = [];
+    if (pipelineResult.risk?.requires_immediate_escalation) {
+      riskFlags.push(`${pipelineResult.risk?.risk_category || 'RISK'}: ${pipelineResult.risk?.reason || 'Immediate escalation required'}`);
+    }
+    if (pipelineResult.intent?.ambiguity_flag) {
+      riskFlags.push('Ambiguous Multi-Intent');
+    }
+    if (!pipelineResult.gates?.answerability?.answerable) {
+      riskFlags.push('Insufficient Grounding Evidence');
+    }
+    if (pipelineResult.claims?.hallucination_detected) {
+      riskFlags.push('Unverified Claim Detected');
+    }
+
+    const matchedEvidence = (pipelineResult.generation?.evidence_used || []).map((e: any) => ({
+      id: e.evidence_id,
+      title: e.title,
+      content: e.body || `[${e.source_type || 'SOURCE'}] ${e.source_reference || ''}`,
+      category: pipelineResult.intent?.intent,
+      trustWeight: 5
+    }));
+
+    const result = {
+      evaluation: {
+        trustScore,
+        riskLevel: (pipelineResult.risk?.risk_level || 'low').toLowerCase(),
+        riskFlags,
+        matchedRules: matchedEvidence.map((e: any) => e.id),
+        gateDecision,
+        breakdown: {
+          intentClarity: Math.round((pipelineResult.intent?.confidence ?? 0.8) * 100),
+          evidenceGrounding: Math.round((pipelineResult.claims?.groundedness_score ?? 1.0) * 100),
+          policyCompliance: pipelineResult.risk?.requires_immediate_escalation ? 10 : 95,
+          hallucinationRisk: pipelineResult.claims?.hallucination_detected ? 90 : 5
+        }
+      },
+      matchedEvidence,
+      draft: pipelineResult.generation?.response_text,
+      pipelineResult
+    };
+
+    res.json(result);
+  } catch (err: any) {
+    console.error('Simulation error:', err);
+    res.status(500).json({ error: err.message });
   }
-
-  const result = evaluateTrustHeuristics(
-    query,
-    category || 'Billing & Refunds',
-    transactionAmount ? Number(transactionAmount) : undefined,
-    companyTier || 'Starter'
-  );
-
-  res.json(result);
 });
 
 // POST Reset Demo
@@ -766,7 +839,7 @@ app.get(['/api/benchmark/summary', '/api/benchmark/summary/'], (req, res) => {
 });
 
 // POST process customer inquiry through Trust-Gated Dual-Track Pipeline
-app.post(['/api/pipeline/process', '/api/pipeline/process/'], (req, res) => {
+app.post(['/api/pipeline/process', '/api/pipeline/process/'], async (req, res) => {
   try {
     res.setHeader('Content-Type', 'application/json');
     const { text, conversation_id, tweet_id } = req.body;
@@ -774,29 +847,20 @@ app.post(['/api/pipeline/process', '/api/pipeline/process/'], (req, res) => {
       return res.status(400).json({ error: 'text is required' });
     }
 
-    const py = spawn('python3', ['scripts/run_pipeline_cli.py']);
-    let stdout = '';
-    let stderr = '';
-
-    py.stdout.on('data', d => stdout += d.toString());
-    py.stderr.on('data', d => stderr += d.toString());
-
-    py.on('close', code => {
-      if (code !== 0) {
-        return res.status(500).json({ error: stderr || 'Pipeline process error' });
-      }
-      try {
-        res.json(JSON.parse(stdout));
-      } catch (e: any) {
-        res.status(500).json({ error: 'Failed to parse pipeline output', raw: stdout });
-      }
-    });
-
-    py.stdin.write(JSON.stringify({ text, conversation_id, tweet_id }));
-    py.stdin.end();
+    const result = await executePythonPipeline({ text, conversation_id, tweet_id });
+    res.json(result);
   } catch (err: any) {
     res.status(500).json({ error: err.message });
   }
+});
+
+// Explicit restriction: GET /api/golden-set is blocked to prevent exposing frozen evaluation set
+app.all(['/api/golden-set', '/api/golden-set/*'], (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+  res.status(403).json({
+    error: 'Access to the frozen golden set is restricted to prevent evaluation leakage.',
+    status: 403
+  });
 });
 
 // Explicit API 404 handler: guarantees that any unhandled /api/* request returns JSON, NEVER HTML
@@ -826,7 +890,7 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
 async function startServer() {
   if (process.env.NODE_ENV !== 'production') {
     const vite = await createViteServer({
-      server: { middlewareMode: true },
+      server: { middlewareMode: true, allowedHosts: true },
       appType: 'spa',
     });
     app.use(vite.middlewares);

@@ -24,3 +24,4 @@ venv/
 node_modules/
 dist/
 .DS_Store
+bun.lock

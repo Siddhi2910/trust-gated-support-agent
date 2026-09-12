@@ -1,9 +1,9 @@
 # Golden Set Construction & Human Validation Report
 
 **Document Version:** `1.0.0`  
-**Date Generated:** `2026-09-12 09:16:11 UTC`  
+**Date Generated:** `2026-09-12 19:59:58 UTC`  
 **Taxonomy Version:** `1.0.0-frozen` (`taxonomy_frozen: true`)  
-**Taxonomy SHA256 Checksum:** `0c05662bcea30cf5...`  
+**Taxonomy SHA256 Checksum:** `52e65425e88fcb47...`  
 **Source Corpus:** `data/processed/applesupport_conversations.parquet` (80,250 opening inquiries)  
 **Annotator:** Exactly ONE Human Reviewer (`human_project_owner`). Zero synthetic or fabricated labels.  
 

@@ -367,6 +367,54 @@ export const TrustSandbox: React.FC<TrustSandboxProps> = ({
                     </div>
                   </div>
                 )}
+
+                {/* Real Trust Receipt Metadata */}
+                {simulationResult.pipelineResult?.trust_receipt && (
+                  <div className="p-3.5 rounded-xl bg-slate-950 border border-cyan-900/40 text-xs space-y-2">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-1.5 font-mono text-cyan-400 font-semibold">
+                        <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
+                        <span>TrustReceipt: {simulationResult.pipelineResult.trust_receipt.receipt_id}</span>
+                      </div>
+                      <span className="px-2 py-0.5 text-[10px] font-mono rounded bg-cyan-950 text-cyan-300 border border-cyan-800">
+                        Taxonomy {simulationResult.pipelineResult.trust_receipt.taxonomy_version}
+                      </span>
+                    </div>
+
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px] pt-1">
+                      <div className="p-1.5 rounded bg-slate-900/80 border border-slate-800">
+                        <span className="text-slate-400 block text-[10px]">Decision</span>
+                        <span className="font-medium text-slate-200">
+                          {simulationResult.pipelineResult.trust_receipt.decision}
+                        </span>
+                      </div>
+                      <div className="p-1.5 rounded bg-slate-900/80 border border-slate-800">
+                        <span className="text-slate-400 block text-[10px]">Queue</span>
+                        <span className="font-medium text-slate-200">
+                          {simulationResult.pipelineResult.trust_receipt.target_queue}
+                        </span>
+                      </div>
+                      <div className="p-1.5 rounded bg-slate-900/80 border border-slate-800">
+                        <span className="text-slate-400 block text-[10px]">Groundedness</span>
+                        <span className="font-medium text-emerald-400">
+                          {Math.round((simulationResult.pipelineResult.trust_receipt.groundedness_score ?? 1.0) * 100)}%
+                        </span>
+                      </div>
+                      <div className="p-1.5 rounded bg-slate-900/80 border border-slate-800">
+                        <span className="text-slate-400 block text-[10px]">Claims Status</span>
+                        <span className="font-medium text-cyan-300">
+                          {simulationResult.pipelineResult.trust_receipt.claims_verified ? 'Verified Grounded' : 'Abstention'}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="text-[10px] text-slate-400 flex items-center justify-between pt-1 border-t border-slate-800/80">
+                      <span>Classifier: {simulationResult.pipelineResult.trust_receipt.model_versions?.intent_classifier}</span>
+                      <span>Gate: {simulationResult.pipelineResult.trust_receipt.model_versions?.risk_gate}</span>
+                      <span>Verifier: {simulationResult.pipelineResult.trust_receipt.model_versions?.claim_verifier}</span>
+                    </div>
+                  </div>
+                )}
               </div>
             )}
           </div>
