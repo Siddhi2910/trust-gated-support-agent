@@ -1,0 +1,874 @@
+{
+  "description": "Full-corpus empirical validation of 18 provisional candidate intents",
+  "evaluated_at": "2026-09-10T23:33:31.422339+00:00",
+  "corpus_stats": {
+    "total_opening_customer_inquiries": 80250,
+    "total_inbound_customer_messages": 131258
+  },
+  "provisional_intents": [
+    {
+      "intent_id": "SOFTWARE_UPDATE_BATTERY_DRAIN",
+      "human_readable_name": "Software Update Battery Drain",
+      "category": "Hardware / Power",
+      "measurement": {
+        "inbound_opening_inquiries_count": 7010,
+        "inbound_opening_inquiries_prevalence_pct": 8.74,
+        "total_inbound_messages_count": 8913,
+        "total_inbound_messages_prevalence_pct": 6.79,
+        "denominator_opening_inquiries": 80250,
+        "denominator_total_inbound": 131258
+      },
+      "matching_method": {
+        "method": "Regex-assisted candidate token retrieval over cleaned message text",
+        "pattern": "\\b(battery|battery life|drain|draining|battery percentage|dying fast|charge dropping|battery drain|lose charge|losing charge|bateria)\\b",
+        "known_risk": "Moderate false-positive risk if terms appear in multi-symptom contexts; low false-negative for standard technical terms."
+      },
+      "representative_examples": [
+        {
+          "tweet_id": 767,
+          "conversation_id": 767,
+          "text": "I just need @115858 to do something about the battery life because it sucks ass"
+        },
+        {
+          "tweet_id": 1761,
+          "conversation_id": 1761,
+          "text": "iOS 11 is killing my battery @115858. Fix it."
+        },
+        {
+          "tweet_id": 2616,
+          "conversation_id": 2616,
+          "text": "@AppleSupport why is my battery life short? I updated to 11.1, my battery is poor. Wife didn\u2019t she likes her battery life"
+        },
+        {
+          "tweet_id": 2628,
+          "conversation_id": 2628,
+          "text": "Question- @249 @115858 my iPhone6 dies very quick (have to charge it 3 times a day) my iPhone5 battery was faulty. Could this be the same?"
+        },
+        {
+          "tweet_id": 3767,
+          "conversation_id": 3767,
+          "text": "@AppleSupport I\u2019m no expert in battery life  but 40% doesn\u2019t go to 7% in 5minutes"
+        }
+      ],
+      "within_intent_diversity": "Moderate semantic diversity: spans rapid battery percentage drops, overheating, dying overnight, and battery health degradation.",
+      "nearest_neighbor_overlap": "High pairwise co-occurrence across multi-symptom complaints (battery drain + lag + reboot loops).",
+      "distinguishability_judgement": "Recommend generalizing to BATTERY_DRAIN_POWER_CONSUMPTION to capture non-update battery drain (36% of battery complaints)."
+    },
+    {
+      "intent_id": "DEVICE_FREEZE_CRASH_REBOOT",
+      "human_readable_name": "Device Freeze Crash Reboot",
+      "category": "OS / Stability",
+      "measurement": {
+        "inbound_opening_inquiries_count": 6319,
+        "inbound_opening_inquiries_prevalence_pct": 7.87,
+        "total_inbound_messages_count": 9105,
+        "total_inbound_messages_prevalence_pct": 6.94,
+        "denominator_opening_inquiries": 80250,
+        "denominator_total_inbound": 131258
+      },
+      "matching_method": {
+        "method": "Regex-assisted candidate token retrieval over cleaned message text",
+        "pattern": "\\b(freeze|frozen|freezes|freezing|crash|crashes|crashing|restart|restarting|reboot|rebooting|stuck on apple logo|boot loop|spinning wheel|black screen|shut off|turns off|wont turn on)\\b",
+        "known_risk": "Moderate false-positive risk if terms appear in multi-symptom contexts; low false-negative for standard technical terms."
+      },
+      "representative_examples": [
+        {
+          "tweet_id": 2640,
+          "conversation_id": 2640,
+          "text": "@AppleSupport hi, I have a problem with my macbook pro, it won't turn on, I think it might be the charger but not sure. Is there a..."
+        },
+        {
+          "tweet_id": 2645,
+          "conversation_id": 2645,
+          "text": "@115858 when will the bug in the calendar app be fixed? I upgraded to iOS 11.1 and it still crashes when iOS 11.03"
+        },
+        {
+          "tweet_id": 3764,
+          "conversation_id": 3764,
+          "text": "not only does my phone keep freezing but when i screenshot things it turns out white... really not liking this iphone 8 plus @AppleSupport"
+        },
+        {
+          "tweet_id": 5821,
+          "conversation_id": 5821,
+          "text": "Dear @AppleSupport this new update sucks ,I have too many problems with my phone now ! Blurry screen , black screen , frozen phone !"
+        },
+        {
+          "tweet_id": 6928,
+          "conversation_id": 6928,
+          "text": "@AppleSupport my iPhone is a fully up to date so why does my phone keep freezing \ud83d\ude43???"
+        }
+      ],
+      "within_intent_diversity": "Standard domain diversity reflecting typical customer support symptom variants.",
+      "nearest_neighbor_overlap": "High pairwise co-occurrence across multi-symptom complaints (battery drain + lag + reboot loops).",
+      "distinguishability_judgement": "Reliably distinguishable with clear technical boundaries."
+    },
+    {
+      "intent_id": "IOS_KEYBOARD_LETTER_I_AUTOCORRECT_BUG",
+      "human_readable_name": "iOS Keyboard Letter 'I' Autocorrect Bug",
+      "category": "Software Bug / Input",
+      "measurement": {
+        "inbound_opening_inquiries_count": 13507,
+        "inbound_opening_inquiries_prevalence_pct": 16.83,
+        "total_inbound_messages_count": 16911,
+        "total_inbound_messages_prevalence_pct": 12.88,
+        "denominator_opening_inquiries": 80250,
+        "denominator_total_inbound": 131258
+      },
+      "matching_method": {
+        "method": "Regex-assisted candidate token retrieval over cleaned message text",
+        "pattern": "(\\b(letter i|capital i|type i|typing i|auto ?correct|keyboard|question mark|box with question|symbol|exclamation point|a \\[?\\]|i autocorrect)\\b|#iterror|\\bi\ufe0f\\b|\\u2049|\\ufe0f)",
+        "known_risk": "Moderate false-positive risk if terms appear in multi-symptom contexts; low false-negative for standard technical terms."
+      },
+      "representative_examples": [
+        {
+          "tweet_id": 700,
+          "conversation_id": 700,
+          "text": "@AppleSupport why are my I\ufe0f\u2019s changing not showing up correctly on any of my social media platforms? https://t.co/GyRvpyVnkE"
+        },
+        {
+          "tweet_id": 711,
+          "conversation_id": 711,
+          "text": "What is up with this \u201c I\ufe0f \u201c"
+        },
+        {
+          "tweet_id": 714,
+          "conversation_id": 714,
+          "text": "Hey @AppleSupport and anyone else who upgraded to ios11.1, are y\u2019all having issues with capital \u201cI\ufe0f\u201d in the Mail app? As it puts in \u201cA\u201d?"
+        },
+        {
+          "tweet_id": 719,
+          "conversation_id": 719,
+          "text": "Tf is wrong with my keyboard @115858"
+        },
+        {
+          "tweet_id": 730,
+          "conversation_id": 730,
+          "text": "Hello, internet. Can someone explain why this symbol keeps appearing on my phone and when I\ufe0f try to type the letter I\ufe0f? Also @AppleSupport https://t.co/QKwvTLtiN7"
+        }
+      ],
+      "within_intent_diversity": "Extremely low semantic diversity: highly uniform customer reports focused on typing letter 'I' turning into 'A [?]' symbol.",
+      "nearest_neighbor_overlap": "Overlaps with APP_SPECIFIC_MALFUNCTION (when reported in Mail/Twitter/Instagram) and PERFORMANCE_SLOWDOWN (keyboard lag).",
+      "distinguishability_judgement": "Empirically distinct (16.65% of corpus), but structurally a sub-pattern of KEYBOARD_TYPING_AUTOCORRECT_ISSUE."
+    },
+    {
+      "intent_id": "PERFORMANCE_SLOWDOWN_AFTER_UPDATE",
+      "human_readable_name": "Performance Slowdown After Update",
+      "category": "Performance / Latency",
+      "measurement": {
+        "inbound_opening_inquiries_count": 2647,
+        "inbound_opening_inquiries_prevalence_pct": 3.3,
+        "total_inbound_messages_count": 3598,
+        "total_inbound_messages_prevalence_pct": 2.74,
+        "denominator_opening_inquiries": 80250,
+        "denominator_total_inbound": 131258
+      },
+      "matching_method": {
+        "method": "Regex-assisted candidate token retrieval over cleaned message text",
+        "pattern": "\\b(slow|lag|laggy|lagging|sluggish|delay|unresponsive|slowdown|delayed|choppy|stutter|takes forever|running slow)\\b",
+        "known_risk": "Moderate false-positive risk if terms appear in multi-symptom contexts; low false-negative for standard technical terms."
+      },
+      "representative_examples": [
+        {
+          "tweet_id": 3773,
+          "conversation_id": 3773,
+          "text": "@AppleSupport iOS 11.1 - keyboard lag. \ud83e\udd28 https://t.co/TdIHT9L9dt"
+        },
+        {
+          "tweet_id": 6919,
+          "conversation_id": 6919,
+          "text": "@AppleSupport I installed the iOS 10.0 , 10.0.1 and 10.0.2 and makes my iPhone 6 very slow and doesn\u2019t work properly can you help me?"
+        },
+        {
+          "tweet_id": 8299,
+          "conversation_id": 8299,
+          "text": "@AppleSupport DL the latest iOS today. Very laggy 6s. Phone is running like hammered dog shit since the DL."
+        },
+        {
+          "tweet_id": 11992,
+          "conversation_id": 11992,
+          "text": "@115858 @AppleSupport your latest iOS update had made my phone slower and apps like iMessage are slow to open and load.  What\u2019s up with this?"
+        },
+        {
+          "tweet_id": 14322,
+          "conversation_id": 14322,
+          "text": "@AppleSupport No typing lag fix on iOS 11.1 Not cool hah"
+        }
+      ],
+      "within_intent_diversity": "Standard domain diversity reflecting typical customer support symptom variants.",
+      "nearest_neighbor_overlap": "High pairwise co-occurrence across multi-symptom complaints (battery drain + lag + reboot loops).",
+      "distinguishability_judgement": "Distinguishable from hard crashes if restricted to latency/lag; or can be merged into DEVICE_PERFORMANCE_CRASH_FREEZE."
+    },
+    {
+      "intent_id": "CONNECTIVITY_WIFI_BLUETOOTH",
+      "human_readable_name": "Connectivity Wifi Bluetooth Cellular",
+      "category": "Connectivity",
+      "measurement": {
+        "inbound_opening_inquiries_count": 3365,
+        "inbound_opening_inquiries_prevalence_pct": 4.19,
+        "total_inbound_messages_count": 5286,
+        "total_inbound_messages_prevalence_pct": 4.03,
+        "denominator_opening_inquiries": 80250,
+        "denominator_total_inbound": 131258
+      },
+      "matching_method": {
+        "method": "Regex-assisted candidate token retrieval over cleaned message text",
+        "pattern": "\\b(wifi|wi-fi|bluetooth|airdrop|hotspot|cellular|data|no service|signal|lte|4g|disconnecting|wont connect|unable to connect|network)\\b",
+        "known_risk": "Moderate false-positive risk if terms appear in multi-symptom contexts; low false-negative for standard technical terms."
+      },
+      "representative_examples": [
+        {
+          "tweet_id": 2642,
+          "conversation_id": 2642,
+          "text": "@AppleSupport still no reliable Bluetooth on my iPhone 8+."
+        },
+        {
+          "tweet_id": 2659,
+          "conversation_id": 2659,
+          "text": "Is anyone else having problems with there iPhone 7 saying no service? @115858 @115714"
+        },
+        {
+          "tweet_id": 4879,
+          "conversation_id": 4879,
+          "text": "@AppleSupport I can\u2019t download songs. Progress icon keeps spinning. On both data + WiFi. Stream works though. Can\u2019t add songs to playlists. https://t.co/x7uUxSqO9u"
+        },
+        {
+          "tweet_id": 4906,
+          "conversation_id": 4906,
+          "text": "@AppleSupport The \u2018Overlapping url over TIME on Free WiFi hotspots\u2019 remains. v11.0.3. Not a WiFi problem; two different hotspots shown. https://t.co/81ifcrDUeS"
+        },
+        {
+          "tweet_id": 5849,
+          "conversation_id": 5849,
+          "text": "I updated to iOS 11 and my iPhone 6 stopped connecting to wi-fi. Already restored the phone and the network connections @AppleSupport"
+        }
+      ],
+      "within_intent_diversity": "Standard domain diversity reflecting typical customer support symptom variants.",
+      "nearest_neighbor_overlap": "Low to moderate overlap with distinct primary technical boundary.",
+      "distinguishability_judgement": "Reliably distinguishable with clear technical boundaries."
+    },
+    {
+      "intent_id": "APP_SPECIFIC_MALFUNCTION",
+      "human_readable_name": "App Specific Malfunction",
+      "category": "Applications",
+      "measurement": {
+        "inbound_opening_inquiries_count": 5088,
+        "inbound_opening_inquiries_prevalence_pct": 6.34,
+        "total_inbound_messages_count": 7834,
+        "total_inbound_messages_prevalence_pct": 5.97,
+        "denominator_opening_inquiries": 80250,
+        "denominator_total_inbound": 131258
+      },
+      "matching_method": {
+        "method": "Regex-assisted candidate token retrieval over cleaned message text",
+        "pattern": "\\b(app store|safari|apple music|itunes|facetime|imessage|whatsapp|instagram|spotify|youtube|facebook|twitter|camera app|photos app|mail app|podcast|weather app|maps app)\\b",
+        "known_risk": "Moderate false-positive risk if terms appear in multi-symptom contexts; low false-negative for standard technical terms."
+      },
+      "representative_examples": [
+        {
+          "tweet_id": 714,
+          "conversation_id": 714,
+          "text": "Hey @AppleSupport and anyone else who upgraded to ios11.1, are y\u2019all having issues with capital \u201cI\ufe0f\u201d in the Mail app? As it puts in \u201cA\u201d?"
+        },
+        {
+          "tweet_id": 749,
+          "conversation_id": 749,
+          "text": "@AppleSupport Hi! What is going on? Has Youtube lost it? What can be done about it? Thanks for the support! https://t.co/T8ZZp4IH6t"
+        },
+        {
+          "tweet_id": 765,
+          "conversation_id": 765,
+          "text": "After update #ios1103 no spotify on my lock screen?@AppleSupport"
+        },
+        {
+          "tweet_id": 8331,
+          "conversation_id": 8331,
+          "text": "Oh my god i\u2019m so embarrassing @115858 why do I always send voice recordings in iMessage by accident do you know how embarrassing that is?!"
+        },
+        {
+          "tweet_id": 8340,
+          "conversation_id": 8340,
+          "text": "@AppleSupport only 8 attempts to open the twitter app and complain about the iOS 11 messing up my iPhone 7 - this is slowing down my life :("
+        }
+      ],
+      "within_intent_diversity": "High semantic diversity: covers many distinct first-party and third-party apps (Apple Music, App Store, Safari, YouTube) with varied failure modes.",
+      "nearest_neighbor_overlap": "Low to moderate overlap with distinct primary technical boundary.",
+      "distinguishability_judgement": "Reliably distinguishable with clear technical boundaries."
+    },
+    {
+      "intent_id": "DATA_LOSS",
+      "human_readable_name": "Data Loss and Recovery",
+      "category": "Data / Backup",
+      "measurement": {
+        "inbound_opening_inquiries_count": 2170,
+        "inbound_opening_inquiries_prevalence_pct": 2.7,
+        "total_inbound_messages_count": 2934,
+        "total_inbound_messages_prevalence_pct": 2.24,
+        "denominator_opening_inquiries": 80250,
+        "denominator_total_inbound": 131258
+      },
+      "matching_method": {
+        "method": "Regex-assisted candidate token retrieval over cleaned message text",
+        "pattern": "\\b(lost|disappeared|deleted|missing|erased|recover|recovery|restore my contacts|restore my photos|lost my notes|lost messages|photos gone|contacts gone)\\b",
+        "known_risk": "Moderate false-positive risk if terms appear in multi-symptom contexts; low false-negative for standard technical terms."
+      },
+      "representative_examples": [
+        {
+          "tweet_id": 749,
+          "conversation_id": 749,
+          "text": "@AppleSupport Hi! What is going on? Has Youtube lost it? What can be done about it? Thanks for the support! https://t.co/T8ZZp4IH6t"
+        },
+        {
+          "tweet_id": 2656,
+          "conversation_id": 2656,
+          "text": "My iPhone has erased and re-added emails dating back from 2013 til now twice in the past 24 hours. Wth??? @AppleSupport"
+        },
+        {
+          "tweet_id": 5845,
+          "conversation_id": 5845,
+          "text": "@AppleSupport Updated iPad Pro to 11.1.  Worked on draft email. None of changes saved. Started new email. Saved but disappeared. Help please"
+        },
+        {
+          "tweet_id": 6554,
+          "conversation_id": 6554,
+          "text": "@AppleSupport how long does it take usually for account recovery to get back to you? It\u2019s been about a week now."
+        },
+        {
+          "tweet_id": 11666,
+          "conversation_id": 11666,
+          "text": "Tried to update my phone to the new IOS system, and my phone died while 'charging' &amp; now I lost everything. Thanks @115858."
+        }
+      ],
+      "within_intent_diversity": "Standard domain diversity reflecting typical customer support symptom variants.",
+      "nearest_neighbor_overlap": "Low to moderate overlap with distinct primary technical boundary.",
+      "distinguishability_judgement": "Reliably distinguishable with clear technical boundaries."
+    },
+    {
+      "intent_id": "SCREEN_DISPLAY_HARDWARE_SYMPTOM",
+      "human_readable_name": "Screen Display Hardware Symptom",
+      "category": "Hardware / Display",
+      "measurement": {
+        "inbound_opening_inquiries_count": 3606,
+        "inbound_opening_inquiries_prevalence_pct": 4.49,
+        "total_inbound_messages_count": 5436,
+        "total_inbound_messages_prevalence_pct": 4.14,
+        "denominator_opening_inquiries": 80250,
+        "denominator_total_inbound": 131258
+      },
+      "matching_method": {
+        "method": "Regex-assisted candidate token retrieval over cleaned message text",
+        "pattern": "\\b(screen|display|touch screen|unresponsive screen|touch id|face id|3d touch|dead pixel|flicker|flickering|green line|black lines|cracked screen|shattered screen)\\b",
+        "known_risk": "Moderate false-positive risk if terms appear in multi-symptom contexts; low false-negative for standard technical terms."
+      },
+      "representative_examples": [
+        {
+          "tweet_id": 765,
+          "conversation_id": 765,
+          "text": "After update #ios1103 no spotify on my lock screen?@AppleSupport"
+        },
+        {
+          "tweet_id": 2678,
+          "conversation_id": 2678,
+          "text": "@AppleSupport Any idea why icons show up like this? I did force reset to no avail. After initial notification display, they show up. https://t.co/qBFIAlpGyD"
+        },
+        {
+          "tweet_id": 5819,
+          "conversation_id": 5819,
+          "text": "@AppleSupport I can\u2019t change lock screen anymore from \u2018wallpaper\u2019 in settings. How do I do it now?"
+        },
+        {
+          "tweet_id": 5821,
+          "conversation_id": 5821,
+          "text": "Dear @AppleSupport this new update sucks ,I have too many problems with my phone now ! Blurry screen , black screen , frozen phone !"
+        },
+        {
+          "tweet_id": 6483,
+          "conversation_id": 6483,
+          "text": "Hello @115858 @AppleSupport what\u2019s happening to my screen https://t.co/GTNXT4VoKd"
+        }
+      ],
+      "within_intent_diversity": "Standard domain diversity reflecting typical customer support symptom variants.",
+      "nearest_neighbor_overlap": "Low to moderate overlap with distinct primary technical boundary.",
+      "distinguishability_judgement": "Reliably distinguishable with clear technical boundaries."
+    },
+    {
+      "intent_id": "ACCOUNT_APPLE_ID_ACCESS",
+      "human_readable_name": "Account Apple ID Access and Security",
+      "category": "Account / Identity",
+      "measurement": {
+        "inbound_opening_inquiries_count": 1408,
+        "inbound_opening_inquiries_prevalence_pct": 1.75,
+        "total_inbound_messages_count": 2015,
+        "total_inbound_messages_prevalence_pct": 1.54,
+        "denominator_opening_inquiries": 80250,
+        "denominator_total_inbound": 131258
+      },
+      "matching_method": {
+        "method": "Regex-assisted candidate token retrieval over cleaned message text",
+        "pattern": "\\b(apple id|icloud login|icloud account|password|passcode|locked out|disabled account|forgot password|two factor|2fa|verification code|security questions|unlock my)\\b",
+        "known_risk": "Moderate false-positive risk if terms appear in multi-symptom contexts; low false-negative for standard technical terms."
+      },
+      "representative_examples": [
+        {
+          "tweet_id": 1764,
+          "conversation_id": 1764,
+          "text": "@AppleSupport Hello, I need some help regarding the region change on my Apple ID"
+        },
+        {
+          "tweet_id": 8297,
+          "conversation_id": 8297,
+          "text": "@AppleSupport Hello there i need help with the use of an administartors name and password on my imac"
+        },
+        {
+          "tweet_id": 8437,
+          "conversation_id": 8437,
+          "text": "@115858 suck! Upgrade phone &amp; I lose my Apple ID. Can\u2019t get new id without old &amp; can\u2019t book Genius bar help appointment without ID!!! #stupid"
+        },
+        {
+          "tweet_id": 8557,
+          "conversation_id": 8557,
+          "text": "@AppleSupport is that safe if we disable passcode for unlock iphone? i mean,is the fingerprint still worked out? i think dat would be enough"
+        },
+        {
+          "tweet_id": 11139,
+          "conversation_id": 11139,
+          "text": "@AppleSupport I get prompted for a system administrator password on a MBP MacOS but there is no system administrator account I\u2019m aware of!! https://t.co/M1DbEkDzaS"
+        }
+      ],
+      "within_intent_diversity": "Standard domain diversity reflecting typical customer support symptom variants.",
+      "nearest_neighbor_overlap": "Moderate overlap on subscription and purchase verification lockouts.",
+      "distinguishability_judgement": "Reliably distinguishable with clear technical boundaries."
+    },
+    {
+      "intent_id": "ORDER_PURCHASE_SHIPPING_STATUS",
+      "human_readable_name": "Order Purchase Shipping Status",
+      "category": "Commerce / Logistics",
+      "measurement": {
+        "inbound_opening_inquiries_count": 894,
+        "inbound_opening_inquiries_prevalence_pct": 1.11,
+        "total_inbound_messages_count": 1234,
+        "total_inbound_messages_prevalence_pct": 0.94,
+        "denominator_opening_inquiries": 80250,
+        "denominator_total_inbound": 131258
+      },
+      "matching_method": {
+        "method": "Regex-assisted candidate token retrieval over cleaned message text",
+        "pattern": "\\b(order|shipping|delivery|shipment|tracking|fedex|ups|dispatched|arrived|order status|store pickup|pick up in store|delivered|package|delivery date)\\b",
+        "known_risk": "Moderate false-positive risk if terms appear in multi-symptom contexts; low false-negative for standard technical terms."
+      },
+      "representative_examples": [
+        {
+          "tweet_id": 8422,
+          "conversation_id": 8422,
+          "text": "Dear @115858, I have an online order which I never received - who can I talk to?"
+        },
+        {
+          "tweet_id": 12596,
+          "conversation_id": 12596,
+          "text": "@AppleSupport Seems I have a virus, I\u2019ve been getting these pop-ups: https://t.co/RMppEqEQSq"
+        },
+        {
+          "tweet_id": 31436,
+          "conversation_id": 31436,
+          "text": "@115858 trying to cancel an online order, each time I login i'm told I don't have access to the order."
+        },
+        {
+          "tweet_id": 31482,
+          "conversation_id": 31482,
+          "text": "@AppleSupport Help!! I need to update the payment method for my iPhone X pre-order. It won\u2019t let me do it online"
+        },
+        {
+          "tweet_id": 32395,
+          "conversation_id": 32395,
+          "text": "Dear @115858, what you've done to my iPhone 6 w/ IOS 11 should be a crime. Thanks 4 updating 2 useless. Makes me want 2 cancel my X pre-order"
+        }
+      ],
+      "within_intent_diversity": "Standard domain diversity reflecting typical customer support symptom variants.",
+      "nearest_neighbor_overlap": "Low to moderate overlap with distinct primary technical boundary.",
+      "distinguishability_judgement": "Reliably distinguishable with clear technical boundaries."
+    },
+    {
+      "intent_id": "BILLING_CHARGE_REFUND_DISPUTE",
+      "human_readable_name": "Billing Charge Refund Dispute",
+      "category": "Commerce / Billing",
+      "measurement": {
+        "inbound_opening_inquiries_count": 1945,
+        "inbound_opening_inquiries_prevalence_pct": 2.42,
+        "total_inbound_messages_count": 2538,
+        "total_inbound_messages_prevalence_pct": 1.93,
+        "denominator_opening_inquiries": 80250,
+        "denominator_total_inbound": 131258
+      },
+      "matching_method": {
+        "method": "Regex-assisted candidate token retrieval over cleaned message text",
+        "pattern": "\\b(charge|charged|billing|refund|subscription|charged twice|unauthorized charge|payment method|invoice|receipt|itunes charge|cancel subscription|charged me)\\b",
+        "known_risk": "Moderate false-positive risk if terms appear in multi-symptom contexts; low false-negative for standard technical terms."
+      },
+      "representative_examples": [
+        {
+          "tweet_id": 2628,
+          "conversation_id": 2628,
+          "text": "Question- @249 @115858 my iPhone6 dies very quick (have to charge it 3 times a day) my iPhone5 battery was faulty. Could this be the same?"
+        },
+        {
+          "tweet_id": 4912,
+          "conversation_id": 4912,
+          "text": "Series1 #Applewatch would consistently get 18 hrs + per charge prior to last update. Now 12-13 hrs max.Died @ gym 2nite. Wtf @AppleSupport ?"
+        },
+        {
+          "tweet_id": 8579,
+          "conversation_id": 8579,
+          "text": "@AppleSupport I bought 2 iPhones X on Friday, but I don\u2019t see any charge on my credit card. Do I should worry or it\u2019s normal?"
+        },
+        {
+          "tweet_id": 22988,
+          "conversation_id": 22988,
+          "text": "@AppleSupport Trying to download an app to a family member's phone that I purchased as the family group organizer.  Being asked to purchase it, but I don't want to be charged again.  Suggestions? https://t.co/Y730eW0nZe"
+        },
+        {
+          "tweet_id": 23077,
+          "conversation_id": 23077,
+          "text": "@115858 ok not sure why this is happening but I need assistance charged my iPhone X (purchased yesterday) wirelessly and reached for it and this was on the screen, I could probably fry an egg https://t.co/WgADbE9263"
+        }
+      ],
+      "within_intent_diversity": "Standard domain diversity reflecting typical customer support symptom variants.",
+      "nearest_neighbor_overlap": "Moderate overlap on subscription and purchase verification lockouts.",
+      "distinguishability_judgement": "Reliably distinguishable with clear technical boundaries."
+    },
+    {
+      "intent_id": "STORAGE_MANAGEMENT",
+      "human_readable_name": "Storage Management and Disk Space",
+      "category": "System / Storage",
+      "measurement": {
+        "inbound_opening_inquiries_count": 517,
+        "inbound_opening_inquiries_prevalence_pct": 0.64,
+        "total_inbound_messages_count": 720,
+        "total_inbound_messages_prevalence_pct": 0.55,
+        "denominator_opening_inquiries": 80250,
+        "denominator_total_inbound": 131258
+      },
+      "matching_method": {
+        "method": "Regex-assisted candidate token retrieval over cleaned message text",
+        "pattern": "\\b(storage|storage full|other storage|system storage|icloud storage|not enough storage|manage storage|gigabytes|\\bgb\\b|free up space|out of storage)\\b",
+        "known_risk": "Moderate false-positive risk if terms appear in multi-symptom contexts; low false-negative for standard technical terms."
+      },
+      "representative_examples": [
+        {
+          "tweet_id": 20022,
+          "conversation_id": 20022,
+          "text": "@AppleSupport 12/9TB of storage completely unusable and what happened to the data? What\u2019s up Apple? 2/2 https://t.co/Ai8NLzzcVB"
+        },
+        {
+          "tweet_id": 23117,
+          "conversation_id": 23117,
+          "text": "@AppleSupport Hi, it looks like I can no longer set the Podcasts app to only keep two recent episodes, and now a bunch of my podcasts are piling up and eating up my storage. Am I missing something or is this setting gone forever?"
+        },
+        {
+          "tweet_id": 41562,
+          "conversation_id": 41562,
+          "text": "@AppleSupport any way at all of reducing the amount of storage Mail takes up on your hard disk? \u201cLoad remote content\u201d is off. I also have a 125GB MacBook Air \ud83d\ude29. The only actual files on my computer are mail files, literally everything else is on DropBox"
+        },
+        {
+          "tweet_id": 42644,
+          "conversation_id": 42644,
+          "text": "@AppleSupport Hello I have iPhone 5s which since 11.0.3 update is constantly saying storage full even though its not! Please help! Thank you"
+        },
+        {
+          "tweet_id": 46576,
+          "conversation_id": 46576,
+          "text": "@AppleSupport I am from the US but I live in China. Is it possible to have my iPhone/Mac iCloud linked to my Chinese info (bank, address), and separate Apple ID linked to my U.S. info (bank, address)?..Want to keep my iCloud storage in China but use App Store/Apple music from US"
+        }
+      ],
+      "within_intent_diversity": "Standard domain diversity reflecting typical customer support symptom variants.",
+      "nearest_neighbor_overlap": "Low to moderate overlap with distinct primary technical boundary.",
+      "distinguishability_judgement": "Reliably distinguishable with clear technical boundaries."
+    },
+    {
+      "intent_id": "HARDWARE_PHYSICAL_DEFECT",
+      "human_readable_name": "Hardware Physical Defect",
+      "category": "Hardware / Physical",
+      "measurement": {
+        "inbound_opening_inquiries_count": 446,
+        "inbound_opening_inquiries_prevalence_pct": 0.56,
+        "total_inbound_messages_count": 756,
+        "total_inbound_messages_prevalence_pct": 0.58,
+        "denominator_opening_inquiries": 80250,
+        "denominator_total_inbound": 131258
+      },
+      "matching_method": {
+        "method": "Regex-assisted candidate token retrieval over cleaned message text",
+        "pattern": "\\b(hardware|bent|broken button|home button|volume button|power button|mute switch|charging port|lightning port|headphone jack|water damage|liquid damage|swollen battery)\\b",
+        "known_risk": "Moderate false-positive risk if terms appear in multi-symptom contexts; low false-negative for standard technical terms."
+      },
+      "representative_examples": [
+        {
+          "tweet_id": 756,
+          "conversation_id": 756,
+          "text": "MY HOME BUTTON DOESN\u2019T WORK #IOS11 @AppleSupport"
+        },
+        {
+          "tweet_id": 31905,
+          "conversation_id": 31905,
+          "text": "@115858 Iphone 8, ios 11.0.2.  Auto lock function not working properly. Will not lock unless i manually press power button. On for hours."
+        },
+        {
+          "tweet_id": 31918,
+          "conversation_id": 31918,
+          "text": "@115858 the latest update is very glitchy! Did you do away with the double tap home button to bring the screen down for the PLUS? #notworking"
+        },
+        {
+          "tweet_id": 38221,
+          "conversation_id": 38221,
+          "text": "P\u00e9simo servicio de @AppleSupport @115858 mal trato telef\u00f3nico y ninguna soluci\u00f3n, problema hardware en un MacBook Pro comprado hace unos d\u00edas"
+        },
+        {
+          "tweet_id": 43373,
+          "conversation_id": 43373,
+          "text": "Phone out of warrantee by 15 days, broken due to a hardware fault and no responsibility taken by @115858 @AppleSupport"
+        }
+      ],
+      "within_intent_diversity": "Standard domain diversity reflecting typical customer support symptom variants.",
+      "nearest_neighbor_overlap": "Low to moderate overlap with distinct primary technical boundary.",
+      "distinguishability_judgement": "Reliably distinguishable with clear technical boundaries."
+    },
+    {
+      "intent_id": "HOW_TO_GENERAL_PRODUCT_QUESTION",
+      "human_readable_name": "How To General Product Question",
+      "category": "General Inquiry",
+      "measurement": {
+        "inbound_opening_inquiries_count": 4754,
+        "inbound_opening_inquiries_prevalence_pct": 5.92,
+        "total_inbound_messages_count": 5761,
+        "total_inbound_messages_prevalence_pct": 4.39,
+        "denominator_opening_inquiries": 80250,
+        "denominator_total_inbound": 131258
+      },
+      "matching_method": {
+        "method": "Regex-assisted candidate token retrieval over cleaned message text",
+        "pattern": "\\b(how (do|can) (i|we|you)|how to|is there a way|wondering if|can i|possible to|does (the|apple)|what is the difference|how does|how do i)\\b",
+        "known_risk": "Moderate false-positive risk if terms appear in multi-symptom contexts; low false-negative for standard technical terms."
+      },
+      "representative_examples": [
+        {
+          "tweet_id": 1759,
+          "conversation_id": 1759,
+          "text": "Why is \u201cI\ufe0f\u201d keep changing to this and how do I\ufe0f stop it\ud83e\udd26\ud83c\udffd\u200d\u2640\ufe0f @115858 @AppleSupport #anybody https://t.co/urzAfSZL5z"
+        },
+        {
+          "tweet_id": 1770,
+          "conversation_id": 1770,
+          "text": "@AppleSupport why is my home sharing not working and how do i fix it"
+        },
+        {
+          "tweet_id": 2666,
+          "conversation_id": 2666,
+          "text": "I keep getting this error message saying \u201cthe item can\u2019t be played\u201d and idk how to fix it... @115948 @AppleSupport"
+        },
+        {
+          "tweet_id": 5819,
+          "conversation_id": 5819,
+          "text": "@AppleSupport I can\u2019t change lock screen anymore from \u2018wallpaper\u2019 in settings. How do I do it now?"
+        },
+        {
+          "tweet_id": 8422,
+          "conversation_id": 8422,
+          "text": "Dear @115858, I have an online order which I never received - who can I talk to?"
+        }
+      ],
+      "within_intent_diversity": "High diversity: covers general configuration questions, migration queries, feature inquiries, and compatibility.",
+      "nearest_neighbor_overlap": "Low to moderate overlap with distinct primary technical boundary.",
+      "distinguishability_judgement": "Reliably distinguishable with clear technical boundaries."
+    },
+    {
+      "intent_id": "CUSTOMER_SERVICE_EXPERIENCE_COMPLAINT",
+      "human_readable_name": "Customer Service Experience Complaint",
+      "category": "Service Complaint",
+      "measurement": {
+        "inbound_opening_inquiries_count": 472,
+        "inbound_opening_inquiries_prevalence_pct": 0.59,
+        "total_inbound_messages_count": 637,
+        "total_inbound_messages_prevalence_pct": 0.49,
+        "denominator_opening_inquiries": 80250,
+        "denominator_total_inbound": 131258
+      },
+      "matching_method": {
+        "method": "Regex-assisted candidate token retrieval over cleaned message text",
+        "pattern": "\\b(customer service|genius bar|apple store staff|store manager|rude|terrible service|worst support|horrible experience|waiting for hours|unhelpful agent|rep hung up|poor customer service)\\b",
+        "known_risk": "Moderate false-positive risk if terms appear in multi-symptom contexts; low false-negative for standard technical terms."
+      },
+      "representative_examples": [
+        {
+          "tweet_id": 8437,
+          "conversation_id": 8437,
+          "text": "@115858 suck! Upgrade phone &amp; I lose my Apple ID. Can\u2019t get new id without old &amp; can\u2019t book Genius bar help appointment without ID!!! #stupid"
+        },
+        {
+          "tweet_id": 14337,
+          "conversation_id": 14337,
+          "text": "So over @115858 &amp; their awful customer service. Locked out of iCloud for 2 weeks &amp; promised password recovery instructions that never came\ud83d\udd95\ud83c\udffd"
+        },
+        {
+          "tweet_id": 17292,
+          "conversation_id": 17292,
+          "text": "So you spend over one thousand pounds on a new #Apple laptop, it breaks, goes in for a two week repair and then comes out... BROKEN AGAIN. I can\u2019t even get through to customer service now. #rippedoff @AppleSupport @115858"
+        },
+        {
+          "tweet_id": 23130,
+          "conversation_id": 23130,
+          "text": "Dear @115858, you\u2019re really rude for ruining the battery life on our phones with that last update."
+        },
+        {
+          "tweet_id": 35971,
+          "conversation_id": 35971,
+          "text": "Another pointless call with @115858 &amp; @AppleSupport disgusting customer service with no care for their customers!!! Who can I complain to?!\ud83d\ude21"
+        }
+      ],
+      "within_intent_diversity": "Standard domain diversity reflecting typical customer support symptom variants.",
+      "nearest_neighbor_overlap": "Low to moderate overlap with distinct primary technical boundary.",
+      "distinguishability_judgement": "Reliably distinguishable with clear technical boundaries."
+    },
+    {
+      "intent_id": "SECURITY_PHISHING_SUSPICIOUS_CONTACT",
+      "human_readable_name": "Security Phishing Suspicious Contact",
+      "category": "Security / Safety",
+      "measurement": {
+        "inbound_opening_inquiries_count": 484,
+        "inbound_opening_inquiries_prevalence_pct": 0.6,
+        "total_inbound_messages_count": 571,
+        "total_inbound_messages_prevalence_pct": 0.44,
+        "denominator_opening_inquiries": 80250,
+        "denominator_total_inbound": 131258
+      },
+      "matching_method": {
+        "method": "Regex-assisted candidate token retrieval over cleaned message text",
+        "pattern": "\\b(phishing|phish|scam|suspicious email|suspicious text|fake apple|hacked|virus|malware|compromised|spam text|is this legit|fraudulent email|suspicious message)\\b",
+        "known_risk": "Moderate false-positive risk if terms appear in multi-symptom contexts; low false-negative for standard technical terms."
+      },
+      "representative_examples": [
+        {
+          "tweet_id": 12586,
+          "conversation_id": 12586,
+          "text": "@AppleSupport What do you make of this? (Top left corner) I am a US customer, and I think my phone has been hacked. https://t.co/5JE0SUCx90"
+        },
+        {
+          "tweet_id": 12596,
+          "conversation_id": 12596,
+          "text": "@AppleSupport Seems I have a virus, I\u2019ve been getting these pop-ups: https://t.co/RMppEqEQSq"
+        },
+        {
+          "tweet_id": 35223,
+          "conversation_id": 35223,
+          "text": "#phishing \nFake, fake, fake.\nThis adress is trying to take my @115858 account\n\u203c\ufe0fCheck adress mail sender https://t.co/6ifjy91pM7"
+        },
+        {
+          "tweet_id": 41653,
+          "conversation_id": 41653,
+          "text": "Hey @AppleSupport either your grammar is going down hill, or someone\u2019s gone #phishing https://t.co/8BHfuw5Tdq"
+        },
+        {
+          "tweet_id": 44569,
+          "conversation_id": 44569,
+          "text": "@AppleSupport I\u2019ve just received this text message... is it a scam? https://t.co/iIz6799AeL"
+        }
+      ],
+      "within_intent_diversity": "Standard domain diversity reflecting typical customer support symptom variants.",
+      "nearest_neighbor_overlap": "Low to moderate overlap with distinct primary technical boundary.",
+      "distinguishability_judgement": "Reliably distinguishable with clear technical boundaries."
+    },
+    {
+      "intent_id": "FEATURE_REQUEST_FEEDBACK",
+      "human_readable_name": "Feature Request Feedback",
+      "category": "Feedback",
+      "measurement": {
+        "inbound_opening_inquiries_count": 164,
+        "inbound_opening_inquiries_prevalence_pct": 0.2,
+        "total_inbound_messages_count": 305,
+        "total_inbound_messages_prevalence_pct": 0.23,
+        "denominator_opening_inquiries": 80250,
+        "denominator_total_inbound": 131258
+      },
+      "matching_method": {
+        "method": "Regex-assisted candidate token retrieval over cleaned message text",
+        "pattern": "\\b(feature request|feedback|wish you would|please add|bring back|should add|need an option to|why did you remove|suggestion for|would be great if)\\b",
+        "known_risk": "Moderate false-positive risk if terms appear in multi-symptom contexts; low false-negative for standard technical terms."
+      },
+      "representative_examples": [
+        {
+          "tweet_id": 184867,
+          "conversation_id": 184867,
+          "text": "@AppleSupport @115858 when are you gonna fix this problem I\ufe0f have with typing it would be great if you can let me know"
+        },
+        {
+          "tweet_id": 188561,
+          "conversation_id": 188561,
+          "text": "@115858 @AppleSupport please bring back the \"Play Later\" feature for iTunes!"
+        },
+        {
+          "tweet_id": 215376,
+          "conversation_id": 215376,
+          "text": "@AppleSupport Hi, when I misspelled words, and tapped them, a suggestion for autocorrect used to appear above the word. Stopped happening?"
+        },
+        {
+          "tweet_id": 258911,
+          "conversation_id": 258911,
+          "text": "It would be great if @115858 would fix their software. Every app crashes 3 times before it works. @122986\u2019s Pixel is lookin good right now."
+        },
+        {
+          "tweet_id": 320905,
+          "conversation_id": 320905,
+          "text": "Usei o feedback pela primeira vez pq cansei disso no #ios111 hey @AppleSupport where are you? https://t.co/3fhSvsp4xb"
+        }
+      ],
+      "within_intent_diversity": "Standard domain diversity reflecting typical customer support symptom variants.",
+      "nearest_neighbor_overlap": "Low to moderate overlap with distinct primary technical boundary.",
+      "distinguishability_judgement": "Reliably distinguishable with clear technical boundaries."
+    },
+    {
+      "intent_id": "UNKNOWN_OUT_OF_SCOPE",
+      "human_readable_name": "Unknown Out Of Scope",
+      "category": "Out of Scope",
+      "measurement": {
+        "inbound_opening_inquiries_count": 119,
+        "inbound_opening_inquiries_prevalence_pct": 0.15,
+        "total_inbound_messages_count": 896,
+        "total_inbound_messages_prevalence_pct": 0.68,
+        "denominator_opening_inquiries": 80250,
+        "denominator_total_inbound": 131258
+      },
+      "matching_method": {
+        "method": "Regex-assisted candidate token retrieval over cleaned message text",
+        "pattern": "(\\b(crypto|bitcoin|forex|dm to promote|follow back|check dm for promo|free iphone giveaway)\\b|^[a-z0-9\\s]{1,4}$|gibberish)",
+        "known_risk": "Moderate false-positive risk if terms appear in multi-symptom contexts; low false-negative for standard technical terms."
+      },
+      "representative_examples": [
+        {
+          "tweet_id": 40543,
+          "conversation_id": 40543,
+          "text": "@115858 @AppleSupport HELP https://t.co/8gsmO5JXRL"
+        },
+        {
+          "tweet_id": 50875,
+          "conversation_id": 50875,
+          "text": "help @AppleSupport https://t.co/Kk9NjhJNtI"
+        },
+        {
+          "tweet_id": 114466,
+          "conversation_id": 114466,
+          "text": "@115858 help https://t.co/Chr5dR69tw"
+        },
+        {
+          "tweet_id": 170347,
+          "conversation_id": 170347,
+          "text": "@AppleSupport wtf https://t.co/aBsrPrmu0P"
+        },
+        {
+          "tweet_id": 302954,
+          "conversation_id": 302954,
+          "text": "@AppleSupport help"
+        }
+      ],
+      "within_intent_diversity": "Standard domain diversity reflecting typical customer support symptom variants.",
+      "nearest_neighbor_overlap": "Low to moderate overlap with distinct primary technical boundary.",
+      "distinguishability_judgement": "Reliably distinguishable with clear technical boundaries."
+    }
+  ]
+}

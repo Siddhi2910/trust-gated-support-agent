@@ -1,0 +1,28 @@
+project:
+  name: "trust-gated-support-agent"
+  version: "1.0.0"
+  target_brand: "AppleSupport"
+  random_seed: 42
+
+paths:
+  raw_dataset: "data/raw/twcs.csv"
+  interim_dir: "data/interim"
+  processed_dir: "data/processed"
+  applesupport_subset: "data/processed/applesupport_subset.parquet"
+  applesupport_conversations: "data/processed/applesupport_conversations.parquet"
+  artifacts_dir: "artifacts"
+  reports_dir: "reports"
+  docs_dir: "docs"
+  configs_dir: "configs"
+
+audit:
+  max_sample_rows_for_heuristics: null # null means process all linked rows
+
+extraction:
+  brand: "AppleSupport"
+  include_full_context: true
+
+conversations:
+  min_turns: 1
+  include_unresolved_links: true
+  target_brand: "AppleSupport"

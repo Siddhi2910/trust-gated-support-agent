@@ -1,0 +1,129 @@
+{
+  "description": "Gap discovery analysis identifying coherent support patterns missing from provisional taxonomy",
+  "evaluated_at": "2026-09-10T23:33:33.968169+00:00",
+  "discovered_intents": [
+    {
+      "intent_id": "AUDIO_SOUND_SPEAKER_MIC",
+      "human_readable_name": "Audio Sound Speaker and Microphone Issues",
+      "category": "Hardware / Audio",
+      "rationale": "High frequency hardware/software audio symptom cluster (earpiece, mic, AirPods) completely unrepresented in provisional 18.",
+      "measurement": {
+        "inbound_opening_inquiries_count": 2053,
+        "inbound_opening_inquiries_prevalence_pct": 2.56,
+        "total_inbound_messages_count": 3031,
+        "total_inbound_messages_prevalence_pct": 2.31
+      },
+      "matching_pattern": "\\b(sound|volume|speaker|speakers|microphone|mic|headphones|headphone|earbuds|airpods|airpod|audio|mute|static noise|buzzing|no sound|cant hear|hear callers)\\b",
+      "representative_examples": [
+        {
+          "tweet_id": 752,
+          "conversation_id": 752,
+          "text": "@AppleSupport my Apple TV works fine with my phone, but when playing videos on Mac air it stutters so much &amp; sound is still on Mac not tv?"
+        },
+        {
+          "tweet_id": 1781,
+          "conversation_id": 1781,
+          "text": "@AppleSupport why can\u2019t I change ringer volume with the buttons? Whose dumb idea was it to change that and how do they still have a job?"
+        },
+        {
+          "tweet_id": 2682,
+          "conversation_id": 2682,
+          "text": "@AppleSupport ios 11.0.3 on 6s. Cannot adjust alarm volume so waking up all in my house and neighbours despite ringer being set to minimum!"
+        },
+        {
+          "tweet_id": 14326,
+          "conversation_id": 14326,
+          "text": "Updated my phone last night &amp; now its stuck in headphone mode, cant hear anything on video, FaceTime &amp; call sound goes in&amp;out @AppleSupport"
+        },
+        {
+          "tweet_id": 15313,
+          "conversation_id": 15313,
+          "text": "3rd pair of @115858 ear shaped earbuds to go bad in the left side. I am currently deaf in one ear after a workout #SaveMyRightEar"
+        }
+      ],
+      "recommendation": "Adopt into revised candidate taxonomy"
+    },
+    {
+      "intent_id": "HARDWARE_CHARGING_POWER_CABLE",
+      "human_readable_name": "Hardware Charging Cable and Power Accessory",
+      "category": "Hardware / Power Accessory",
+      "rationale": "Distinct charging hardware and cable defect cluster, often conflated with or masked by battery drain.",
+      "measurement": {
+        "inbound_opening_inquiries_count": 2456,
+        "inbound_opening_inquiries_prevalence_pct": 3.06,
+        "total_inbound_messages_count": 3322,
+        "total_inbound_messages_prevalence_pct": 2.53
+      },
+      "matching_pattern": "\\b(charge|charging|charger|cable|lightning cable|wont charge|not charging|plugged in|wireless charging|charger port|adapter)\\b",
+      "representative_examples": [
+        {
+          "tweet_id": 2628,
+          "conversation_id": 2628,
+          "text": "Question- @249 @115858 my iPhone6 dies very quick (have to charge it 3 times a day) my iPhone5 battery was faulty. Could this be the same?"
+        },
+        {
+          "tweet_id": 2640,
+          "conversation_id": 2640,
+          "text": "@AppleSupport hi, I have a problem with my macbook pro, it won't turn on, I think it might be the charger but not sure. Is there a..."
+        },
+        {
+          "tweet_id": 4912,
+          "conversation_id": 4912,
+          "text": "Series1 #Applewatch would consistently get 18 hrs + per charge prior to last update. Now 12-13 hrs max.Died @ gym 2nite. Wtf @AppleSupport ?"
+        },
+        {
+          "tweet_id": 8579,
+          "conversation_id": 8579,
+          "text": "@AppleSupport I bought 2 iPhones X on Friday, but I don\u2019t see any charge on my credit card. Do I should worry or it\u2019s normal?"
+        },
+        {
+          "tweet_id": 9160,
+          "conversation_id": 9160,
+          "text": "I got my phone yesterday and it\u2019s already not charging thanks @115858 \ud83d\ude43"
+        }
+      ],
+      "recommendation": "Adopt into revised candidate taxonomy"
+    },
+    {
+      "intent_id": "NOTIFICATION_ALERT_BADGE_ISSUE",
+      "human_readable_name": "Notification Alert and Badge Display Issue",
+      "category": "OS / Notifications",
+      "rationale": "Common software notification failure where notifications fail to appear or badge counts fail to clear.",
+      "measurement": {
+        "inbound_opening_inquiries_count": 1175,
+        "inbound_opening_inquiries_prevalence_pct": 1.46,
+        "total_inbound_messages_count": 1750,
+        "total_inbound_messages_prevalence_pct": 1.33
+      },
+      "matching_pattern": "\\b(notification|notifications|badge|badge count|red dot|alert|alerts|banner|lock screen notification|not getting notifications)\\b",
+      "representative_examples": [
+        {
+          "tweet_id": 2678,
+          "conversation_id": 2678,
+          "text": "@AppleSupport Any idea why icons show up like this? I did force reset to no avail. After initial notification display, they show up. https://t.co/qBFIAlpGyD"
+        },
+        {
+          "tweet_id": 11645,
+          "conversation_id": 11645,
+          "text": "How do I get rid of this notification? @4305 @19762 @115858 @AppleSupport https://t.co/MF02cJYU5A"
+        },
+        {
+          "tweet_id": 15501,
+          "conversation_id": 15501,
+          "text": "My phone is so god damn jank, it\u2019s turning all my snapchats volume all the way up, not alerting me with sound or vibration with texts and messages, and all my notifications come in all at once every hour... @115858"
+        },
+        {
+          "tweet_id": 25251,
+          "conversation_id": 25251,
+          "text": "@AppleSupport ever since I downloaded Animal Crossing I keep getting these notifications even though it\u2019s fully downloaded and I\u2019ve been playing it :( please help https://t.co/wthMnb9nou"
+        },
+        {
+          "tweet_id": 31921,
+          "conversation_id": 31921,
+          "text": "Is it just me or does the X to close out your notifications only show up sometimes? Does anyone know how to fix that? @AppleSupport https://t.co/qtY6wnrl19"
+        }
+      ],
+      "recommendation": "Adopt into revised candidate taxonomy"
+    }
+  ]
+}

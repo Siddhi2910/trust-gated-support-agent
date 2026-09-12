@@ -1,0 +1,26 @@
+# Environment and secrets
+.env
+.env.local
+
+# Data files (raw dataset and large derived/interim files)
+data/raw/
+data/interim/
+data/processed/*.parquet
+data/processed/*.db
+data/processed/*.sqlite
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+venv/
+.venv/
+
+# Node & Build
+node_modules/
+dist/
+.DS_Store

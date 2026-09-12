@@ -1,0 +1,265 @@
+{
+  "description": "Character and word length distribution for inbound customer support messages",
+  "all_inbound_messages": {
+    "total_messages": 131258,
+    "character_length": {
+      "count": 131258,
+      "min": 1,
+      "max": 362,
+      "mean": 106.54,
+      "median": 105.0,
+      "std": 53.25,
+      "quantiles": {
+        "p10": 40.0,
+        "p25": 67.0,
+        "p50_median": 105.0,
+        "p75": 138.0,
+        "p90": 163.0,
+        "p95": 206.0,
+        "p99": 277.0
+      },
+      "distribution_buckets": [
+        {
+          "range": "0-30 chars",
+          "count": 7152,
+          "percentage": "5.45%"
+        },
+        {
+          "range": "31-60 chars",
+          "count": 20472,
+          "percentage": "15.60%"
+        },
+        {
+          "range": "61-90 chars",
+          "count": 25870,
+          "percentage": "19.71%"
+        },
+        {
+          "range": "91-120 chars",
+          "count": 25983,
+          "percentage": "19.80%"
+        },
+        {
+          "range": "121-140 chars (legacy limit)",
+          "count": 25343,
+          "percentage": "19.31%"
+        },
+        {
+          "range": "141-200 chars",
+          "count": 19374,
+          "percentage": "14.76%"
+        },
+        {
+          "range": "201-240 chars",
+          "count": 3323,
+          "percentage": "2.53%"
+        },
+        {
+          "range": "241-280 chars (extended limit)",
+          "count": 2828,
+          "percentage": "2.15%"
+        },
+        {
+          "range": "281+ chars (multi-tweet / links)",
+          "count": 913,
+          "percentage": "0.70%"
+        }
+      ]
+    },
+    "word_length": {
+      "count": 131258,
+      "min": 1,
+      "max": 94,
+      "mean": 18.32,
+      "median": 18.0,
+      "std": 9.96,
+      "quantiles": {
+        "p10": 6.0,
+        "p25": 11.0,
+        "p50_median": 18.0,
+        "p75": 24.0,
+        "p90": 29.0,
+        "p95": 37.0,
+        "p99": 50.0
+      },
+      "distribution_buckets": [
+        {
+          "range": "1-5 words",
+          "count": 11601,
+          "percentage": "8.84%"
+        },
+        {
+          "range": "6-10 words",
+          "count": 19057,
+          "percentage": "14.52%"
+        },
+        {
+          "range": "11-15 words",
+          "count": 23347,
+          "percentage": "17.79%"
+        },
+        {
+          "range": "16-20 words",
+          "count": 24843,
+          "percentage": "18.93%"
+        },
+        {
+          "range": "21-25 words",
+          "count": 27345,
+          "percentage": "20.83%"
+        },
+        {
+          "range": "26-30 words",
+          "count": 14007,
+          "percentage": "10.67%"
+        },
+        {
+          "range": "31-40 words",
+          "count": 6308,
+          "percentage": "4.81%"
+        },
+        {
+          "range": "41-50 words",
+          "count": 3590,
+          "percentage": "2.74%"
+        },
+        {
+          "range": "51+ words",
+          "count": 1160,
+          "percentage": "0.88%"
+        }
+      ]
+    }
+  },
+  "first_turn_customer_inquiries": {
+    "total_messages": 80250,
+    "character_length": {
+      "count": 80250,
+      "min": 1,
+      "max": 328,
+      "mean": 115.1,
+      "median": 114.0,
+      "std": 48.22,
+      "quantiles": {
+        "p10": 58.0,
+        "p25": 81.0,
+        "p50_median": 114.0,
+        "p75": 138.0,
+        "p90": 165.0,
+        "p95": 211.0,
+        "p99": 276.0
+      },
+      "distribution_buckets": [
+        {
+          "range": "0-30 chars",
+          "count": 785,
+          "percentage": "0.98%"
+        },
+        {
+          "range": "31-60 chars",
+          "count": 8446,
+          "percentage": "10.52%"
+        },
+        {
+          "range": "61-90 chars",
+          "count": 16663,
+          "percentage": "20.76%"
+        },
+        {
+          "range": "91-120 chars",
+          "count": 18455,
+          "percentage": "23.00%"
+        },
+        {
+          "range": "121-140 chars (legacy limit)",
+          "count": 20333,
+          "percentage": "25.34%"
+        },
+        {
+          "range": "141-200 chars",
+          "count": 10878,
+          "percentage": "13.56%"
+        },
+        {
+          "range": "201-240 chars",
+          "count": 2302,
+          "percentage": "2.87%"
+        },
+        {
+          "range": "241-280 chars (extended limit)",
+          "count": 2039,
+          "percentage": "2.54%"
+        },
+        {
+          "range": "281+ chars (multi-tweet / links)",
+          "count": 349,
+          "percentage": "0.43%"
+        }
+      ]
+    },
+    "word_length": {
+      "count": 80250,
+      "min": 1,
+      "max": 70,
+      "mean": 19.92,
+      "median": 19.0,
+      "std": 9.01,
+      "quantiles": {
+        "p10": 9.0,
+        "p25": 14.0,
+        "p50_median": 19.0,
+        "p75": 24.0,
+        "p90": 30.0,
+        "p95": 37.0,
+        "p99": 50.0
+      },
+      "distribution_buckets": [
+        {
+          "range": "1-5 words",
+          "count": 1848,
+          "percentage": "2.30%"
+        },
+        {
+          "range": "6-10 words",
+          "count": 9025,
+          "percentage": "11.25%"
+        },
+        {
+          "range": "11-15 words",
+          "count": 15354,
+          "percentage": "19.13%"
+        },
+        {
+          "range": "16-20 words",
+          "count": 17918,
+          "percentage": "22.33%"
+        },
+        {
+          "range": "21-25 words",
+          "count": 20207,
+          "percentage": "25.18%"
+        },
+        {
+          "range": "26-30 words",
+          "count": 8678,
+          "percentage": "10.81%"
+        },
+        {
+          "range": "31-40 words",
+          "count": 4171,
+          "percentage": "5.20%"
+        },
+        {
+          "range": "41-50 words",
+          "count": 2382,
+          "percentage": "2.97%"
+        },
+        {
+          "range": "51+ words",
+          "count": 667,
+          "percentage": "0.83%"
+        }
+      ]
+    }
+  }
+}

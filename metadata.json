@@ -1,0 +1,6 @@
+{
+  "name": "Trust-Gated Support Agent",
+  "description": "Trust-gated AI customer support agent with human-validated evidence learning",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,2504 @@
+{
+  "description": "Top frequent unigrams and bigrams across all inbound AppleSupport customer messages",
+  "metadata": {
+    "total_inbound_messages_analyzed": 131258,
+    "unique_unigrams_extracted": 35883,
+    "unique_bigrams_extracted": 441486,
+    "stopword_count": 236,
+    "stopwords_list": [
+      "a",
+      "about",
+      "above",
+      "after",
+      "again",
+      "against",
+      "ain",
+      "aint",
+      "all",
+      "am",
+      "amp",
+      "an",
+      "and",
+      "any",
+      "apple",
+      "applesupport",
+      "are",
+      "aren",
+      "aren't",
+      "arent",
+      "as",
+      "at",
+      "be",
+      "because",
+      "been",
+      "before",
+      "being",
+      "below",
+      "between",
+      "both",
+      "but",
+      "by",
+      "can",
+      "cant",
+      "co",
+      "couldn",
+      "couldn't",
+      "couldnt",
+      "d",
+      "did",
+      "didn",
+      "didn't",
+      "didnt",
+      "dm",
+      "do",
+      "does",
+      "doesn",
+      "doesn't",
+      "doesnt",
+      "doing",
+      "don",
+      "don't",
+      "dont",
+      "down",
+      "during",
+      "each",
+      "few",
+      "for",
+      "from",
+      "further",
+      "had",
+      "hadn",
+      "hadn't",
+      "hadnt",
+      "has",
+      "hasn",
+      "hasn't",
+      "hasnt",
+      "have",
+      "haven",
+      "haven't",
+      "havent",
+      "having",
+      "he",
+      "hed",
+      "hell",
+      "her",
+      "here",
+      "heres",
+      "hers",
+      "herself",
+      "hes",
+      "him",
+      "himself",
+      "his",
+      "how",
+      "hows",
+      "http",
+      "https",
+      "i",
+      "id",
+      "if",
+      "ill",
+      "im",
+      "in",
+      "into",
+      "is",
+      "isn",
+      "isn't",
+      "isnt",
+      "it",
+      "it's",
+      "its",
+      "itself",
+      "ive",
+      "just",
+      "ll",
+      "m",
+      "ma",
+      "me",
+      "mightn",
+      "mightn't",
+      "more",
+      "most",
+      "mustn",
+      "mustn't",
+      "my",
+      "myself",
+      "needn",
+      "needn't",
+      "no",
+      "nor",
+      "not",
+      "now",
+      "o",
+      "of",
+      "off",
+      "on",
+      "once",
+      "only",
+      "or",
+      "other",
+      "our",
+      "ours",
+      "ourselves",
+      "out",
+      "over",
+      "own",
+      "please",
+      "re",
+      "rt",
+      "s",
+      "same",
+      "shan",
+      "shan't",
+      "she",
+      "she's",
+      "shed",
+      "shell",
+      "shes",
+      "should",
+      "should've",
+      "shouldn",
+      "shouldn't",
+      "shouldnt",
+      "so",
+      "some",
+      "such",
+      "t",
+      "than",
+      "thank",
+      "thanks",
+      "that",
+      "that'll",
+      "thats",
+      "the",
+      "their",
+      "theirs",
+      "them",
+      "themselves",
+      "then",
+      "there",
+      "theres",
+      "these",
+      "they",
+      "theyd",
+      "theyll",
+      "theyre",
+      "theyve",
+      "this",
+      "those",
+      "through",
+      "to",
+      "too",
+      "under",
+      "until",
+      "up",
+      "ve",
+      "very",
+      "via",
+      "was",
+      "wasn",
+      "wasn't",
+      "wasnt",
+      "we",
+      "wed",
+      "well",
+      "were",
+      "weren",
+      "weren't",
+      "werent",
+      "weve",
+      "what",
+      "whats",
+      "when",
+      "whens",
+      "where",
+      "wheres",
+      "which",
+      "while",
+      "who",
+      "whom",
+      "why",
+      "whys",
+      "will",
+      "with",
+      "won",
+      "won't",
+      "wont",
+      "wouldn",
+      "wouldn't",
+      "wouldnt",
+      "y",
+      "you",
+      "you'd",
+      "you'll",
+      "you're",
+      "you've",
+      "youd",
+      "youll",
+      "your",
+      "youre",
+      "yours",
+      "yourself",
+      "yourselves",
+      "youve"
+    ],
+    "tokenization_method": "Cleaned copy only: URLs and @mentions removed, lowercase, apostrophes stripped, regex [a-z0-9]+ matching non-stopword tokens of length > 1, excluding pure digits."
+  },
+  "top_150_combined": [
+    {
+      "term": "phone",
+      "count": 24806,
+      "type": "unigram"
+    },
+    {
+      "term": "iphone",
+      "count": 22624,
+      "type": "unigram"
+    },
+    {
+      "term": "ios",
+      "count": 18174,
+      "type": "unigram"
+    },
+    {
+      "term": "update",
+      "count": 17764,
+      "type": "unigram"
+    },
+    {
+      "term": "fix",
+      "count": 15659,
+      "type": "unigram"
+    },
+    {
+      "term": "new",
+      "count": 10261,
+      "type": "unigram"
+    },
+    {
+      "term": "battery",
+      "count": 9303,
+      "type": "unigram"
+    },
+    {
+      "term": "help",
+      "count": 7896,
+      "type": "unigram"
+    },
+    {
+      "term": "get",
+      "count": 7438,
+      "type": "unigram"
+    },
+    {
+      "term": "since",
+      "count": 6617,
+      "type": "unigram"
+    },
+    {
+      "term": "still",
+      "count": 6038,
+      "type": "unigram"
+    },
+    {
+      "term": "like",
+      "count": 6021,
+      "type": "unigram"
+    },
+    {
+      "term": "app",
+      "count": 5933,
+      "type": "unigram"
+    },
+    {
+      "term": "time",
+      "count": 5864,
+      "type": "unigram"
+    },
+    {
+      "term": "updated",
+      "count": 5363,
+      "type": "unigram"
+    },
+    {
+      "term": "screen",
+      "count": 5164,
+      "type": "unigram"
+    },
+    {
+      "term": "work",
+      "count": 4980,
+      "type": "unigram"
+    },
+    {
+      "term": "issue",
+      "count": 4929,
+      "type": "unigram"
+    },
+    {
+      "term": "ios11",
+      "count": 4817,
+      "type": "unigram"
+    },
+    {
+      "term": "apps",
+      "count": 4759,
+      "type": "unigram"
+    },
+    {
+      "term": "shit",
+      "count": 4690,
+      "type": "unigram"
+    },
+    {
+      "term": "problem",
+      "count": 4628,
+      "type": "unigram"
+    },
+    {
+      "term": "back",
+      "count": 4467,
+      "type": "unigram"
+    },
+    {
+      "term": "even",
+      "count": 4345,
+      "type": "unigram"
+    },
+    {
+      "term": "hey",
+      "count": 4209,
+      "type": "unigram"
+    },
+    {
+      "term": "every",
+      "count": 4190,
+      "type": "unigram"
+    },
+    {
+      "term": "need",
+      "count": 4170,
+      "type": "unigram"
+    },
+    {
+      "term": "working",
+      "count": 4057,
+      "type": "unigram"
+    },
+    {
+      "term": "one",
+      "count": 4010,
+      "type": "unigram"
+    },
+    {
+      "term": "music",
+      "count": 3888,
+      "type": "unigram"
+    },
+    {
+      "term": "going",
+      "count": 3826,
+      "type": "unigram"
+    },
+    {
+      "term": "got",
+      "count": 3453,
+      "type": "unigram"
+    },
+    {
+      "term": "use",
+      "count": 3358,
+      "type": "unigram"
+    },
+    {
+      "term": "yall",
+      "count": 3299,
+      "type": "unigram"
+    },
+    {
+      "term": "keeps",
+      "count": 3265,
+      "type": "unigram"
+    },
+    {
+      "term": "really",
+      "count": 3053,
+      "type": "unigram"
+    },
+    {
+      "term": "letter",
+      "count": 3043,
+      "type": "unigram"
+    },
+    {
+      "term": "6s",
+      "count": 2921,
+      "type": "unigram"
+    },
+    {
+      "term": "question",
+      "count": 2906,
+      "type": "unigram"
+    },
+    {
+      "term": "know",
+      "count": 2899,
+      "type": "unigram"
+    },
+    {
+      "term": "getting",
+      "count": 2897,
+      "type": "unigram"
+    },
+    {
+      "term": "type",
+      "count": 2872,
+      "type": "unigram"
+    },
+    {
+      "term": "last",
+      "count": 2851,
+      "type": "unigram"
+    },
+    {
+      "term": "yes",
+      "count": 2825,
+      "type": "unigram"
+    },
+    {
+      "term": "plus",
+      "count": 2700,
+      "type": "unigram"
+    },
+    {
+      "term": "tried",
+      "count": 2680,
+      "type": "unigram"
+    },
+    {
+      "term": "want",
+      "count": 2679,
+      "type": "unigram"
+    },
+    {
+      "term": "wifi",
+      "count": 2634,
+      "type": "unigram"
+    },
+    {
+      "term": "see",
+      "count": 2631,
+      "type": "unigram"
+    },
+    {
+      "term": "hi",
+      "count": 2614,
+      "type": "unigram"
+    },
+    {
+      "term": "go",
+      "count": 2581,
+      "type": "unigram"
+    },
+    {
+      "term": "latest",
+      "count": 2555,
+      "type": "unigram"
+    },
+    {
+      "term": "wtf",
+      "count": 2547,
+      "type": "unigram"
+    },
+    {
+      "term": "ever",
+      "count": 2532,
+      "type": "unigram"
+    },
+    {
+      "term": "also",
+      "count": 2463,
+      "type": "unigram"
+    },
+    {
+      "term": "life",
+      "count": 2437,
+      "type": "unigram"
+    },
+    {
+      "term": "bug",
+      "count": 2432,
+      "type": "unigram"
+    },
+    {
+      "term": "day",
+      "count": 2420,
+      "type": "unigram"
+    },
+    {
+      "term": "using",
+      "count": 2420,
+      "type": "unigram"
+    },
+    {
+      "term": "issues",
+      "count": 2416,
+      "type": "unigram"
+    },
+    {
+      "term": "keep",
+      "count": 2415,
+      "type": "unigram"
+    },
+    {
+      "term": "make",
+      "count": 2410,
+      "type": "unigram"
+    },
+    {
+      "term": "times",
+      "count": 2387,
+      "type": "unigram"
+    },
+    {
+      "term": "ios update",
+      "count": 2387,
+      "type": "bigram"
+    },
+    {
+      "term": "store",
+      "count": 2341,
+      "type": "unigram"
+    },
+    {
+      "term": "ipad",
+      "count": 2328,
+      "type": "unigram"
+    },
+    {
+      "term": "already",
+      "count": 2265,
+      "type": "unigram"
+    },
+    {
+      "term": "slow",
+      "count": 2248,
+      "type": "unigram"
+    },
+    {
+      "term": "turn",
+      "count": 2243,
+      "type": "unigram"
+    },
+    {
+      "term": "updates",
+      "count": 2207,
+      "type": "unigram"
+    },
+    {
+      "term": "glitch",
+      "count": 2174,
+      "type": "unigram"
+    },
+    {
+      "term": "never",
+      "count": 2146,
+      "type": "unigram"
+    },
+    {
+      "term": "software",
+      "count": 2136,
+      "type": "unigram"
+    },
+    {
+      "term": "would",
+      "count": 2097,
+      "type": "unigram"
+    },
+    {
+      "term": "itunes",
+      "count": 2094,
+      "type": "unigram"
+    },
+    {
+      "term": "way",
+      "count": 2066,
+      "type": "unigram"
+    },
+    {
+      "term": "fixed",
+      "count": 2055,
+      "type": "unigram"
+    },
+    {
+      "term": "freezing",
+      "count": 2047,
+      "type": "unigram"
+    },
+    {
+      "term": "annoying",
+      "count": 2027,
+      "type": "unigram"
+    },
+    {
+      "term": "new update",
+      "count": 2025,
+      "type": "bigram"
+    },
+    {
+      "term": "fucking",
+      "count": 2019,
+      "type": "unigram"
+    },
+    {
+      "term": "trying",
+      "count": 2009,
+      "type": "unigram"
+    },
+    {
+      "term": "watch",
+      "count": 1983,
+      "type": "unigram"
+    },
+    {
+      "term": "guys",
+      "count": 1930,
+      "type": "unigram"
+    },
+    {
+      "term": "thing",
+      "count": 1915,
+      "type": "unigram"
+    },
+    {
+      "term": "battery life",
+      "count": 1915,
+      "type": "bigram"
+    },
+    {
+      "term": "nothing",
+      "count": 1862,
+      "type": "unigram"
+    },
+    {
+      "term": "stop",
+      "count": 1851,
+      "type": "unigram"
+    },
+    {
+      "term": "icloud",
+      "count": 1851,
+      "type": "unigram"
+    },
+    {
+      "term": "mark",
+      "count": 1838,
+      "type": "unigram"
+    },
+    {
+      "term": "hours",
+      "count": 1807,
+      "type": "unigram"
+    },
+    {
+      "term": "keyboard",
+      "count": 1795,
+      "type": "unigram"
+    },
+    {
+      "term": "iphone 6s",
+      "count": 1781,
+      "type": "bigram"
+    },
+    {
+      "term": "try",
+      "count": 1745,
+      "type": "unigram"
+    },
+    {
+      "term": "done",
+      "count": 1738,
+      "type": "unigram"
+    },
+    {
+      "term": "photos",
+      "count": 1736,
+      "type": "unigram"
+    },
+    {
+      "term": "text",
+      "count": 1735,
+      "type": "unigram"
+    },
+    {
+      "term": "every time",
+      "count": 1734,
+      "type": "bigram"
+    },
+    {
+      "term": "old",
+      "count": 1705,
+      "type": "unigram"
+    },
+    {
+      "term": "macbook",
+      "count": 1704,
+      "type": "unigram"
+    },
+    {
+      "term": "much",
+      "count": 1699,
+      "type": "unigram"
+    },
+    {
+      "term": "happening",
+      "count": 1694,
+      "type": "unigram"
+    },
+    {
+      "term": "open",
+      "count": 1686,
+      "type": "unigram"
+    },
+    {
+      "term": "question mark",
+      "count": 1679,
+      "type": "bigram"
+    },
+    {
+      "term": "email",
+      "count": 1674,
+      "type": "unigram"
+    },
+    {
+      "term": "anyone",
+      "count": 1671,
+      "type": "unigram"
+    },
+    {
+      "term": "updating",
+      "count": 1647,
+      "type": "unigram"
+    },
+    {
+      "term": "support",
+      "count": 1645,
+      "type": "unigram"
+    },
+    {
+      "term": "without",
+      "count": 1637,
+      "type": "unigram"
+    },
+    {
+      "term": "call",
+      "count": 1622,
+      "type": "unigram"
+    },
+    {
+      "term": "everything",
+      "count": 1593,
+      "type": "unigram"
+    },
+    {
+      "term": "download",
+      "count": 1592,
+      "type": "unigram"
+    },
+    {
+      "term": "reset",
+      "count": 1586,
+      "type": "unigram"
+    },
+    {
+      "term": "right",
+      "count": 1578,
+      "type": "unigram"
+    },
+    {
+      "term": "think",
+      "count": 1554,
+      "type": "unigram"
+    },
+    {
+      "term": "today",
+      "count": 1543,
+      "type": "unigram"
+    },
+    {
+      "term": "fuck",
+      "count": 1533,
+      "type": "unigram"
+    },
+    {
+      "term": "message",
+      "count": 1526,
+      "type": "unigram"
+    },
+    {
+      "term": "box",
+      "count": 1515,
+      "type": "unigram"
+    },
+    {
+      "term": "days",
+      "count": 1512,
+      "type": "unigram"
+    },
+    {
+      "term": "anything",
+      "count": 1512,
+      "type": "unigram"
+    },
+    {
+      "term": "charge",
+      "count": 1498,
+      "type": "unigram"
+    },
+    {
+      "term": "phones",
+      "count": 1497,
+      "type": "unigram"
+    },
+    {
+      "term": "bluetooth",
+      "count": 1496,
+      "type": "unigram"
+    },
+    {
+      "term": "new ios",
+      "count": 1496,
+      "type": "bigram"
+    },
+    {
+      "term": "works",
+      "count": 1488,
+      "type": "unigram"
+    },
+    {
+      "term": "minutes",
+      "count": 1461,
+      "type": "unigram"
+    },
+    {
+      "term": "send",
+      "count": 1447,
+      "type": "unigram"
+    },
+    {
+      "term": "problems",
+      "count": 1436,
+      "type": "unigram"
+    },
+    {
+      "term": "let",
+      "count": 1431,
+      "type": "unigram"
+    },
+    {
+      "term": "iphone plus",
+      "count": 1430,
+      "type": "bigram"
+    },
+    {
+      "term": "freezes",
+      "count": 1429,
+      "type": "unigram"
+    },
+    {
+      "term": "says",
+      "count": 1423,
+      "type": "unigram"
+    },
+    {
+      "term": "could",
+      "count": 1421,
+      "type": "unigram"
+    },
+    {
+      "term": "dear",
+      "count": 1418,
+      "type": "unigram"
+    },
+    {
+      "term": "come",
+      "count": 1409,
+      "type": "unigram"
+    },
+    {
+      "term": "something",
+      "count": 1407,
+      "type": "unigram"
+    },
+    {
+      "term": "new iphone",
+      "count": 1382,
+      "type": "bigram"
+    },
+    {
+      "term": "mac",
+      "count": 1381,
+      "type": "unigram"
+    },
+    {
+      "term": "upgrade",
+      "count": 1381,
+      "type": "unigram"
+    },
+    {
+      "term": "de",
+      "count": 1380,
+      "type": "unigram"
+    },
+    {
+      "term": "sent",
+      "count": 1365,
+      "type": "unigram"
+    },
+    {
+      "term": "calls",
+      "count": 1362,
+      "type": "unigram"
+    },
+    {
+      "term": "messages",
+      "count": 1357,
+      "type": "unigram"
+    },
+    {
+      "term": "good",
+      "count": 1349,
+      "type": "unigram"
+    },
+    {
+      "term": "many",
+      "count": 1339,
+      "type": "unigram"
+    },
+    {
+      "term": "restart",
+      "count": 1331,
+      "type": "unigram"
+    },
+    {
+      "term": "version",
+      "count": 1328,
+      "type": "unigram"
+    },
+    {
+      "term": "ever since",
+      "count": 1319,
+      "type": "bigram"
+    },
+    {
+      "term": "ok",
+      "count": 1316,
+      "type": "unigram"
+    }
+  ],
+  "top_150_unigrams": [
+    {
+      "term": "phone",
+      "count": 24806,
+      "type": "unigram"
+    },
+    {
+      "term": "iphone",
+      "count": 22624,
+      "type": "unigram"
+    },
+    {
+      "term": "ios",
+      "count": 18174,
+      "type": "unigram"
+    },
+    {
+      "term": "update",
+      "count": 17764,
+      "type": "unigram"
+    },
+    {
+      "term": "fix",
+      "count": 15659,
+      "type": "unigram"
+    },
+    {
+      "term": "new",
+      "count": 10261,
+      "type": "unigram"
+    },
+    {
+      "term": "battery",
+      "count": 9303,
+      "type": "unigram"
+    },
+    {
+      "term": "help",
+      "count": 7896,
+      "type": "unigram"
+    },
+    {
+      "term": "get",
+      "count": 7438,
+      "type": "unigram"
+    },
+    {
+      "term": "since",
+      "count": 6617,
+      "type": "unigram"
+    },
+    {
+      "term": "still",
+      "count": 6038,
+      "type": "unigram"
+    },
+    {
+      "term": "like",
+      "count": 6021,
+      "type": "unigram"
+    },
+    {
+      "term": "app",
+      "count": 5933,
+      "type": "unigram"
+    },
+    {
+      "term": "time",
+      "count": 5864,
+      "type": "unigram"
+    },
+    {
+      "term": "updated",
+      "count": 5363,
+      "type": "unigram"
+    },
+    {
+      "term": "screen",
+      "count": 5164,
+      "type": "unigram"
+    },
+    {
+      "term": "work",
+      "count": 4980,
+      "type": "unigram"
+    },
+    {
+      "term": "issue",
+      "count": 4929,
+      "type": "unigram"
+    },
+    {
+      "term": "ios11",
+      "count": 4817,
+      "type": "unigram"
+    },
+    {
+      "term": "apps",
+      "count": 4759,
+      "type": "unigram"
+    },
+    {
+      "term": "shit",
+      "count": 4690,
+      "type": "unigram"
+    },
+    {
+      "term": "problem",
+      "count": 4628,
+      "type": "unigram"
+    },
+    {
+      "term": "back",
+      "count": 4467,
+      "type": "unigram"
+    },
+    {
+      "term": "even",
+      "count": 4345,
+      "type": "unigram"
+    },
+    {
+      "term": "hey",
+      "count": 4209,
+      "type": "unigram"
+    },
+    {
+      "term": "every",
+      "count": 4190,
+      "type": "unigram"
+    },
+    {
+      "term": "need",
+      "count": 4170,
+      "type": "unigram"
+    },
+    {
+      "term": "working",
+      "count": 4057,
+      "type": "unigram"
+    },
+    {
+      "term": "one",
+      "count": 4010,
+      "type": "unigram"
+    },
+    {
+      "term": "music",
+      "count": 3888,
+      "type": "unigram"
+    },
+    {
+      "term": "going",
+      "count": 3826,
+      "type": "unigram"
+    },
+    {
+      "term": "got",
+      "count": 3453,
+      "type": "unigram"
+    },
+    {
+      "term": "use",
+      "count": 3358,
+      "type": "unigram"
+    },
+    {
+      "term": "yall",
+      "count": 3299,
+      "type": "unigram"
+    },
+    {
+      "term": "keeps",
+      "count": 3265,
+      "type": "unigram"
+    },
+    {
+      "term": "really",
+      "count": 3053,
+      "type": "unigram"
+    },
+    {
+      "term": "letter",
+      "count": 3043,
+      "type": "unigram"
+    },
+    {
+      "term": "6s",
+      "count": 2921,
+      "type": "unigram"
+    },
+    {
+      "term": "question",
+      "count": 2906,
+      "type": "unigram"
+    },
+    {
+      "term": "know",
+      "count": 2899,
+      "type": "unigram"
+    },
+    {
+      "term": "getting",
+      "count": 2897,
+      "type": "unigram"
+    },
+    {
+      "term": "type",
+      "count": 2872,
+      "type": "unigram"
+    },
+    {
+      "term": "last",
+      "count": 2851,
+      "type": "unigram"
+    },
+    {
+      "term": "yes",
+      "count": 2825,
+      "type": "unigram"
+    },
+    {
+      "term": "plus",
+      "count": 2700,
+      "type": "unigram"
+    },
+    {
+      "term": "tried",
+      "count": 2680,
+      "type": "unigram"
+    },
+    {
+      "term": "want",
+      "count": 2679,
+      "type": "unigram"
+    },
+    {
+      "term": "wifi",
+      "count": 2634,
+      "type": "unigram"
+    },
+    {
+      "term": "see",
+      "count": 2631,
+      "type": "unigram"
+    },
+    {
+      "term": "hi",
+      "count": 2614,
+      "type": "unigram"
+    },
+    {
+      "term": "go",
+      "count": 2581,
+      "type": "unigram"
+    },
+    {
+      "term": "latest",
+      "count": 2555,
+      "type": "unigram"
+    },
+    {
+      "term": "wtf",
+      "count": 2547,
+      "type": "unigram"
+    },
+    {
+      "term": "ever",
+      "count": 2532,
+      "type": "unigram"
+    },
+    {
+      "term": "also",
+      "count": 2463,
+      "type": "unigram"
+    },
+    {
+      "term": "life",
+      "count": 2437,
+      "type": "unigram"
+    },
+    {
+      "term": "bug",
+      "count": 2432,
+      "type": "unigram"
+    },
+    {
+      "term": "day",
+      "count": 2420,
+      "type": "unigram"
+    },
+    {
+      "term": "using",
+      "count": 2420,
+      "type": "unigram"
+    },
+    {
+      "term": "issues",
+      "count": 2416,
+      "type": "unigram"
+    },
+    {
+      "term": "keep",
+      "count": 2415,
+      "type": "unigram"
+    },
+    {
+      "term": "make",
+      "count": 2410,
+      "type": "unigram"
+    },
+    {
+      "term": "times",
+      "count": 2387,
+      "type": "unigram"
+    },
+    {
+      "term": "store",
+      "count": 2341,
+      "type": "unigram"
+    },
+    {
+      "term": "ipad",
+      "count": 2328,
+      "type": "unigram"
+    },
+    {
+      "term": "already",
+      "count": 2265,
+      "type": "unigram"
+    },
+    {
+      "term": "slow",
+      "count": 2248,
+      "type": "unigram"
+    },
+    {
+      "term": "turn",
+      "count": 2243,
+      "type": "unigram"
+    },
+    {
+      "term": "updates",
+      "count": 2207,
+      "type": "unigram"
+    },
+    {
+      "term": "glitch",
+      "count": 2174,
+      "type": "unigram"
+    },
+    {
+      "term": "never",
+      "count": 2146,
+      "type": "unigram"
+    },
+    {
+      "term": "software",
+      "count": 2136,
+      "type": "unigram"
+    },
+    {
+      "term": "would",
+      "count": 2097,
+      "type": "unigram"
+    },
+    {
+      "term": "itunes",
+      "count": 2094,
+      "type": "unigram"
+    },
+    {
+      "term": "way",
+      "count": 2066,
+      "type": "unigram"
+    },
+    {
+      "term": "fixed",
+      "count": 2055,
+      "type": "unigram"
+    },
+    {
+      "term": "freezing",
+      "count": 2047,
+      "type": "unigram"
+    },
+    {
+      "term": "annoying",
+      "count": 2027,
+      "type": "unigram"
+    },
+    {
+      "term": "fucking",
+      "count": 2019,
+      "type": "unigram"
+    },
+    {
+      "term": "trying",
+      "count": 2009,
+      "type": "unigram"
+    },
+    {
+      "term": "watch",
+      "count": 1983,
+      "type": "unigram"
+    },
+    {
+      "term": "guys",
+      "count": 1930,
+      "type": "unigram"
+    },
+    {
+      "term": "thing",
+      "count": 1915,
+      "type": "unigram"
+    },
+    {
+      "term": "nothing",
+      "count": 1862,
+      "type": "unigram"
+    },
+    {
+      "term": "stop",
+      "count": 1851,
+      "type": "unigram"
+    },
+    {
+      "term": "icloud",
+      "count": 1851,
+      "type": "unigram"
+    },
+    {
+      "term": "mark",
+      "count": 1838,
+      "type": "unigram"
+    },
+    {
+      "term": "hours",
+      "count": 1807,
+      "type": "unigram"
+    },
+    {
+      "term": "keyboard",
+      "count": 1795,
+      "type": "unigram"
+    },
+    {
+      "term": "try",
+      "count": 1745,
+      "type": "unigram"
+    },
+    {
+      "term": "done",
+      "count": 1738,
+      "type": "unigram"
+    },
+    {
+      "term": "photos",
+      "count": 1736,
+      "type": "unigram"
+    },
+    {
+      "term": "text",
+      "count": 1735,
+      "type": "unigram"
+    },
+    {
+      "term": "old",
+      "count": 1705,
+      "type": "unigram"
+    },
+    {
+      "term": "macbook",
+      "count": 1704,
+      "type": "unigram"
+    },
+    {
+      "term": "much",
+      "count": 1699,
+      "type": "unigram"
+    },
+    {
+      "term": "happening",
+      "count": 1694,
+      "type": "unigram"
+    },
+    {
+      "term": "open",
+      "count": 1686,
+      "type": "unigram"
+    },
+    {
+      "term": "email",
+      "count": 1674,
+      "type": "unigram"
+    },
+    {
+      "term": "anyone",
+      "count": 1671,
+      "type": "unigram"
+    },
+    {
+      "term": "updating",
+      "count": 1647,
+      "type": "unigram"
+    },
+    {
+      "term": "support",
+      "count": 1645,
+      "type": "unigram"
+    },
+    {
+      "term": "without",
+      "count": 1637,
+      "type": "unigram"
+    },
+    {
+      "term": "call",
+      "count": 1622,
+      "type": "unigram"
+    },
+    {
+      "term": "everything",
+      "count": 1593,
+      "type": "unigram"
+    },
+    {
+      "term": "download",
+      "count": 1592,
+      "type": "unigram"
+    },
+    {
+      "term": "reset",
+      "count": 1586,
+      "type": "unigram"
+    },
+    {
+      "term": "right",
+      "count": 1578,
+      "type": "unigram"
+    },
+    {
+      "term": "think",
+      "count": 1554,
+      "type": "unigram"
+    },
+    {
+      "term": "today",
+      "count": 1543,
+      "type": "unigram"
+    },
+    {
+      "term": "fuck",
+      "count": 1533,
+      "type": "unigram"
+    },
+    {
+      "term": "message",
+      "count": 1526,
+      "type": "unigram"
+    },
+    {
+      "term": "box",
+      "count": 1515,
+      "type": "unigram"
+    },
+    {
+      "term": "days",
+      "count": 1512,
+      "type": "unigram"
+    },
+    {
+      "term": "anything",
+      "count": 1512,
+      "type": "unigram"
+    },
+    {
+      "term": "charge",
+      "count": 1498,
+      "type": "unigram"
+    },
+    {
+      "term": "phones",
+      "count": 1497,
+      "type": "unigram"
+    },
+    {
+      "term": "bluetooth",
+      "count": 1496,
+      "type": "unigram"
+    },
+    {
+      "term": "works",
+      "count": 1488,
+      "type": "unigram"
+    },
+    {
+      "term": "minutes",
+      "count": 1461,
+      "type": "unigram"
+    },
+    {
+      "term": "send",
+      "count": 1447,
+      "type": "unigram"
+    },
+    {
+      "term": "problems",
+      "count": 1436,
+      "type": "unigram"
+    },
+    {
+      "term": "let",
+      "count": 1431,
+      "type": "unigram"
+    },
+    {
+      "term": "freezes",
+      "count": 1429,
+      "type": "unigram"
+    },
+    {
+      "term": "says",
+      "count": 1423,
+      "type": "unigram"
+    },
+    {
+      "term": "could",
+      "count": 1421,
+      "type": "unigram"
+    },
+    {
+      "term": "dear",
+      "count": 1418,
+      "type": "unigram"
+    },
+    {
+      "term": "come",
+      "count": 1409,
+      "type": "unigram"
+    },
+    {
+      "term": "something",
+      "count": 1407,
+      "type": "unigram"
+    },
+    {
+      "term": "mac",
+      "count": 1381,
+      "type": "unigram"
+    },
+    {
+      "term": "upgrade",
+      "count": 1381,
+      "type": "unigram"
+    },
+    {
+      "term": "de",
+      "count": 1380,
+      "type": "unigram"
+    },
+    {
+      "term": "sent",
+      "count": 1365,
+      "type": "unigram"
+    },
+    {
+      "term": "calls",
+      "count": 1362,
+      "type": "unigram"
+    },
+    {
+      "term": "messages",
+      "count": 1357,
+      "type": "unigram"
+    },
+    {
+      "term": "good",
+      "count": 1349,
+      "type": "unigram"
+    },
+    {
+      "term": "many",
+      "count": 1339,
+      "type": "unigram"
+    },
+    {
+      "term": "restart",
+      "count": 1331,
+      "type": "unigram"
+    },
+    {
+      "term": "version",
+      "count": 1328,
+      "type": "unigram"
+    },
+    {
+      "term": "ok",
+      "count": 1316,
+      "type": "unigram"
+    },
+    {
+      "term": "settings",
+      "count": 1301,
+      "type": "unigram"
+    },
+    {
+      "term": "else",
+      "count": 1288,
+      "type": "unigram"
+    },
+    {
+      "term": "crashing",
+      "count": 1280,
+      "type": "unigram"
+    },
+    {
+      "term": "change",
+      "count": 1267,
+      "type": "unigram"
+    },
+    {
+      "term": "service",
+      "count": 1261,
+      "type": "unigram"
+    },
+    {
+      "term": "ago",
+      "count": 1253,
+      "type": "unigram"
+    },
+    {
+      "term": "seems",
+      "count": 1252,
+      "type": "unigram"
+    },
+    {
+      "term": "home",
+      "count": 1247,
+      "type": "unigram"
+    },
+    {
+      "term": "people",
+      "count": 1241,
+      "type": "unigram"
+    },
+    {
+      "term": "able",
+      "count": 1236,
+      "type": "unigram"
+    }
+  ],
+  "top_150_bigrams": [
+    {
+      "term": "ios update",
+      "count": 2387,
+      "type": "bigram"
+    },
+    {
+      "term": "new update",
+      "count": 2025,
+      "type": "bigram"
+    },
+    {
+      "term": "battery life",
+      "count": 1915,
+      "type": "bigram"
+    },
+    {
+      "term": "iphone 6s",
+      "count": 1781,
+      "type": "bigram"
+    },
+    {
+      "term": "every time",
+      "count": 1734,
+      "type": "bigram"
+    },
+    {
+      "term": "question mark",
+      "count": 1679,
+      "type": "bigram"
+    },
+    {
+      "term": "new ios",
+      "count": 1496,
+      "type": "bigram"
+    },
+    {
+      "term": "iphone plus",
+      "count": 1430,
+      "type": "bigram"
+    },
+    {
+      "term": "new iphone",
+      "count": 1382,
+      "type": "bigram"
+    },
+    {
+      "term": "ever since",
+      "count": 1319,
+      "type": "bigram"
+    },
+    {
+      "term": "updated phone",
+      "count": 1207,
+      "type": "bigram"
+    },
+    {
+      "term": "update phone",
+      "count": 1089,
+      "type": "bigram"
+    },
+    {
+      "term": "fix shit",
+      "count": 1023,
+      "type": "bigram"
+    },
+    {
+      "term": "new phone",
+      "count": 1005,
+      "type": "bigram"
+    },
+    {
+      "term": "high sierra",
+      "count": 978,
+      "type": "bigram"
+    },
+    {
+      "term": "since updated",
+      "count": 975,
+      "type": "bigram"
+    },
+    {
+      "term": "updated ios",
+      "count": 862,
+      "type": "bigram"
+    },
+    {
+      "term": "latest update",
+      "count": 774,
+      "type": "bigram"
+    },
+    {
+      "term": "phone keeps",
+      "count": 744,
+      "type": "bigram"
+    },
+    {
+      "term": "type letter",
+      "count": 743,
+      "type": "bigram"
+    },
+    {
+      "term": "question marks",
+      "count": 726,
+      "type": "bigram"
+    },
+    {
+      "term": "latest ios",
+      "count": 715,
+      "type": "bigram"
+    },
+    {
+      "term": "since update",
+      "count": 708,
+      "type": "bigram"
+    },
+    {
+      "term": "anyone else",
+      "count": 705,
+      "type": "bigram"
+    },
+    {
+      "term": "app store",
+      "count": 699,
+      "type": "bigram"
+    },
+    {
+      "term": "need fix",
+      "count": 698,
+      "type": "bigram"
+    },
+    {
+      "term": "lock screen",
+      "count": 679,
+      "type": "bigram"
+    },
+    {
+      "term": "ios iphone",
+      "count": 674,
+      "type": "bigram"
+    },
+    {
+      "term": "macbook pro",
+      "count": 673,
+      "type": "bigram"
+    },
+    {
+      "term": "fix problem",
+      "count": 656,
+      "type": "bigram"
+    },
+    {
+      "term": "iphone ios",
+      "count": 647,
+      "type": "bigram"
+    },
+    {
+      "term": "shit together",
+      "count": 604,
+      "type": "bigram"
+    },
+    {
+      "term": "software update",
+      "count": 597,
+      "type": "bigram"
+    },
+    {
+      "term": "fix glitch",
+      "count": 573,
+      "type": "bigram"
+    },
+    {
+      "term": "since ios",
+      "count": 568,
+      "type": "bigram"
+    },
+    {
+      "term": "fix issue",
+      "count": 568,
+      "type": "bigram"
+    },
+    {
+      "term": "update iphone",
+      "count": 567,
+      "type": "bigram"
+    },
+    {
+      "term": "keeps freezing",
+      "count": 559,
+      "type": "bigram"
+    },
+    {
+      "term": "going fix",
+      "count": 539,
+      "type": "bigram"
+    },
+    {
+      "term": "iphone update",
+      "count": 526,
+      "type": "bigram"
+    },
+    {
+      "term": "update ios",
+      "count": 524,
+      "type": "bigram"
+    },
+    {
+      "term": "get shit",
+      "count": 518,
+      "type": "bigram"
+    },
+    {
+      "term": "battery drain",
+      "count": 500,
+      "type": "bigram"
+    },
+    {
+      "term": "last update",
+      "count": 499,
+      "type": "bigram"
+    },
+    {
+      "term": "mark box",
+      "count": 480,
+      "type": "bigram"
+    },
+    {
+      "term": "need help",
+      "count": 476,
+      "type": "bigram"
+    },
+    {
+      "term": "iphone battery",
+      "count": 469,
+      "type": "bigram"
+    },
+    {
+      "term": "last night",
+      "count": 466,
+      "type": "bigram"
+    },
+    {
+      "term": "6s plus",
+      "count": 462,
+      "type": "bigram"
+    },
+    {
+      "term": "brand new",
+      "count": 455,
+      "type": "bigram"
+    },
+    {
+      "term": "new one",
+      "count": 445,
+      "type": "bigram"
+    },
+    {
+      "term": "phone still",
+      "count": 443,
+      "type": "bigram"
+    },
+    {
+      "term": "battery draining",
+      "count": 437,
+      "type": "bigram"
+    },
+    {
+      "term": "update fix",
+      "count": 436,
+      "type": "bigram"
+    },
+    {
+      "term": "times day",
+      "count": 435,
+      "type": "bigram"
+    },
+    {
+      "term": "yall fix",
+      "count": 430,
+      "type": "bigram"
+    },
+    {
+      "term": "since updating",
+      "count": 428,
+      "type": "bigram"
+    },
+    {
+      "term": "go back",
+      "count": 425,
+      "type": "bigram"
+    },
+    {
+      "term": "updating ios",
+      "count": 424,
+      "type": "bigram"
+    },
+    {
+      "term": "ios phone",
+      "count": 417,
+      "type": "bigram"
+    },
+    {
+      "term": "control center",
+      "count": 413,
+      "type": "bigram"
+    },
+    {
+      "term": "updated iphone",
+      "count": 404,
+      "type": "bigram"
+    },
+    {
+      "term": "get together",
+      "count": 401,
+      "type": "bigram"
+    },
+    {
+      "term": "stopped working",
+      "count": 386,
+      "type": "bigram"
+    },
+    {
+      "term": "iphone se",
+      "count": 385,
+      "type": "bigram"
+    },
+    {
+      "term": "iphone 5s",
+      "count": 385,
+      "type": "bigram"
+    },
+    {
+      "term": "music app",
+      "count": 384,
+      "type": "bigram"
+    },
+    {
+      "term": "looks like",
+      "count": 371,
+      "type": "bigram"
+    },
+    {
+      "term": "time type",
+      "count": 370,
+      "type": "bigram"
+    },
+    {
+      "term": "gonna fix",
+      "count": 368,
+      "type": "bigram"
+    },
+    {
+      "term": "ios battery",
+      "count": 360,
+      "type": "bigram"
+    },
+    {
+      "term": "even though",
+      "count": 357,
+      "type": "bigram"
+    },
+    {
+      "term": "since new",
+      "count": 354,
+      "type": "bigram"
+    },
+    {
+      "term": "yall need",
+      "count": 348,
+      "type": "bigram"
+    },
+    {
+      "term": "home button",
+      "count": 346,
+      "type": "bigram"
+    },
+    {
+      "term": "ipad pro",
+      "count": 343,
+      "type": "bigram"
+    },
+    {
+      "term": "keep getting",
+      "count": 340,
+      "type": "bigram"
+    },
+    {
+      "term": "keeps crashing",
+      "count": 340,
+      "type": "bigram"
+    },
+    {
+      "term": "ios11 update",
+      "count": 340,
+      "type": "bigram"
+    },
+    {
+      "term": "buy new",
+      "count": 336,
+      "type": "bigram"
+    },
+    {
+      "term": "home screen",
+      "count": 336,
+      "type": "bigram"
+    },
+    {
+      "term": "since last",
+      "count": 336,
+      "type": "bigram"
+    },
+    {
+      "term": "customer service",
+      "count": 335,
+      "type": "bigram"
+    },
+    {
+      "term": "iphone keeps",
+      "count": 334,
+      "type": "bigram"
+    },
+    {
+      "term": "phone freezes",
+      "count": 327,
+      "type": "bigram"
+    },
+    {
+      "term": "battery drains",
+      "count": 326,
+      "type": "bigram"
+    },
+    {
+      "term": "fix bug",
+      "count": 324,
+      "type": "bigram"
+    },
+    {
+      "term": "restart phone",
+      "count": 320,
+      "type": "bigram"
+    },
+    {
+      "term": "fix ios",
+      "count": 318,
+      "type": "bigram"
+    },
+    {
+      "term": "phone battery",
+      "count": 312,
+      "type": "bigram"
+    },
+    {
+      "term": "using iphone",
+      "count": 306,
+      "type": "bigram"
+    },
+    {
+      "term": "fix damn",
+      "count": 299,
+      "type": "bigram"
+    },
+    {
+      "term": "get back",
+      "count": 296,
+      "type": "bigram"
+    },
+    {
+      "term": "hey fix",
+      "count": 295,
+      "type": "bigram"
+    },
+    {
+      "term": "still seeing",
+      "count": 284,
+      "type": "bigram"
+    },
+    {
+      "term": "draining battery",
+      "count": 282,
+      "type": "bigram"
+    },
+    {
+      "term": "phone keep",
+      "count": 276,
+      "type": "bigram"
+    },
+    {
+      "term": "days ago",
+      "count": 275,
+      "type": "bigram"
+    },
+    {
+      "term": "wi fi",
+      "count": 272,
+      "type": "bigram"
+    },
+    {
+      "term": "running ios",
+      "count": 271,
+      "type": "bigram"
+    },
+    {
+      "term": "wifi bluetooth",
+      "count": 260,
+      "type": "bigram"
+    },
+    {
+      "term": "phone slow",
+      "count": 258,
+      "type": "bigram"
+    },
+    {
+      "term": "black screen",
+      "count": 257,
+      "type": "bigram"
+    },
+    {
+      "term": "update apps",
+      "count": 255,
+      "type": "bigram"
+    },
+    {
+      "term": "letter eye",
+      "count": 254,
+      "type": "bigram"
+    },
+    {
+      "term": "pls fix",
+      "count": 254,
+      "type": "bigram"
+    },
+    {
+      "term": "hard reset",
+      "count": 253,
+      "type": "bigram"
+    },
+    {
+      "term": "fix phone",
+      "count": 246,
+      "type": "bigram"
+    },
+    {
+      "term": "get rid",
+      "count": 244,
+      "type": "bigram"
+    },
+    {
+      "term": "phone calls",
+      "count": 242,
+      "type": "bigram"
+    },
+    {
+      "term": "fix asap",
+      "count": 242,
+      "type": "bigram"
+    },
+    {
+      "term": "phone freezing",
+      "count": 241,
+      "type": "bigram"
+    },
+    {
+      "term": "new software",
+      "count": 240,
+      "type": "bigram"
+    },
+    {
+      "term": "latest version",
+      "count": 240,
+      "type": "bigram"
+    },
+    {
+      "term": "ios updates",
+      "count": 240,
+      "type": "bigram"
+    },
+    {
+      "term": "fix battery",
+      "count": 239,
+      "type": "bigram"
+    },
+    {
+      "term": "let know",
+      "count": 238,
+      "type": "bigram"
+    },
+    {
+      "term": "get new",
+      "count": 237,
+      "type": "bigram"
+    },
+    {
+      "term": "reset phone",
+      "count": 237,
+      "type": "bigram"
+    },
+    {
+      "term": "still working",
+      "count": 230,
+      "type": "bigram"
+    },
+    {
+      "term": "got iphone",
+      "count": 227,
+      "type": "bigram"
+    },
+    {
+      "term": "every minutes",
+      "count": 225,
+      "type": "bigram"
+    },
+    {
+      "term": "got new",
+      "count": 225,
+      "type": "bigram"
+    },
+    {
+      "term": "recent update",
+      "count": 223,
+      "type": "bigram"
+    },
+    {
+      "term": "6s ios",
+      "count": 222,
+      "type": "bigram"
+    },
+    {
+      "term": "use phone",
+      "count": 222,
+      "type": "bigram"
+    },
+    {
+      "term": "multiple times",
+      "count": 220,
+      "type": "bigram"
+    },
+    {
+      "term": "phone work",
+      "count": 220,
+      "type": "bigram"
+    },
+    {
+      "term": "update battery",
+      "count": 219,
+      "type": "bigram"
+    },
+    {
+      "term": "macbook air",
+      "count": 219,
+      "type": "bigram"
+    },
+    {
+      "term": "would like",
+      "count": 219,
+      "type": "bigram"
+    },
+    {
+      "term": "first time",
+      "count": 218,
+      "type": "bigram"
+    },
+    {
+      "term": "needs fix",
+      "count": 215,
+      "type": "bigram"
+    },
+    {
+      "term": "fix fucking",
+      "count": 214,
+      "type": "bigram"
+    },
+    {
+      "term": "update sucks",
+      "count": 213,
+      "type": "bigram"
+    },
+    {
+      "term": "podcast app",
+      "count": 212,
+      "type": "bigram"
+    },
+    {
+      "term": "really annoying",
+      "count": 211,
+      "type": "bigram"
+    },
+    {
+      "term": "anyone elses",
+      "count": 211,
+      "type": "bigram"
+    },
+    {
+      "term": "year old",
+      "count": 210,
+      "type": "bigram"
+    },
+    {
+      "term": "make phone",
+      "count": 209,
+      "type": "bigram"
+    },
+    {
+      "term": "pls help",
+      "count": 208,
+      "type": "bigram"
+    },
+    {
+      "term": "many times",
+      "count": 206,
+      "type": "bigram"
+    },
+    {
+      "term": "genius bar",
+      "count": 205,
+      "type": "bigram"
+    },
+    {
+      "term": "still see",
+      "count": 203,
+      "type": "bigram"
+    },
+    {
+      "term": "time try",
+      "count": 200,
+      "type": "bigram"
+    },
+    {
+      "term": "use letter",
+      "count": 199,
+      "type": "bigram"
+    },
+    {
+      "term": "box question",
+      "count": 195,
+      "type": "bigram"
+    },
+    {
+      "term": "since ios11",
+      "count": 195,
+      "type": "bigram"
+    },
+    {
+      "term": "look like",
+      "count": 193,
+      "type": "bigram"
+    },
+    {
+      "term": "still work",
+      "count": 192,
+      "type": "bigram"
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "description": "Taxonomy validation provenance and lineage mapping",
+  "timestamp": "2026-09-10T23:33:39.678562+00:00",
+  "source_dataset_fingerprints": {
+    "twcs_csv_sha256": "cd297fcfa1bf6f99938be242e8e578980bc6d1b96adc8691abec9a39175b03c0",
+    "applesupport_subset_parquet_sha256": "55d21a8511ed3bf3bffdbb8b99521bf7ed0a28112ac9972cc96402d4a9d73cb5",
+    "applesupport_conversations_parquet_sha256": "ee70052e7be482e78be57cde9960a1981ba6b817fed8818abf0833bee6a5bd9b",
+    "taxonomy_input_sample_sha256": "c519e6f736ca4c215ef6827194682b22779f5bf392dfa9c552bfa215667640d9"
+  },
+  "methodology": {
+    "corpus_scope": "Full AppleSupport opening customer inquiries (N=80,250) and full inbound subset (N=131,258)",
+    "validation_mode": "Deterministic regex-assisted token matching with boundary guards and manual sample auditing",
+    "random_seeds_used": [
+      42,
+      101
+    ]
+  },
+  "intent_lineage": {
+    "BATTERY_DRAIN_POWER_CONSUMPTION": {
+      "origin": "MERGED_AND_GENERALIZED",
+      "source_provisional": [
+        "SOFTWARE_UPDATE_BATTERY_DRAIN"
+      ],
+      "justification": "Expanded to encompass both update-linked and non-update-linked battery drain (36% of battery complaints did not cite update)."
+    },
+    "DEVICE_FREEZE_CRASH_REBOOT": {
+      "origin": "RETAINED_WITH_REFINED_BOUNDARY",
+      "source_provisional": [
+        "DEVICE_FREEZE_CRASH_REBOOT"
+      ],
+      "justification": "Validated as core stability bucket; clear boundary established against performance slowdown."
+    },
+    "KEYBOARD_TYPING_AUTOCORRECT_ISSUE": {
+      "origin": "GENERALIZED_FROM_SPECIAL_CASE",
+      "source_provisional": [
+        "IOS_KEYBOARD_LETTER_I_AUTOCORRECT_BUG"
+      ],
+      "justification": "Broadened from transient historical letter 'I' bug to permanent keyboard/typing/autocorrect ontology category while maintaining benchmark test slice."
+    },
+    "PERFORMANCE_SLOWDOWN_LATENCY": {
+      "origin": "GENERALIZED",
+      "source_provisional": [
+        "PERFORMANCE_SLOWDOWN_AFTER_UPDATE"
+      ],
+      "justification": "General latency and UI lag bucket without requiring explicit mention of update keyword."
+    },
+    "CONNECTIVITY_WIFI_BLUETOOTH": {
+      "origin": "RETAINED",
+      "source_provisional": [
+        "CONNECTIVITY_WIFI_BLUETOOTH"
+      ],
+      "justification": "High volume coherent network connectivity category."
+    },
+    "APP_SPECIFIC_MALFUNCTION": {
+      "origin": "RETAINED",
+      "source_provisional": [
+        "APP_SPECIFIC_MALFUNCTION"
+      ],
+      "justification": "High volume distinct application failure bucket."
+    },
+    "DATA_LOSS_RECOVERY": {
+      "origin": "RETAINED_RENAMED",
+      "source_provisional": [
+        "DATA_LOSS"
+      ],
+      "justification": "Renamed for semantic precision; distinct recovery workflow."
+    },
+    "SCREEN_DISPLAY_TOUCH_BIOMETRICS": {
+      "origin": "EXPANDED_RENAME",
+      "source_provisional": [
+        "SCREEN_DISPLAY_HARDWARE_SYMPTOM"
+      ],
+      "justification": "Expanded from SCREEN_DISPLAY_HARDWARE_SYMPTOM to formally encompass touch digitizer anomalies and biometric authentication sensors (Touch ID, Face ID), avoiding artificial category fragmentation."
+    },
+    "HARDWARE_CHARGING_POWER_CABLE": {
+      "origin": "NEWLY_DISCOVERED_GAP",
+      "source_provisional": [
+        "HARDWARE_PHYSICAL_DEFECT (split)"
+      ],
+      "justification": "Discovered in Stage B gap analysis (3.06% of corpus) covering cables, ports, and power adapters."
+    },
+    "AUDIO_SOUND_SPEAKER_MIC": {
+      "origin": "NEWLY_DISCOVERED_GAP",
+      "source_provisional": [
+        "HARDWARE_PHYSICAL_DEFECT (split)"
+      ],
+      "justification": "Discovered in Stage B gap analysis (2.56% of corpus) covering speaker, microphone, AirPods audio defects."
+    },
+    "ACCOUNT_APPLE_ID_ACCESS": {
+      "origin": "RETAINED",
+      "source_provisional": [
+        "ACCOUNT_APPLE_ID_ACCESS"
+      ],
+      "justification": "Critical authentication and credential recovery bucket."
+    },
+    "BILLING_CHARGE_REFUND_DISPUTE": {
+      "origin": "RETAINED",
+      "source_provisional": [
+        "BILLING_CHARGE_REFUND_DISPUTE"
+      ],
+      "justification": "Core financial and subscription dispute category."
+    },
+    "ORDER_PURCHASE_SHIPPING_STATUS": {
+      "origin": "RETAINED",
+      "source_provisional": [
+        "ORDER_PURCHASE_SHIPPING_STATUS"
+      ],
+      "justification": "Distinct e-commerce fulfillment and shipping status category."
+    },
+    "SECURITY_PHISHING_SUSPICIOUS_CONTACT": {
+      "origin": "RETAINED_SAFETY_CRITICAL",
+      "source_provisional": [
+        "SECURITY_PHISHING_SUSPICIOUS_CONTACT"
+      ],
+      "justification": "Retained despite low volume (0.63%) due to critical safety and trust escalation risk gating."
+    },
+    "UNKNOWN_INSUFFICIENT_CONTEXT": {
+      "origin": "EXPANDED_RENAME",
+      "source_provisional": [
+        "UNKNOWN_OUT_OF_SCOPE"
+      ],
+      "justification": "Transitioned from UNKNOWN_OUT_OF_SCOPE to encompass both non-support content (Category A, 5 inquiries) and genuine support inquiries lacking actionable diagnostic context (Category B, 517 inquiries: bare help cries, pings, media-only attachments, and symptomless frustration rants; measured at 0.65% corpus prevalence)."
+    }
+  }
+}

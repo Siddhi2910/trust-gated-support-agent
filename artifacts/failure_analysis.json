@@ -1,0 +1,120 @@
+{
+  "total_evaluated": 170,
+  "clean_auto_resolutions_count": 33,
+  "safety_escalations_count": 1,
+  "ambiguities_flagged_count": 15,
+  "abstentions_count": 132,
+  "unsupported_claims_count": 0,
+  "ambiguities_sample": [
+    {
+      "tweet_id": 40474,
+      "text": "@AppleSupport My battery is draining quickly on my iPhone 6s when I use 3G. I lose like 5% a minute. But it\u2019s better when I use my WiFi.",
+      "candidate_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "predicted_intent": "CONNECTIVITY_WIFI_BLUETOOTH",
+      "matched_intents": [
+        "BATTERY_DRAIN_POWER_CONSUMPTION",
+        "CONNECTIVITY_WIFI_BLUETOOTH"
+      ]
+    },
+    {
+      "tweet_id": 1011847,
+      "text": "Pourquoi mon iPhone 7 est si lent ?\n\nHey @AppleSupport why is my iPhone 7 so slow ? And battery draining quite fast.",
+      "candidate_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "predicted_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "matched_intents": [
+        "BATTERY_DRAIN_POWER_CONSUMPTION",
+        "PERFORMANCE_SLOWDOWN_LATENCY"
+      ]
+    },
+    {
+      "tweet_id": 436485,
+      "text": "@AppleSupport  iPhone 6 freezing &amp; on  calls screen black and have to reboot &amp; real bad battery life ,",
+      "candidate_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "predicted_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "matched_intents": [
+        "SCREEN_DISPLAY_TOUCH_BIOMETRICS",
+        "DEVICE_FREEZE_CRASH_REBOOT"
+      ]
+    },
+    {
+      "tweet_id": 2789816,
+      "text": "@AppleSupport my phone is moving really slow, there\u2019s a delay in my keyboard as well....just got this phone \ud83e\udd14",
+      "candidate_intent": "PERFORMANCE_SLOWDOWN_LATENCY",
+      "predicted_intent": "KEYBOARD_TYPING_AUTOCORRECT_ISSUE",
+      "matched_intents": [
+        "KEYBOARD_TYPING_AUTOCORRECT_ISSUE",
+        "PERFORMANCE_SLOWDOWN_LATENCY"
+      ]
+    },
+    {
+      "tweet_id": 1366329,
+      "text": "@AppleSupport hoping the keyboard lag on iP6 will be fixed in a coming release.  Is this the case? Gets worse everyday!",
+      "candidate_intent": "PERFORMANCE_SLOWDOWN_LATENCY",
+      "predicted_intent": "KEYBOARD_TYPING_AUTOCORRECT_ISSUE",
+      "matched_intents": [
+        "KEYBOARD_TYPING_AUTOCORRECT_ISSUE",
+        "PERFORMANCE_SLOWDOWN_LATENCY"
+      ]
+    },
+    {
+      "tweet_id": 2341877,
+      "text": "@AppleSupport i have ipad pro since updates on airplane mode keeps turn on wifi and bltooth on its own and music app freezes randomly?",
+      "candidate_intent": "CONNECTIVITY_WIFI_BLUETOOTH",
+      "predicted_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "matched_intents": [
+        "CONNECTIVITY_WIFI_BLUETOOTH",
+        "DEVICE_FREEZE_CRASH_REBOOT"
+      ]
+    },
+    {
+      "tweet_id": 737006,
+      "text": "If you haven\u2019t updated your iPhone, I wouldn\u2019t recommend it. My apps have been constantly crashing and my battery is drained. @AppleSupport",
+      "candidate_intent": "APP_SPECIFIC_MALFUNCTION",
+      "predicted_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "matched_intents": [
+        "BATTERY_DRAIN_POWER_CONSUMPTION",
+        "DEVICE_FREEZE_CRASH_REBOOT"
+      ]
+    },
+    {
+      "tweet_id": 294912,
+      "text": "@AppleSupport @115858 #ios1102 Problems: draining battery like hell, Constantly Iphone and keyboard freezing, APPS crashing... etc ... HELP!",
+      "candidate_intent": "APP_SPECIFIC_MALFUNCTION",
+      "predicted_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "matched_intents": [
+        "KEYBOARD_TYPING_AUTOCORRECT_ISSUE",
+        "DEVICE_FREEZE_CRASH_REBOOT"
+      ]
+    },
+    {
+      "tweet_id": 2783276,
+      "text": "@AppleSupport Facing prob in my 6 &amp; spouse 5s since upgrading to iOS 11 Apart frm draining battery wrong battery %display 5scudn\u2019t be restarted on frozen logo Tk 2 Apple store reloaded iOS all data lost. disgusting is iCloud data cud-not be retrieved. Losing faith very fast.",
+      "candidate_intent": "DATA_LOSS_RECOVERY",
+      "predicted_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "matched_intents": [
+        "SCREEN_DISPLAY_TOUCH_BIOMETRICS",
+        "DEVICE_FREEZE_CRASH_REBOOT"
+      ]
+    },
+    {
+      "tweet_id": 897704,
+      "text": "Hey @AppleSupport I have been having issues with the WiFi connection it requires me over and over the password, and the email is really slow",
+      "candidate_intent": "ACCOUNT_APPLE_ID_ACCESS",
+      "predicted_intent": "CONNECTIVITY_WIFI_BLUETOOTH",
+      "matched_intents": [
+        "CONNECTIVITY_WIFI_BLUETOOTH",
+        "PERFORMANCE_SLOWDOWN_LATENCY"
+      ]
+    }
+  ],
+  "safety_escalations_sample": [
+    {
+      "tweet_id": 689325,
+      "text": "im convinced somebody hacked my phone because this shit has been doing all kinds of fuckery that i just cant explain &amp; honestly im a little shook..... but mostly annoyed. @115858",
+      "risk_level": "HIGH",
+      "risk_category": "ACCOUNT_SECURITY_COMPROMISE",
+      "queue": "SECURITY_SPECIALIST"
+    }
+  ],
+  "unsupported_claims_sample": []
+}

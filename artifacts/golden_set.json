@@ -1,0 +1,3419 @@
+{
+  "metadata": {
+    "name": "AppleSupport Golden Set (170 Cases)",
+    "version": "1.0.0",
+    "taxonomy_version": "1.0.0-frozen",
+    "taxonomy_sha256": "0c05662bcea30cf59833733d51151db8efd0e6b64c1be5a683690713ad774a7f",
+    "total_cases": 170,
+    "deterministic_cases": 170,
+    "ambiguous_cases": 0,
+    "accept_count": 115,
+    "reject_count": 55,
+    "uncertain_count": 0,
+    "single_human_reviewer": true,
+    "reviewer_identity": "human_project_owner",
+    "created_at": "2026-09-12T09:16:11.046314Z"
+  },
+  "cases": [
+    {
+      "case_id": 1,
+      "tweet_id": 2193292,
+      "conversation_id": 2193292,
+      "customer_inquiry_text": "Hey @115858 while your fixing all the other bugs, can you fix my battery so it doesn’t die every 10 minutes !!!!!",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "human_decision": "ACCEPT",
+      "human_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "is_ambiguous": false,
+      "focal_grievance": "Battery drains extremely quickly / poor battery life",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2193292,
+        "conversation_id": 2193292,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 2,
+      "tweet_id": 2193337,
+      "conversation_id": 2193337,
+      "customer_inquiry_text": "@AppleSupport I’ve done 2 hard resets and update the software. I can’t go anywhere without an extra battery but even that can’t reboot",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "human_decision": "ACCEPT",
+      "human_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "is_ambiguous": false,
+      "focal_grievance": "Battery drains so severely that the device cannot be used/rebooted without an extra battery.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2193337,
+        "conversation_id": 2193337,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 3,
+      "tweet_id": 1060519,
+      "conversation_id": 1060519,
+      "customer_inquiry_text": "@AppleSupport since installing iOS 11.0.3 on 5s work phone, battery has gone from 2.5 days to 1.5. Background refresh is off. Any ideas? https://t.co/5kXkYPWNK5",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "human_decision": "ACCEPT",
+      "human_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "is_ambiguous": false,
+      "focal_grievance": "Battery life decreased after iOS update",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1060519,
+        "conversation_id": 1060519,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 4,
+      "tweet_id": 40474,
+      "conversation_id": 40474,
+      "customer_inquiry_text": "@AppleSupport My battery is draining quickly on my iPhone 6s when I use 3G. I lose like 5% a minute. But it’s better when I use my WiFi.",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "human_decision": "ACCEPT",
+      "human_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "is_ambiguous": false,
+      "focal_grievance": "Battery drains rapidly during 3G use; Wi-Fi use reduces the drain.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 40474,
+        "conversation_id": 40474,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 5,
+      "tweet_id": 1011847,
+      "conversation_id": 1011847,
+      "customer_inquiry_text": "Pourquoi mon iPhone 7 est si lent ?\n\nHey @AppleSupport why is my iPhone 7 so slow ? And battery draining quite fast.",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "human_decision": "REJECT",
+      "human_intent": "PERFORMANCE_SLOWDOWN_LATENCY",
+      "is_ambiguous": false,
+      "focal_grievance": "iPhone is very slow",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1011847,
+        "conversation_id": 1011847,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 6,
+      "tweet_id": 90649,
+      "conversation_id": 90649,
+      "customer_inquiry_text": "Hey @AppleSupport @115858 can you let me know why my iPhone 6 (normally fit&amp;well, no previous issues) suddenly has battery issues, mic doesn't work, so can't make calls...I won't be upgrading if that's what you want 😂 but I've paid for the phone now so... solve this pls?😃🙌🏽",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "human_decision": "REJECT",
+      "human_intent": "AUDIO_SOUND_SPEAKER_MIC",
+      "is_ambiguous": false,
+      "focal_grievance": "Microphone failure prevents calls, alongside a separate battery complaint.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 90649,
+        "conversation_id": 90649,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 7,
+      "tweet_id": 1758996,
+      "conversation_id": 1758996,
+      "customer_inquiry_text": "I guess it’s a good thing @115858 didn’t fix that WiFi turning back on by itself problem 🙄 I love draining my battery for no reason",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "human_decision": "REJECT",
+      "human_intent": "CONNECTIVITY_WIFI_BLUETOOTH",
+      "is_ambiguous": false,
+      "focal_grievance": "WiFi turns back on by itself",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1758996,
+        "conversation_id": 1758996,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 8,
+      "tweet_id": 436485,
+      "conversation_id": 436485,
+      "customer_inquiry_text": "@AppleSupport  iPhone 6 freezing &amp; on  calls screen black and have to reboot &amp; real bad battery life ,",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "human_decision": "REJECT",
+      "human_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "is_ambiguous": false,
+      "focal_grievance": "Phone freezes, screen goes black during calls, and requires rebooting; battery life is secondary.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 436485,
+        "conversation_id": 436485,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 9,
+      "tweet_id": 2571386,
+      "conversation_id": 2571386,
+      "customer_inquiry_text": "@AppleSupport absolutely hate the new update. I don't even want to use my iPhone. Keeps freezing and very slow to open apps. Fix ASAP plz!",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "human_decision": "REJECT",
+      "human_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "is_ambiguous": false,
+      "focal_grievance": "iPhone keeps freezing",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2571386,
+        "conversation_id": 2571386,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 10,
+      "tweet_id": 543792,
+      "conversation_id": 543792,
+      "customer_inquiry_text": "@AppleSupport my iPhone keeps restarting - is there a known fix please?? Driving me crazy!!",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "human_decision": "ACCEPT",
+      "human_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "is_ambiguous": false,
+      "focal_grievance": "Phone repeatedly restarts on its own.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 543792,
+        "conversation_id": 543792,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 11,
+      "tweet_id": 2834853,
+      "conversation_id": 2834853,
+      "customer_inquiry_text": "WHY DO MY APPS KEEP FREEZING WITH THIS UPDATE @AppleSupport",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "human_decision": "REJECT",
+      "human_intent": "APP_SPECIFIC_MALFUNCTION",
+      "is_ambiguous": false,
+      "focal_grievance": "Apps keep freezing after the update",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2834853,
+        "conversation_id": 2834853,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 12,
+      "tweet_id": 2527027,
+      "conversation_id": 2527027,
+      "customer_inquiry_text": "Another update and still this display issue, @AppleSupport. Oh, and the great lagginess (sure, that’s a word) on this 6s. And still the design issues. It is like iOS 11 is trying to to get me to look at @122609. Yes. I’ve restarted. Repeatedly. https://t.co/aQrwqNlokt",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "human_decision": "REJECT",
+      "human_intent": "SCREEN_DISPLAY_TOUCH_BIOMETRICS",
+      "is_ambiguous": false,
+      "focal_grievance": "Customer explicitly reports a display issue; lag/design complaints are secondary and there is no clear system crash.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2527027,
+        "conversation_id": 2527027,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 13,
+      "tweet_id": 2896141,
+      "conversation_id": 2896141,
+      "customer_inquiry_text": "Hold down Command+R while starting up until you see the #Apple logo, then from the menu that appears, run Disk Utility to repair your Hard Disk.\n\nI am here if you need additional assistance.\n\n@AppleSupport needs to be included in this conversation.  https://t.co/ugdjZlgMWS",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "human_decision": "REJECT",
+      "human_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "is_ambiguous": false,
+      "focal_grievance": "This is advice posted by another user rather than a concrete customer support problem.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2896141,
+        "conversation_id": 2896141,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 14,
+      "tweet_id": 1808654,
+      "conversation_id": 1808654,
+      "customer_inquiry_text": "@AppleSupport battery stuck@96% while charging after ios 11.0.3 update on 6s &amp; Shows 100% after restarting.#ios11",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "human_decision": "REJECT",
+      "human_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "is_ambiguous": false,
+      "focal_grievance": "Battery percentage behaves abnormally while charging; the issue is battery reporting/behavior, not inability to charge.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1808654,
+        "conversation_id": 1808654,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 15,
+      "tweet_id": 1928792,
+      "conversation_id": 1928792,
+      "customer_inquiry_text": "@115858 ever since this new update my 📱 has been screwing up 😡. Not loading videos, freezing etc. I’m about 2 switch to @125607 #apple",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "human_decision": "ACCEPT",
+      "human_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "is_ambiguous": false,
+      "focal_grievance": "The device is generally malfunctioning and explicitly freezing; no single app is identified.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1928792,
+        "conversation_id": 1928792,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 16,
+      "tweet_id": 1886395,
+      "conversation_id": 1886395,
+      "customer_inquiry_text": "@AppleSupport An only iPhone user since 2009 first time Im planning to switch. #iOS 11.0.3 sucks beyond belief. Blackouts and crashes.",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "human_decision": "ACCEPT",
+      "human_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "is_ambiguous": false,
+      "focal_grievance": "Blackouts and crashes are system/device-level symptoms.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1886395,
+        "conversation_id": 1886395,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 17,
+      "tweet_id": 1458791,
+      "conversation_id": 1458791,
+      "customer_inquiry_text": "@AppleSupport why is a capital i autocorrecting to the weird A and question mark every time now?????",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "KEYBOARD_TYPING_AUTOCORRECT_ISSUE",
+      "human_decision": "ACCEPT",
+      "human_intent": "KEYBOARD_TYPING_AUTOCORRECT_ISSUE",
+      "is_ambiguous": false,
+      "focal_grievance": "Capital I autocorrects to incorrect characters",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1458791,
+        "conversation_id": 1458791,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 18,
+      "tweet_id": 1599696,
+      "conversation_id": 1599696,
+      "customer_inquiry_text": "@AppleSupport there’s an issue with y’all keyboard 👀",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "KEYBOARD_TYPING_AUTOCORRECT_ISSUE",
+      "human_decision": "ACCEPT",
+      "human_intent": "KEYBOARD_TYPING_AUTOCORRECT_ISSUE",
+      "is_ambiguous": false,
+      "focal_grievance": "Keyboard and letters are displaying incorrectly",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1599696,
+        "conversation_id": 1599696,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 19,
+      "tweet_id": 1455312,
+      "conversation_id": 1455312,
+      "customer_inquiry_text": "So @AppleSupport, why does the letter I show up as a weird character? Updates have been a mess 🙄",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "KEYBOARD_TYPING_AUTOCORRECT_ISSUE",
+      "human_decision": "ACCEPT",
+      "human_intent": "KEYBOARD_TYPING_AUTOCORRECT_ISSUE",
+      "is_ambiguous": false,
+      "focal_grievance": "Letter I appears as a weird character",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1455312,
+        "conversation_id": 1455312,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 20,
+      "tweet_id": 2014720,
+      "conversation_id": 2014720,
+      "customer_inquiry_text": "so the letter I is a box with a question mark😂 get your shit together @115858",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "KEYBOARD_TYPING_AUTOCORRECT_ISSUE",
+      "human_decision": "ACCEPT",
+      "human_intent": "KEYBOARD_TYPING_AUTOCORRECT_ISSUE",
+      "is_ambiguous": false,
+      "focal_grievance": "Letter I appears as a weird character",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2014720,
+        "conversation_id": 2014720,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 21,
+      "tweet_id": 2179491,
+      "conversation_id": 2179491,
+      "customer_inquiry_text": "@AppleSupport there’s another glitch🙃🙃🙃whenever I try to type “it” autocorrect changes to I.t 🙃🙃🙃next glitch I want a new phone🙃🙃🙃🙃",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "KEYBOARD_TYPING_AUTOCORRECT_ISSUE",
+      "human_decision": "ACCEPT",
+      "human_intent": "KEYBOARD_TYPING_AUTOCORRECT_ISSUE",
+      "is_ambiguous": false,
+      "focal_grievance": "Autocorrect changes \"it\" to \"I.t\"",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2179491,
+        "conversation_id": 2179491,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 22,
+      "tweet_id": 2014688,
+      "conversation_id": 2014688,
+      "customer_inquiry_text": "So @115858 when are you going to fix the letter “I” on our iPhone keyboard?",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "KEYBOARD_TYPING_AUTOCORRECT_ISSUE",
+      "human_decision": "ACCEPT",
+      "human_intent": "KEYBOARD_TYPING_AUTOCORRECT_ISSUE",
+      "is_ambiguous": false,
+      "focal_grievance": "Letter I keyboard bug",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2014688,
+        "conversation_id": 2014688,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 23,
+      "tweet_id": 1773706,
+      "conversation_id": 1773706,
+      "customer_inquiry_text": "Somebody please explain to me how to fix my keyboard &amp; these letters 😫I can’t understand anyone’s texts!!! @AppleSupport",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "KEYBOARD_TYPING_AUTOCORRECT_ISSUE",
+      "human_decision": "ACCEPT",
+      "human_intent": "KEYBOARD_TYPING_AUTOCORRECT_ISSUE",
+      "is_ambiguous": false,
+      "focal_grievance": "Keyboard and letters are displaying incorrectly",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1773706,
+        "conversation_id": 1773706,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 24,
+      "tweet_id": 706134,
+      "conversation_id": 706134,
+      "customer_inquiry_text": "@115858 @AppleSupport your #iOS11 just screwed up my #iPhone 6Plus #NotHappy way too slow, keyboard freezes apps take time to open 😡😡😡",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "KEYBOARD_TYPING_AUTOCORRECT_ISSUE",
+      "human_decision": "REJECT",
+      "human_intent": "PERFORMANCE_SLOWDOWN_LATENCY",
+      "is_ambiguous": false,
+      "focal_grievance": "Overall phone is too slow; keyboard freezing and slow app opening are accompanying symptoms.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 706134,
+        "conversation_id": 706134,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 25,
+      "tweet_id": 1455370,
+      "conversation_id": 1455370,
+      "customer_inquiry_text": "@AppleSupport also, could you help me about battery autonomy, and lag problems since iOS 11 ?",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "PERFORMANCE_SLOWDOWN_LATENCY",
+      "human_decision": "ACCEPT",
+      "human_intent": "PERFORMANCE_SLOWDOWN_LATENCY",
+      "is_ambiguous": false,
+      "focal_grievance": "Lag problems since iOS 11",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1455370,
+        "conversation_id": 1455370,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 26,
+      "tweet_id": 1621246,
+      "conversation_id": 1621246,
+      "customer_inquiry_text": "@AppleSupport Hi there! My iPhone 6 has been losing battery, lagging and restarting on its own. Anything thing I can do about it?",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "PERFORMANCE_SLOWDOWN_LATENCY",
+      "human_decision": "REJECT",
+      "human_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "is_ambiguous": false,
+      "focal_grievance": "The device restarts on its own in addition to lag and battery loss; the restart/crash behavior is the strongest focal symptom.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1621246,
+        "conversation_id": 1621246,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 27,
+      "tweet_id": 2789816,
+      "conversation_id": 2789816,
+      "customer_inquiry_text": "@AppleSupport my phone is moving really slow, there’s a delay in my keyboard as well....just got this phone 🤔",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "PERFORMANCE_SLOWDOWN_LATENCY",
+      "human_decision": "ACCEPT",
+      "human_intent": "PERFORMANCE_SLOWDOWN_LATENCY",
+      "is_ambiguous": false,
+      "focal_grievance": "Phone is moving really slowly",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2789816,
+        "conversation_id": 2789816,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 28,
+      "tweet_id": 1366329,
+      "conversation_id": 1366329,
+      "customer_inquiry_text": "@AppleSupport hoping the keyboard lag on iP6 will be fixed in a coming release.  Is this the case? Gets worse everyday!",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "PERFORMANCE_SLOWDOWN_LATENCY",
+      "human_decision": "ACCEPT",
+      "human_intent": "PERFORMANCE_SLOWDOWN_LATENCY",
+      "is_ambiguous": false,
+      "focal_grievance": "The problem is specifically keyboard lag while typing; historical AppleSupport cases contain the same keyboard-lag cluster.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1366329,
+        "conversation_id": 1366329,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 29,
+      "tweet_id": 152805,
+      "conversation_id": 152805,
+      "customer_inquiry_text": "This @115858 #ios update has my phone lagging and slow AF 😠",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "PERFORMANCE_SLOWDOWN_LATENCY",
+      "human_decision": "ACCEPT",
+      "human_intent": "PERFORMANCE_SLOWDOWN_LATENCY",
+      "is_ambiguous": false,
+      "focal_grievance": "Phone became slow after the update",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 152805,
+        "conversation_id": 152805,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 30,
+      "tweet_id": 1713748,
+      "conversation_id": 1713748,
+      "customer_inquiry_text": "@AppleSupport my iPhone is working terribly. Battery goes from 50 to 14 in seconds. Very slow. Freezes. On current upl",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "PERFORMANCE_SLOWDOWN_LATENCY",
+      "human_decision": "REJECT",
+      "human_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "is_ambiguous": false,
+      "focal_grievance": "The phone freezes in addition to being slow and showing abnormal battery percentage.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1713748,
+        "conversation_id": 1713748,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 31,
+      "tweet_id": 362482,
+      "conversation_id": 362482,
+      "customer_inquiry_text": "@AppleSupport Why has my phone become so slow after updating to 11.0.2? It feels like I am using an old android phone.",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "PERFORMANCE_SLOWDOWN_LATENCY",
+      "human_decision": "ACCEPT",
+      "human_intent": "PERFORMANCE_SLOWDOWN_LATENCY",
+      "is_ambiguous": false,
+      "focal_grievance": "The primary complaint is whole-phone slowdown after the update.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 362482,
+        "conversation_id": 362482,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 32,
+      "tweet_id": 1404102,
+      "conversation_id": 1404102,
+      "customer_inquiry_text": "@AppleSupport i have updated to iOS 11.0.3, the phone is dead slow and battery drains like running nose during cold, using iPhone6",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "PERFORMANCE_SLOWDOWN_LATENCY",
+      "human_decision": "ACCEPT",
+      "human_intent": "PERFORMANCE_SLOWDOWN_LATENCY",
+      "is_ambiguous": false,
+      "focal_grievance": "The explicit primary symptom is that the phone is dead slow; battery drain is secondary.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1404102,
+        "conversation_id": 1404102,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 33,
+      "tweet_id": 1477500,
+      "conversation_id": 1477500,
+      "customer_inquiry_text": "Dear @AppleSupport in your latest update that I did last night, I now cannot turn on my wifi.  Please fix!",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "CONNECTIVITY_WIFI_BLUETOOTH",
+      "human_decision": "ACCEPT",
+      "human_intent": "CONNECTIVITY_WIFI_BLUETOOTH",
+      "is_ambiguous": false,
+      "focal_grievance": "Wi-Fi cannot be turned on after the update",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1477500,
+        "conversation_id": 1477500,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 34,
+      "tweet_id": 2341877,
+      "conversation_id": 2341877,
+      "customer_inquiry_text": "@AppleSupport i have ipad pro since updates on airplane mode keeps turn on wifi and bltooth on its own and music app freezes randomly?",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "CONNECTIVITY_WIFI_BLUETOOTH",
+      "human_decision": "REJECT",
+      "human_intent": "CONNECTIVITY_WIFI_BLUETOOTH",
+      "is_ambiguous": false,
+      "focal_grievance": "Wi-Fi and Bluetooth turn on by themselves; the music-app freeze is secondary.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2341877,
+        "conversation_id": 2341877,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 35,
+      "tweet_id": 2837112,
+      "conversation_id": 2837112,
+      "customer_inquiry_text": "@115858 my iPhone 7 stops playing Pandora randomly about 5 times a day, I have a mess of wires in three places for the audio Bluetooth adaptation, and nobody can hear me with the shitty mic",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "CONNECTIVITY_WIFI_BLUETOOTH",
+      "human_decision": "REJECT",
+      "human_intent": "AUDIO_SOUND_SPEAKER_MIC",
+      "is_ambiguous": false,
+      "focal_grievance": "The strongest actionable cluster is audio playback/Bluetooth audio and microphone failure.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2837112,
+        "conversation_id": 2837112,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 36,
+      "tweet_id": 2112932,
+      "conversation_id": 2112932,
+      "customer_inquiry_text": "So I finally did the new update on my phone. And I have questions. Why does my Bluetooth always turn on? What is the green button that is on above the Bluetooth? @115858 help me. https://t.co/bXWMntqFNk",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "CONNECTIVITY_WIFI_BLUETOOTH",
+      "human_decision": "ACCEPT",
+      "human_intent": "CONNECTIVITY_WIFI_BLUETOOTH",
+      "is_ambiguous": false,
+      "focal_grievance": "Bluetooth turns on unexpectedly and the customer asks about a Bluetooth-related control.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2112932,
+        "conversation_id": 2112932,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 37,
+      "tweet_id": 1718426,
+      "conversation_id": 1718426,
+      "customer_inquiry_text": "@AppleSupport Hi, would a cellular version of your new watch bought in the USA work with a UK network in the UK? Thanks",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "CONNECTIVITY_WIFI_BLUETOOTH",
+      "human_decision": "ACCEPT",
+      "human_intent": "CONNECTIVITY_WIFI_BLUETOOTH",
+      "is_ambiguous": false,
+      "focal_grievance": "The question is about cellular/network compatibility of an Apple Watch across countries.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1718426,
+        "conversation_id": 1718426,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 38,
+      "tweet_id": 2385181,
+      "conversation_id": 2385181,
+      "customer_inquiry_text": "@AppleSupport I need some help. My Apple Music says I need to confirm that I’m still a student on the next 6 days, but I’m not in Brazil I’m in Europe I’ll only have access to my Uni WiFi in 2 months... how can I confirm it?",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "CONNECTIVITY_WIFI_BLUETOOTH",
+      "human_decision": "REJECT",
+      "human_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "is_ambiguous": false,
+      "focal_grievance": "This is a student-verification/how-to question about Apple Music, not a defined malfunction in the current taxonomy.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2385181,
+        "conversation_id": 2385181,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 39,
+      "tweet_id": 2261758,
+      "conversation_id": 2261758,
+      "customer_inquiry_text": "Do Jabra Bluetooth headsets not work with #ios11? Since I upgraded yesterday, it can’t find device, plus battery life much worse. @115858",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "CONNECTIVITY_WIFI_BLUETOOTH",
+      "human_decision": "ACCEPT",
+      "human_intent": "CONNECTIVITY_WIFI_BLUETOOTH",
+      "is_ambiguous": false,
+      "focal_grievance": "Bluetooth headset cannot be detected after iOS 11 update",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2261758,
+        "conversation_id": 2261758,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 40,
+      "tweet_id": 447427,
+      "conversation_id": 447427,
+      "customer_inquiry_text": "@AppleSupport HOW DO I STOP MY PHONE FROM LOOKIJG FOR WIFI AND TURNING ON ITS SEARCHING ITS ALREADY WASTING MY BATTERY FAST ENLUGH STOP",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "CONNECTIVITY_WIFI_BLUETOOTH",
+      "human_decision": "ACCEPT",
+      "human_intent": "CONNECTIVITY_WIFI_BLUETOOTH",
+      "is_ambiguous": false,
+      "focal_grievance": "The phone keeps searching for/turning on Wi-Fi and the customer wants it stopped.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 447427,
+        "conversation_id": 447427,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 41,
+      "tweet_id": 2071092,
+      "conversation_id": 2071092,
+      "customer_inquiry_text": "@AppleSupport this new update is terrible. Every app is crashing!",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "APP_SPECIFIC_MALFUNCTION",
+      "human_decision": "REJECT",
+      "human_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "is_ambiguous": false,
+      "focal_grievance": "Every app is crashing after the update",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2071092,
+        "conversation_id": 2071092,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 42,
+      "tweet_id": 229207,
+      "conversation_id": 229207,
+      "customer_inquiry_text": "I need to submit an bug report to @115858 in regards to their iOS 11 update. I have more infor on the podcast app not working.",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "APP_SPECIFIC_MALFUNCTION",
+      "human_decision": "ACCEPT",
+      "human_intent": "APP_SPECIFIC_MALFUNCTION",
+      "is_ambiguous": false,
+      "focal_grievance": "The customer explicitly reports the Podcasts app not working and wants to submit a bug report.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 229207,
+        "conversation_id": 229207,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 43,
+      "tweet_id": 2555457,
+      "conversation_id": 2555457,
+      "customer_inquiry_text": "What is the point in downloading movies using the iTunes app on an iPad if the TV app won’t play them back when traveling with no WiFi? This bug has existed since iOS 10.2. How is it still a thing? The TV app is useless. @AppleSupport",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "APP_SPECIFIC_MALFUNCTION",
+      "human_decision": "ACCEPT",
+      "human_intent": "APP_SPECIFIC_MALFUNCTION",
+      "is_ambiguous": false,
+      "focal_grievance": "TV app cannot play downloaded movies without Wi-Fi",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2555457,
+        "conversation_id": 2555457,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 44,
+      "tweet_id": 737006,
+      "conversation_id": 737006,
+      "customer_inquiry_text": "If you haven’t updated your iPhone, I wouldn’t recommend it. My apps have been constantly crashing and my battery is drained. @AppleSupport",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "APP_SPECIFIC_MALFUNCTION",
+      "human_decision": "REJECT",
+      "human_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "is_ambiguous": false,
+      "focal_grievance": "Multiple apps are constantly crashing after the update, indicating a broader system/device failure rather than one isolated app.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 737006,
+        "conversation_id": 737006,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 45,
+      "tweet_id": 552205,
+      "conversation_id": 552205,
+      "customer_inquiry_text": "@AppleSupport ApplePay isn’t accepting my home address on certain apps, and the app creator says the bug isn’t on their end.",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "APP_SPECIFIC_MALFUNCTION",
+      "human_decision": "ACCEPT",
+      "human_intent": "APP_SPECIFIC_MALFUNCTION",
+      "is_ambiguous": false,
+      "focal_grievance": "Apple Pay does not accept the home address in certain apps",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 552205,
+        "conversation_id": 552205,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 46,
+      "tweet_id": 294912,
+      "conversation_id": 294912,
+      "customer_inquiry_text": "@AppleSupport @115858 #ios1102 Problems: draining battery like hell, Constantly Iphone and keyboard freezing, APPS crashing... etc ... HELP!",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "APP_SPECIFIC_MALFUNCTION",
+      "human_decision": "REJECT",
+      "human_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "is_ambiguous": false,
+      "focal_grievance": "The complaint spans the iPhone itself, with freezing and apps crashing; this is broader than an isolated app issue.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 294912,
+        "conversation_id": 294912,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 47,
+      "tweet_id": 2051238,
+      "conversation_id": 2051238,
+      "customer_inquiry_text": "@115858 ever since this update my phone has been bugging apps have been crashing my iTunes music app is messing up!",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "APP_SPECIFIC_MALFUNCTION",
+      "human_decision": "ACCEPT",
+      "human_intent": "APP_SPECIFIC_MALFUNCTION",
+      "is_ambiguous": false,
+      "focal_grievance": "iTunes Music app is malfunctioning after the update",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2051238,
+        "conversation_id": 2051238,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 48,
+      "tweet_id": 1708492,
+      "conversation_id": 1708492,
+      "customer_inquiry_text": "@AppleSupport again the music app keeps crashing without any reason.\nTried restarting and no use.\nSee the video.\niPhone 6 plus - iOS11.0.3 https://t.co/6VpYeHL8aK",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "APP_SPECIFIC_MALFUNCTION",
+      "human_decision": "ACCEPT",
+      "human_intent": "APP_SPECIFIC_MALFUNCTION",
+      "is_ambiguous": false,
+      "focal_grievance": "The Music app repeatedly crashes; it is a named app-specific failure.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1708492,
+        "conversation_id": 1708492,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 49,
+      "tweet_id": 1874636,
+      "conversation_id": 1874636,
+      "customer_inquiry_text": "@AppleSupport any idea why my contacts have become lost from the message headers? It’s happened since last update. (iPhone 5s)",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "DATA_LOSS_RECOVERY",
+      "human_decision": "ACCEPT",
+      "human_intent": "DATA_LOSS_RECOVERY",
+      "is_ambiguous": false,
+      "focal_grievance": "Contacts have disappeared from message headers",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1874636,
+        "conversation_id": 1874636,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 50,
+      "tweet_id": 300611,
+      "conversation_id": 300611,
+      "customer_inquiry_text": "@AppleSupport there is bug after iOS 11. If you Open camera, take a picture and click  “delete”, it doesn’t work! the photo is still there!",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "DATA_LOSS_RECOVERY",
+      "human_decision": "ACCEPT",
+      "human_intent": "DATA_LOSS_RECOVERY",
+      "is_ambiguous": false,
+      "focal_grievance": "The native Camera app does not delete photos as expected; this is an app-specific malfunction.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 300611,
+        "conversation_id": 300611,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 51,
+      "tweet_id": 2783276,
+      "conversation_id": 2783276,
+      "customer_inquiry_text": "@AppleSupport Facing prob in my 6 &amp; spouse 5s since upgrading to iOS 11 Apart frm draining battery wrong battery %display 5scudn’t be restarted on frozen logo Tk 2 Apple store reloaded iOS all data lost. disgusting is iCloud data cud-not be retrieved. Losing faith very fast.",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "DATA_LOSS_RECOVERY",
+      "human_decision": "ACCEPT",
+      "human_intent": "DATA_LOSS_RECOVERY",
+      "is_ambiguous": false,
+      "focal_grievance": "The customer explicitly reports data loss after an iOS reload and inability to retrieve iCloud data.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2783276,
+        "conversation_id": 2783276,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 52,
+      "tweet_id": 2001925,
+      "conversation_id": 2001925,
+      "customer_inquiry_text": "@123857 iOS 11.2 not signed for iPhone X? Can’t restore data…",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "DATA_LOSS_RECOVERY",
+      "human_decision": "ACCEPT",
+      "human_intent": "DATA_LOSS_RECOVERY",
+      "is_ambiguous": false,
+      "focal_grievance": "The explicit problem is inability to restore data.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2001925,
+        "conversation_id": 2001925,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 53,
+      "tweet_id": 122311,
+      "conversation_id": 122311,
+      "customer_inquiry_text": "@AppleSupport Just noticed, my iTunes backup size grew from 10GB to 50GB while iCloud backup is still 6GB with my new phone. Does iTunes save photos from the phone in high resolution even with iCloud Photo Library enabled? Here it says it doesn’t. https://t.co/iZ6wglsK3O",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "DATA_LOSS_RECOVERY",
+      "human_decision": "REJECT",
+      "human_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "is_ambiguous": false,
+      "focal_grievance": "This is an informational question about backup/photo storage behavior, not a concrete failure covered by the current taxonomy.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 122311,
+        "conversation_id": 122311,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 54,
+      "tweet_id": 2373285,
+      "conversation_id": 2373285,
+      "customer_inquiry_text": "@AppleSupport what is wrong with your customer service/support system? I lost my phone, can't sign into Find My Phone, and can't reset my password - I CAN\"T GET TEXTS W/OUT A PHONE - and I can't call the support line w/out phone either.  why can't i use the chat feature?",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "DATA_LOSS_RECOVERY",
+      "human_decision": "REJECT",
+      "human_intent": "ACCOUNT_APPLE_ID_ACCESS",
+      "is_ambiguous": false,
+      "focal_grievance": "The customer cannot sign in/reset the account and cannot access Find My after losing the phone; account access is the focal blocker.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2373285,
+        "conversation_id": 2373285,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 55,
+      "tweet_id": 181442,
+      "conversation_id": 181442,
+      "customer_inquiry_text": "@AppleSupport  how long is it going to take for my backup to complete on my iPhone X !? It’s been hours and my pictures still haven’t been added into my picture app yet 😰",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "DATA_LOSS_RECOVERY",
+      "human_decision": "REJECT",
+      "human_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "is_ambiguous": false,
+      "focal_grievance": "Backup has not completed and photos are not appearing",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 181442,
+        "conversation_id": 181442,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 56,
+      "tweet_id": 2856794,
+      "conversation_id": 2856794,
+      "customer_inquiry_text": "My phone deleted all my text threads and is maybe not getting texts?? Who can know! and the only fix is \"replace your phone\" so THANK U @115858 and lol @ everyone who suggested I replace my iPhone with another iPhone",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "DATA_LOSS_RECOVERY",
+      "human_decision": "ACCEPT",
+      "human_intent": "DATA_LOSS_RECOVERY",
+      "is_ambiguous": false,
+      "focal_grievance": "The phone deleted text threads; loss/recovery of user content is the primary issue.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2856794,
+        "conversation_id": 2856794,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 57,
+      "tweet_id": 2953805,
+      "conversation_id": 2953805,
+      "customer_inquiry_text": "@115858 how do I unlock my phone if I accident razored off part of my fingerprint. Asking for a friend.",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "SCREEN_DISPLAY_TOUCH_BIOMETRICS",
+      "human_decision": "ACCEPT",
+      "human_intent": "SCREEN_DISPLAY_TOUCH_BIOMETRICS",
+      "is_ambiguous": false,
+      "focal_grievance": "Unable to unlock phone after damaging fingerprint",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2953805,
+        "conversation_id": 2953805,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 58,
+      "tweet_id": 2901948,
+      "conversation_id": 2901948,
+      "customer_inquiry_text": "@AppleSupport I have bought iPhone X 256 GB.\nFace recognition is very dangerous.\nSet my Face ID, it opens my banks app and allow transactions.",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "SCREEN_DISPLAY_TOUCH_BIOMETRICS",
+      "human_decision": "ACCEPT",
+      "human_intent": "SCREEN_DISPLAY_TOUCH_BIOMETRICS",
+      "is_ambiguous": false,
+      "focal_grievance": "The complaint is specifically about Face ID/biometric behavior and its use for authentication in apps.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2901948,
+        "conversation_id": 2901948,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 59,
+      "tweet_id": 1949792,
+      "conversation_id": 1949792,
+      "customer_inquiry_text": "@AppleSupport message app stopped working on iphone 6s plus running 11.0.3 ... when trying to open, long delay, then back to home screen",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "SCREEN_DISPLAY_TOUCH_BIOMETRICS",
+      "human_decision": "REJECT",
+      "human_intent": "APP_SPECIFIC_MALFUNCTION",
+      "is_ambiguous": false,
+      "focal_grievance": "Messages app crashes back to the Home screen",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1949792,
+        "conversation_id": 1949792,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 60,
+      "tweet_id": 2047848,
+      "conversation_id": 2047848,
+      "customer_inquiry_text": "@AppleSupport I’m really not happy with what’s happening with my phone. It’s freezing for 10 minutes. Restarting itself, and the screen",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "SCREEN_DISPLAY_TOUCH_BIOMETRICS",
+      "human_decision": "REJECT",
+      "human_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "is_ambiguous": false,
+      "focal_grievance": "Phone freezes and restarts itself",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2047848,
+        "conversation_id": 2047848,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 61,
+      "tweet_id": 1918561,
+      "conversation_id": 1918561,
+      "customer_inquiry_text": "What kind of joke is #iOS11 ??? I have an iPhone 7 and apps disappear, screen lags... @115858 @AppleSupport stop forcing people upgrade shit https://t.co/k00g2rXEyg",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "SCREEN_DISPLAY_TOUCH_BIOMETRICS",
+      "human_decision": "REJECT",
+      "human_intent": "PERFORMANCE_SLOWDOWN_LATENCY",
+      "is_ambiguous": false,
+      "focal_grievance": "The clearest technical symptom is screen lag; app disappearance is also reported, but there is no freeze/reboot.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1918561,
+        "conversation_id": 1918561,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 62,
+      "tweet_id": 2206030,
+      "conversation_id": 2206030,
+      "customer_inquiry_text": "@115858 I have 6S in Egypt and I can't repair the screen cracked as no original screens ! What can I do ?",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "SCREEN_DISPLAY_TOUCH_BIOMETRICS",
+      "human_decision": "ACCEPT",
+      "human_intent": "SCREEN_DISPLAY_TOUCH_BIOMETRICS",
+      "is_ambiguous": false,
+      "focal_grievance": "The customer has a cracked screen and is asking about screen repair availability.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2206030,
+        "conversation_id": 2206030,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 63,
+      "tweet_id": 2193450,
+      "conversation_id": 2193450,
+      "customer_inquiry_text": "@AppleSupport Ever since installing latest #iPhoneUpdate my iPhone 6+ is virtually useless. Opens apps, switches to FaceTime, places calls without prompt &amp; touch screen won't let me answer calls. Can you help me?",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "SCREEN_DISPLAY_TOUCH_BIOMETRICS",
+      "human_decision": "ACCEPT",
+      "human_intent": "SCREEN_DISPLAY_TOUCH_BIOMETRICS",
+      "is_ambiguous": false,
+      "focal_grievance": "Touch screen won't respond when answering calls",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2193450,
+        "conversation_id": 2193450,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 64,
+      "tweet_id": 798832,
+      "conversation_id": 798832,
+      "customer_inquiry_text": "so i need to know WHY i can’t read my notifications when i pull down. i don’t want my lock screen to pop up @115858 https://t.co/sv6OMetVdl",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "SCREEN_DISPLAY_TOUCH_BIOMETRICS",
+      "human_decision": "REJECT",
+      "human_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "is_ambiguous": false,
+      "focal_grievance": "Notification/lock-screen behavior is not represented by a dedicated current intent and is not clearly an app malfunction.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 798832,
+        "conversation_id": 798832,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 65,
+      "tweet_id": 740603,
+      "conversation_id": 740603,
+      "customer_inquiry_text": "My iPhone was good to me b4 this new update. Now it’s slow as shit, closes apps randomly, says I have 1% on a full charge lol I wonder why 🤔",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "HARDWARE_CHARGING_POWER_CABLE",
+      "human_decision": "REJECT",
+      "human_intent": "PERFORMANCE_SLOWDOWN_LATENCY",
+      "is_ambiguous": false,
+      "focal_grievance": "The main complaint is that the phone became very slow; random app closing and battery reporting are secondary.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 740603,
+        "conversation_id": 740603,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 66,
+      "tweet_id": 1588817,
+      "conversation_id": 1588817,
+      "customer_inquiry_text": "Argggh my iphone is stuck in continuous apple logo loop and as soon as power cable is disconnected, the screen goes blank instantly #help",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "HARDWARE_CHARGING_POWER_CABLE",
+      "human_decision": "ACCEPT",
+      "human_intent": "HARDWARE_CHARGING_POWER_CABLE",
+      "is_ambiguous": false,
+      "focal_grievance": "The phone is stuck in a continuous Apple-logo boot loop and the screen goes blank when power is removed.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1588817,
+        "conversation_id": 1588817,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 67,
+      "tweet_id": 2728200,
+      "conversation_id": 2728200,
+      "customer_inquiry_text": "Dear @115858 please observe this screen recording. Initially my battery is showing 5% and now when I switch on my charger, it shows 5% again I disconnected and reconnected my charger it showed 13%. What is this bug of yours??  Please fix it. https://t.co/gVR0kzrfuf",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "HARDWARE_CHARGING_POWER_CABLE",
+      "human_decision": "REJECT",
+      "human_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "is_ambiguous": false,
+      "focal_grievance": "Battery percentage is behaving inconsistently around charging; this is battery behavior/reporting rather than a failure to charge.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2728200,
+        "conversation_id": 2728200,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 68,
+      "tweet_id": 2815631,
+      "conversation_id": 2815631,
+      "customer_inquiry_text": "@AppleSupport YO does using your phone while charging i️t mess up the battery",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "HARDWARE_CHARGING_POWER_CABLE",
+      "human_decision": "ACCEPT",
+      "human_intent": "HARDWARE_CHARGING_POWER_CABLE",
+      "is_ambiguous": false,
+      "focal_grievance": "Battery behavior/health while charging",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2815631,
+        "conversation_id": 2815631,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 69,
+      "tweet_id": 945501,
+      "conversation_id": 945501,
+      "customer_inquiry_text": "@AppleSupport You have been charging me bit more of US 10 per month for a suscripton to itunes I never requested. I want my money back asap",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "HARDWARE_CHARGING_POWER_CABLE",
+      "human_decision": "ACCEPT",
+      "human_intent": "HARDWARE_CHARGING_POWER_CABLE",
+      "is_ambiguous": false,
+      "focal_grievance": "Unexpected iTunes subscription charge and refund request",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 945501,
+        "conversation_id": 945501,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 70,
+      "tweet_id": 1296825,
+      "conversation_id": 1296825,
+      "customer_inquiry_text": "@AppleSupport my Bluetooth headphones won’t pair since I updated to 11.0.3 - and my battery isn’t holding a charge!",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "HARDWARE_CHARGING_POWER_CABLE",
+      "human_decision": "REJECT",
+      "human_intent": "CONNECTIVITY_WIFI_BLUETOOTH",
+      "is_ambiguous": false,
+      "focal_grievance": "Bluetooth headphones will not pair",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1296825,
+        "conversation_id": 1296825,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 71,
+      "tweet_id": 1898008,
+      "conversation_id": 1898008,
+      "customer_inquiry_text": "@AppleSupport why after iOS 11.0.3 updates do both my iPhone5s have intermittent charging issues when using OEM wall chargers?",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "HARDWARE_CHARGING_POWER_CABLE",
+      "human_decision": "ACCEPT",
+      "human_intent": "HARDWARE_CHARGING_POWER_CABLE",
+      "is_ambiguous": false,
+      "focal_grievance": "Intermittent charging with OEM wall chargers",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1898008,
+        "conversation_id": 1898008,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 72,
+      "tweet_id": 1828500,
+      "conversation_id": 1828500,
+      "customer_inquiry_text": "@115858 @AppleSupport this has happened to my MacBook charger - can I get a replacement? https://t.co/QPE5L65TDD",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "HARDWARE_CHARGING_POWER_CABLE",
+      "human_decision": "ACCEPT",
+      "human_intent": "HARDWARE_CHARGING_POWER_CABLE",
+      "is_ambiguous": false,
+      "focal_grievance": "MacBook charger replacement",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1828500,
+        "conversation_id": 1828500,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 73,
+      "tweet_id": 2238187,
+      "conversation_id": 2238187,
+      "customer_inquiry_text": "@AppleSupport I really hate how Apple Music works with having a family. Anytime more than one person in a family wants to listen it kicks the other off, why?",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "AUDIO_SOUND_SPEAKER_MIC",
+      "human_decision": "ACCEPT",
+      "human_intent": "AUDIO_SOUND_SPEAKER_MIC",
+      "is_ambiguous": false,
+      "focal_grievance": "Apple Music family playback kicks another family member off; the named app/service is malfunctioning.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2238187,
+        "conversation_id": 2238187,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 74,
+      "tweet_id": 246527,
+      "conversation_id": 246527,
+      "customer_inquiry_text": "@AppleSupport why my iPhone do some weirds “beeps” when someone send me a text? I mean not the normal sound, do two doble beeps!?",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "AUDIO_SOUND_SPEAKER_MIC",
+      "human_decision": "ACCEPT",
+      "human_intent": "AUDIO_SOUND_SPEAKER_MIC",
+      "is_ambiguous": false,
+      "focal_grievance": "Unexpected/double notification sound when receiving texts",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 246527,
+        "conversation_id": 246527,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 75,
+      "tweet_id": 2863567,
+      "conversation_id": 2863567,
+      "customer_inquiry_text": "I wanted to say the #iPhoneX is awesome but I can’t. It sucks; no one can hear me &amp; it does not play voicemails. Stores won’t take it back. @AppleSupport @115858 @115714",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "AUDIO_SOUND_SPEAKER_MIC",
+      "human_decision": "ACCEPT",
+      "human_intent": "AUDIO_SOUND_SPEAKER_MIC",
+      "is_ambiguous": false,
+      "focal_grievance": "Microphone/call audio and voicemail playback problems",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2863567,
+        "conversation_id": 2863567,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 76,
+      "tweet_id": 1766076,
+      "conversation_id": 1766076,
+      "customer_inquiry_text": "@AppleSupport after I updated my os yo 11.03 last night my music doesn’t play through car audio system! It charges alright, phone works too!",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "AUDIO_SOUND_SPEAKER_MIC",
+      "human_decision": "ACCEPT",
+      "human_intent": "AUDIO_SOUND_SPEAKER_MIC",
+      "is_ambiguous": false,
+      "focal_grievance": "Music audio does not play through car audio system",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1766076,
+        "conversation_id": 1766076,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 77,
+      "tweet_id": 798827,
+      "conversation_id": 798827,
+      "customer_inquiry_text": "Wow @115858, your own app won’t open due to “security.” An audio file created on the iPhone in the Voice Recorder app playing in Quicktime. https://t.co/K30YM5tMSk",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "AUDIO_SOUND_SPEAKER_MIC",
+      "human_decision": "REJECT",
+      "human_intent": "APP_SPECIFIC_MALFUNCTION",
+      "is_ambiguous": false,
+      "focal_grievance": "Voice Recorder/QuickTime audio file access issue",
+      "reviewer_notes": "Not an acoustic symptom; the issue is application/file access.",
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 798827,
+        "conversation_id": 798827,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 78,
+      "tweet_id": 2750445,
+      "conversation_id": 2750445,
+      "customer_inquiry_text": "Hey @AppleSupport what is going on here? That was a browser window playing a video. I can still hear it, so the computer hasn't crashed bit it's non responsive. #help! https://t.co/4u4kYEvLcr",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "AUDIO_SOUND_SPEAKER_MIC",
+      "human_decision": "REJECT",
+      "human_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "is_ambiguous": false,
+      "focal_grievance": "Computer becomes non-responsive while video continues playing",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2750445,
+        "conversation_id": 2750445,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 79,
+      "tweet_id": 174975,
+      "conversation_id": 174975,
+      "customer_inquiry_text": "Hey @AppleSupport what’s with this volume thing and the @115888 app when I switch apps on iPhone X? https://t.co/oXvO3qqNcs",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "AUDIO_SOUND_SPEAKER_MIC",
+      "human_decision": "ACCEPT",
+      "human_intent": "AUDIO_SOUND_SPEAKER_MIC",
+      "is_ambiguous": false,
+      "focal_grievance": "Volume/audio control issue when switching apps",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 174975,
+        "conversation_id": 174975,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 80,
+      "tweet_id": 947768,
+      "conversation_id": 947768,
+      "customer_inquiry_text": "@AppleSupport hey guys i play my apple music from my imac to my stereo. is there a way to control the browser volume separate from music??",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "AUDIO_SOUND_SPEAKER_MIC",
+      "human_decision": "ACCEPT",
+      "human_intent": "AUDIO_SOUND_SPEAKER_MIC",
+      "is_ambiguous": false,
+      "focal_grievance": "Separate browser and music audio volume control",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 947768,
+        "conversation_id": 947768,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 81,
+      "tweet_id": 1106641,
+      "conversation_id": 1106641,
+      "customer_inquiry_text": "@AppleSupport why is ios11 so bad on my phone and why does iCloud corrupt all my photos? Seriously I can barely use @128065 anymore.",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "ACCOUNT_APPLE_ID_ACCESS",
+      "human_decision": "REJECT",
+      "human_intent": "DATA_LOSS_RECOVERY",
+      "is_ambiguous": false,
+      "focal_grievance": "Photos are corrupted or missing in iCloud",
+      "reviewer_notes": "Photo/data loss is the primary actionable issue.",
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1106641,
+        "conversation_id": 1106641,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 82,
+      "tweet_id": 154443,
+      "conversation_id": 154443,
+      "customer_inquiry_text": "@applesupport nothing but woes since installing 10.13.1: network not recognized, Gmail doesn't load sometimes, network disconnect, re-entering password repeatedly, etc. How can you lunch since a bugged up OS?",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "ACCOUNT_APPLE_ID_ACCESS",
+      "human_decision": "REJECT",
+      "human_intent": "CONNECTIVITY_WIFI_BLUETOOTH",
+      "is_ambiguous": false,
+      "focal_grievance": "Network connection repeatedly disconnects / asks for password",
+      "reviewer_notes": "Connectivity is the closest current taxonomy intent.",
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 154443,
+        "conversation_id": 154443,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 83,
+      "tweet_id": 1886647,
+      "conversation_id": 1886647,
+      "customer_inquiry_text": "I'm locked out of my fuck ass iphone please help @AppleSupport",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "ACCOUNT_APPLE_ID_ACCESS",
+      "human_decision": "ACCEPT",
+      "human_intent": "ACCOUNT_APPLE_ID_ACCESS",
+      "is_ambiguous": false,
+      "focal_grievance": "Locked out of iPhone",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1886647,
+        "conversation_id": 1886647,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 84,
+      "tweet_id": 2039858,
+      "conversation_id": 2039858,
+      "customer_inquiry_text": "@116333 why is iCloud Drive so slow to sync? I’ve had to drive from work to home today, then later from home to work to copy to usb 👎🏻",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "ACCOUNT_APPLE_ID_ACCESS",
+      "human_decision": "REJECT",
+      "human_intent": "APP_SPECIFIC_MALFUNCTION",
+      "is_ambiguous": false,
+      "focal_grievance": "iCloud Drive sync is very slow",
+      "reviewer_notes": "Current taxonomy has no dedicated iCloud Drive intent.",
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2039858,
+        "conversation_id": 2039858,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 85,
+      "tweet_id": 897704,
+      "conversation_id": 897704,
+      "customer_inquiry_text": "Hey @AppleSupport I have been having issues with the WiFi connection it requires me over and over the password, and the email is really slow",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "ACCOUNT_APPLE_ID_ACCESS",
+      "human_decision": "REJECT",
+      "human_intent": "CONNECTIVITY_WIFI_BLUETOOTH",
+      "is_ambiguous": false,
+      "focal_grievance": "Wi-Fi repeatedly asks for password",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 897704,
+        "conversation_id": 897704,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 86,
+      "tweet_id": 820686,
+      "conversation_id": 820686,
+      "customer_inquiry_text": "If my Apple ID signs me out one more time I’ll hit the roof @AppleSupport #ios11update",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "ACCOUNT_APPLE_ID_ACCESS",
+      "human_decision": "ACCEPT",
+      "human_intent": "ACCOUNT_APPLE_ID_ACCESS",
+      "is_ambiguous": false,
+      "focal_grievance": "Apple ID repeatedly signs out",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 820686,
+        "conversation_id": 820686,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 87,
+      "tweet_id": 2311842,
+      "conversation_id": 2311842,
+      "customer_inquiry_text": "@AppleSupport don’t fucking give me thousands of notifications to put in my password and when i do this happens, i fucking hate y’all https://t.co/K2AFHC8RI1",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "ACCOUNT_APPLE_ID_ACCESS",
+      "human_decision": "ACCEPT",
+      "human_intent": "ACCOUNT_APPLE_ID_ACCESS",
+      "is_ambiguous": false,
+      "focal_grievance": "Repeated Apple ID password prompts",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2311842,
+        "conversation_id": 2311842,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 88,
+      "tweet_id": 1003753,
+      "conversation_id": 1003753,
+      "customer_inquiry_text": "@AppleSupport I’m getting the following error when trying to access my Apple ID - iPhone 6s plus (11.0.3).  HELP!! https://t.co/qPPhunkwEs",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "ACCOUNT_APPLE_ID_ACCESS",
+      "human_decision": "ACCEPT",
+      "human_intent": "ACCOUNT_APPLE_ID_ACCESS",
+      "is_ambiguous": false,
+      "focal_grievance": "Error accessing Apple ID",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1003753,
+        "conversation_id": 1003753,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 89,
+      "tweet_id": 1765110,
+      "conversation_id": 1765110,
+      "customer_inquiry_text": "@115858 2017 MacBook Pro won’t charge, iPad won’t update, falsely says not connected to internet, desktop &gt; hour to update. No work possible",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "BILLING_CHARGE_REFUND_DISPUTE",
+      "human_decision": "REJECT",
+      "human_intent": "HARDWARE_CHARGING_POWER_CABLE",
+      "is_ambiguous": false,
+      "focal_grievance": "MacBook Pro will not charge",
+      "reviewer_notes": "No billing issue; charging is the strongest actionable symptom.",
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1765110,
+        "conversation_id": 1765110,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 90,
+      "tweet_id": 1834108,
+      "conversation_id": 1834108,
+      "customer_inquiry_text": "@115858 @AppleSupport since updating to 11.0.3 I have needed to charge my phone twice a day. Is this related ? Any help or options to fix?",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "BILLING_CHARGE_REFUND_DISPUTE",
+      "human_decision": "REJECT",
+      "human_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "is_ambiguous": false,
+      "focal_grievance": "Battery life worsened after iOS update",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1834108,
+        "conversation_id": 1834108,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 91,
+      "tweet_id": 154425,
+      "conversation_id": 154425,
+      "customer_inquiry_text": "It’s just 8am and after a full overnight charge, my @115858 iPhone is at 25% battery. \nDo yourself a favor and don’t buy an iPhone. https://t.co/OBMoOJDLPP",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "BILLING_CHARGE_REFUND_DISPUTE",
+      "human_decision": "REJECT",
+      "human_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "is_ambiguous": false,
+      "focal_grievance": "Battery drains rapidly overnight",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 154425,
+        "conversation_id": 154425,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 92,
+      "tweet_id": 2063439,
+      "conversation_id": 2063439,
+      "customer_inquiry_text": "@AppleSupport hi why does my iPhone keep doing this when using it, it won't hold charge and the back camera keeps heating up https://t.co/0eFAp8ZS9a",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "BILLING_CHARGE_REFUND_DISPUTE",
+      "human_decision": "REJECT",
+      "human_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "is_ambiguous": false,
+      "focal_grievance": "iPhone battery drains quickly and heats around camera",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2063439,
+        "conversation_id": 2063439,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 93,
+      "tweet_id": 589565,
+      "conversation_id": 589565,
+      "customer_inquiry_text": "@115858 you charge a small fortune for an iphone and can’t make it type the letter “I️ “ properly. Figure your shit out already!",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "BILLING_CHARGE_REFUND_DISPUTE",
+      "human_decision": "REJECT",
+      "human_intent": "KEYBOARD_TYPING_AUTOCORRECT_ISSUE",
+      "is_ambiguous": false,
+      "focal_grievance": "Letter I cannot be typed correctly",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 589565,
+        "conversation_id": 589565,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 94,
+      "tweet_id": 2922669,
+      "conversation_id": 2922669,
+      "customer_inquiry_text": "@AppleSupport the battery with iOS 11 FUCKING SUCKS. I shouldn’t have to charge 3 times a day. I have a brand new phone",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "BILLING_CHARGE_REFUND_DISPUTE",
+      "human_decision": "REJECT",
+      "human_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "is_ambiguous": false,
+      "focal_grievance": "Battery requires charging multiple times per day",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2922669,
+        "conversation_id": 2922669,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 95,
+      "tweet_id": 756536,
+      "conversation_id": 756536,
+      "customer_inquiry_text": "@AppleSupport @115858 I'm charged ₹60 for free subscription on iTunes. Please provide me details why I'm charged when it's free. https://t.co/DORPM0mBla",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "BILLING_CHARGE_REFUND_DISPUTE",
+      "human_decision": "ACCEPT",
+      "human_intent": "BILLING_CHARGE_REFUND_DISPUTE",
+      "is_ambiguous": false,
+      "focal_grievance": "Charged for a supposedly free iTunes subscription",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 756536,
+        "conversation_id": 756536,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 96,
+      "tweet_id": 1864165,
+      "conversation_id": 1864165,
+      "customer_inquiry_text": "@applesupport my phone won't hold a charge since update 11.0.3. Affecting my ability to conduct business. #iphone7 #batterydrain #apple",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "BILLING_CHARGE_REFUND_DISPUTE",
+      "human_decision": "REJECT",
+      "human_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "is_ambiguous": false,
+      "focal_grievance": "Battery no longer holds charge after iOS update",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1864165,
+        "conversation_id": 1864165,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 97,
+      "tweet_id": 2014830,
+      "conversation_id": 2014830,
+      "customer_inquiry_text": "@AppleSupport charged for the fight that never actually downloaded. We couldn’t get passed the order page??? https://t.co/e4XUiGC2OX",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "ORDER_PURCHASE_SHIPPING_STATUS",
+      "human_decision": "REJECT",
+      "human_intent": "BILLING_CHARGE_REFUND_DISPUTE",
+      "is_ambiguous": false,
+      "focal_grievance": "Charged for content that did not download",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2014830,
+        "conversation_id": 2014830,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 98,
+      "tweet_id": 553544,
+      "conversation_id": 553544,
+      "customer_inquiry_text": "Seriously, @115858? I have to manually disable notifications for all apps, with the phone resetting every 4 seconds, in order to get my phone working again? It's like a really annoying game of race the clock. iOS 11 broke my iPhone X overnight. What a pain! https://t.co/dwtZImORJr",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "ORDER_PURCHASE_SHIPPING_STATUS",
+      "human_decision": "REJECT",
+      "human_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "is_ambiguous": false,
+      "focal_grievance": "Phone repeatedly resets after iOS 11",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 553544,
+        "conversation_id": 553544,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 99,
+      "tweet_id": 2029687,
+      "conversation_id": 2029687,
+      "customer_inquiry_text": "@AppleSupport why are my messages being sent, but in my screen shows it's still trying to send and shows no delivery? And then deletes?",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "ORDER_PURCHASE_SHIPPING_STATUS",
+      "human_decision": "REJECT",
+      "human_intent": "APP_SPECIFIC_MALFUNCTION",
+      "is_ambiguous": false,
+      "focal_grievance": "Messages fail to send and disappear",
+      "reviewer_notes": "Current taxonomy has no dedicated Messages intent.",
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2029687,
+        "conversation_id": 2029687,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 100,
+      "tweet_id": 1912997,
+      "conversation_id": 1912997,
+      "customer_inquiry_text": "@AppleSupport if i order an iphone from https://t.co/hIJbdY3Djh it will be delivered to my house or p o box ?",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "ORDER_PURCHASE_SHIPPING_STATUS",
+      "human_decision": "ACCEPT",
+      "human_intent": "ORDER_PURCHASE_SHIPPING_STATUS",
+      "is_ambiguous": false,
+      "focal_grievance": "iPhone delivery address eligibility",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1912997,
+        "conversation_id": 1912997,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 101,
+      "tweet_id": 2012480,
+      "conversation_id": 2012480,
+      "customer_inquiry_text": "Say hello to the future. Order iPhone X.",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "ORDER_PURCHASE_SHIPPING_STATUS",
+      "human_decision": "ACCEPT",
+      "human_intent": "ORDER_PURCHASE_SHIPPING_STATUS",
+      "is_ambiguous": false,
+      "focal_grievance": "Promotional/product-launch content without a support request",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2012480,
+        "conversation_id": 2012480,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 102,
+      "tweet_id": 1148813,
+      "conversation_id": 1148813,
+      "customer_inquiry_text": "How does the iPhone pre-order work? Is it for online orders only? @AppleSupport",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "ORDER_PURCHASE_SHIPPING_STATUS",
+      "human_decision": "ACCEPT",
+      "human_intent": "ORDER_PURCHASE_SHIPPING_STATUS",
+      "is_ambiguous": false,
+      "focal_grievance": "How iPhone pre-order works",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1148813,
+        "conversation_id": 1148813,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 103,
+      "tweet_id": 2302112,
+      "conversation_id": 2302112,
+      "customer_inquiry_text": "@AppleSupport Hello teamApple, order number W421888395, I need to talk urgently about delivering this order nearby, ur phone is not dialin",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "ORDER_PURCHASE_SHIPPING_STATUS",
+      "human_decision": "ACCEPT",
+      "human_intent": "ORDER_PURCHASE_SHIPPING_STATUS",
+      "is_ambiguous": false,
+      "focal_grievance": "Urgent order delivery assistance",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2302112,
+        "conversation_id": 2302112,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 104,
+      "tweet_id": 247610,
+      "conversation_id": 247610,
+      "customer_inquiry_text": "@AppleSupport \nI ordered iPhone two days ago and didn't receive confirmation email until now. Is that normal?",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "ORDER_PURCHASE_SHIPPING_STATUS",
+      "human_decision": "ACCEPT",
+      "human_intent": "ORDER_PURCHASE_SHIPPING_STATUS",
+      "is_ambiguous": false,
+      "focal_grievance": "Missing order confirmation email",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 247610,
+        "conversation_id": 247610,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 105,
+      "tweet_id": 2298077,
+      "conversation_id": 2298077,
+      "customer_inquiry_text": "@115858 @AppleSupport check this fraud!! https://t.co/XKaEFph2PF",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "SECURITY_PHISHING_SUSPICIOUS_CONTACT",
+      "human_decision": "ACCEPT",
+      "human_intent": "SECURITY_PHISHING_SUSPICIOUS_CONTACT",
+      "is_ambiguous": false,
+      "focal_grievance": "Potential fraud/scam link",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2298077,
+        "conversation_id": 2298077,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 106,
+      "tweet_id": 2311579,
+      "conversation_id": 2311579,
+      "customer_inquiry_text": "@AppleSupport Wanted to let you guys know about a scam going down in your name. https://t.co/3ey3GlZGs4",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "SECURITY_PHISHING_SUSPICIOUS_CONTACT",
+      "human_decision": "ACCEPT",
+      "human_intent": "SECURITY_PHISHING_SUSPICIOUS_CONTACT",
+      "is_ambiguous": false,
+      "focal_grievance": "Report of a scam impersonating Apple",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2311579,
+        "conversation_id": 2311579,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 107,
+      "tweet_id": 2782073,
+      "conversation_id": 2782073,
+      "customer_inquiry_text": "@AppleSupport, wanted to share the email I received to help warn others. I assume it’s a scam? https://t.co/Fwha1bbUu5",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "SECURITY_PHISHING_SUSPICIOUS_CONTACT",
+      "human_decision": "ACCEPT",
+      "human_intent": "SECURITY_PHISHING_SUSPICIOUS_CONTACT",
+      "is_ambiguous": false,
+      "focal_grievance": "Question about whether an email is a scam",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2782073,
+        "conversation_id": 2782073,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 108,
+      "tweet_id": 505101,
+      "conversation_id": 505101,
+      "customer_inquiry_text": "@AppleSupport Hey, I think you've a scammer out there have gotten several calls from  a Lexington Park number saying your going to delete my iCloud account!!",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "SECURITY_PHISHING_SUSPICIOUS_CONTACT",
+      "human_decision": "ACCEPT",
+      "human_intent": "SECURITY_PHISHING_SUSPICIOUS_CONTACT",
+      "is_ambiguous": false,
+      "focal_grievance": "Suspicious calls threatening iCloud account deletion",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 505101,
+        "conversation_id": 505101,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 109,
+      "tweet_id": 1133153,
+      "conversation_id": 1133153,
+      "customer_inquiry_text": "@AppleSupport is this a scam or really Apple? See pic below that came up on my phone https://t.co/fT7cCDTgWF",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "SECURITY_PHISHING_SUSPICIOUS_CONTACT",
+      "human_decision": "ACCEPT",
+      "human_intent": "SECURITY_PHISHING_SUSPICIOUS_CONTACT",
+      "is_ambiguous": false,
+      "focal_grievance": "Verify whether a message is a scam",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1133153,
+        "conversation_id": 1133153,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 110,
+      "tweet_id": 328552,
+      "conversation_id": 328552,
+      "customer_inquiry_text": "Absolutely love getting scam emails from @115858. NOT. @AppleSupport",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "SECURITY_PHISHING_SUSPICIOUS_CONTACT",
+      "human_decision": "ACCEPT",
+      "human_intent": "SECURITY_PHISHING_SUSPICIOUS_CONTACT",
+      "is_ambiguous": false,
+      "focal_grievance": "Unwanted scam emails impersonating Apple",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 328552,
+        "conversation_id": 328552,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 111,
+      "tweet_id": 633902,
+      "conversation_id": 633902,
+      "customer_inquiry_text": "Lol @115858 wtf? I just got a call from “Scam Likely”!",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "SECURITY_PHISHING_SUSPICIOUS_CONTACT",
+      "human_decision": "ACCEPT",
+      "human_intent": "SECURITY_PHISHING_SUSPICIOUS_CONTACT",
+      "is_ambiguous": false,
+      "focal_grievance": "Suspicious scam call",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 633902,
+        "conversation_id": 633902,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 112,
+      "tweet_id": 689325,
+      "conversation_id": 689325,
+      "customer_inquiry_text": "im convinced somebody hacked my phone because this shit has been doing all kinds of fuckery that i just cant explain &amp; honestly im a little shook..... but mostly annoyed. @115858",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "SECURITY_PHISHING_SUSPICIOUS_CONTACT",
+      "human_decision": "ACCEPT",
+      "human_intent": "SECURITY_PHISHING_SUSPICIOUS_CONTACT",
+      "is_ambiguous": false,
+      "focal_grievance": "Concern that phone has been hacked",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 689325,
+        "conversation_id": 689325,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 113,
+      "tweet_id": 1807484,
+      "conversation_id": 1807484,
+      "customer_inquiry_text": "@AppleSupport @115858 https://t.co/v0KDFxlDBT",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "human_decision": "ACCEPT",
+      "human_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "is_ambiguous": false,
+      "focal_grievance": "Insufficient context; media/link only",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1807484,
+        "conversation_id": 1807484,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 114,
+      "tweet_id": 2860047,
+      "conversation_id": 2860047,
+      "customer_inquiry_text": "@AppleSupport @115948 ☹️☹️ https://t.co/byLnUWjYaI",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "human_decision": "ACCEPT",
+      "human_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "is_ambiguous": false,
+      "focal_grievance": "Insufficient context; media/link only",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2860047,
+        "conversation_id": 2860047,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 115,
+      "tweet_id": 2378883,
+      "conversation_id": 2378883,
+      "customer_inquiry_text": "@AppleSupport quick question",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "human_decision": "ACCEPT",
+      "human_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "is_ambiguous": false,
+      "focal_grievance": "Insufficient context about the actual support issue",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2378883,
+        "conversation_id": 2378883,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 116,
+      "tweet_id": 1405494,
+      "conversation_id": 1405494,
+      "customer_inquiry_text": "@115858 @AppleSupport help me!!! https://t.co/UKY0ebnVBG",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "human_decision": "ACCEPT",
+      "human_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "is_ambiguous": false,
+      "focal_grievance": "Insufficient context; help request with media/link only",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1405494,
+        "conversation_id": 1405494,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 117,
+      "tweet_id": 2866195,
+      "conversation_id": 2866195,
+      "customer_inquiry_text": "@AppleSupport help https://t.co/8HUS3cmIKl",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "human_decision": "ACCEPT",
+      "human_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "is_ambiguous": false,
+      "focal_grievance": "Insufficient context; help request with media/link only",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2866195,
+        "conversation_id": 2866195,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 118,
+      "tweet_id": 1168545,
+      "conversation_id": 1168545,
+      "customer_inquiry_text": "Wtf? @AppleSupport #ios11  @115858 #iossucks https://t.co/9EG4FD427f",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "human_decision": "ACCEPT",
+      "human_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "is_ambiguous": false,
+      "focal_grievance": "Unspecified frustration about iOS update",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1168545,
+        "conversation_id": 1168545,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 119,
+      "tweet_id": 1580440,
+      "conversation_id": 1580440,
+      "customer_inquiry_text": "What is this @115858 @AppleSupport https://t.co/r9c5OzODxz",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "human_decision": "ACCEPT",
+      "human_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "is_ambiguous": false,
+      "focal_grievance": "Insufficient context; unspecified linked content",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1580440,
+        "conversation_id": 1580440,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 120,
+      "tweet_id": 2940408,
+      "conversation_id": 2940408,
+      "customer_inquiry_text": "#Etisalat #Apple #Applecare #AppleSupport #dubaided #Dubai_consumers #TRA #BBC_DUBAI #GULF_NEWS #KHALEEJ_TIMES @115858 @AppleSupport @39782 @36393 @112852 @34651 @112853 #no_support_for_customers #etisalat_apple_playing_games #urgent_assistence https://t.co/8Bb0bWYO2d",
+      "part": "PART_1_CANDIDATE_INTENTS",
+      "candidate_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "human_decision": "ACCEPT",
+      "human_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "is_ambiguous": false,
+      "focal_grievance": "Complaint without a concrete support symptom",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2940408,
+        "conversation_id": 2940408,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 121,
+      "tweet_id": 2634938,
+      "conversation_id": 2634938,
+      "customer_inquiry_text": "@AppleSupport is there a fix for the iOS 11.1.1 battery issue yet? My battery drains while plugged in.",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "human_decision": "ACCEPT",
+      "human_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "is_ambiguous": false,
+      "focal_grievance": "Battery drains while plugged in",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2634938,
+        "conversation_id": 2634938,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 122,
+      "tweet_id": 1762817,
+      "conversation_id": 1762817,
+      "customer_inquiry_text": "OKAY @115858 MY PHONE SAYS ITS CHARGING BUT MY BATTERY WENT DOWN TWO PERCENTAGES",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "human_decision": "ACCEPT",
+      "human_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "is_ambiguous": false,
+      "focal_grievance": "Battery percentage decreases while charging",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1762817,
+        "conversation_id": 1762817,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 123,
+      "tweet_id": 2448342,
+      "conversation_id": 2448342,
+      "customer_inquiry_text": "Interesting how my #iPhone went from 10% battery to 33% after being plugged in for 2m &amp; now it’s at 28% writing this tweet. Still haven’t figured that out @115858? #fail",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "human_decision": "ACCEPT",
+      "human_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "is_ambiguous": false,
+      "focal_grievance": "Battery percentage behaves erratically while charging",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2448342,
+        "conversation_id": 2448342,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 124,
+      "tweet_id": 254686,
+      "conversation_id": 254686,
+      "customer_inquiry_text": "@AppleSupport Updated to latest IOS and my phone battery is dying. Turned off location/background refresh. Refuses charge with Apple charger",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "human_decision": "REJECT",
+      "human_intent": "HARDWARE_CHARGING_POWER_CABLE",
+      "is_ambiguous": false,
+      "focal_grievance": "Phone refuses to charge with Apple charger",
+      "reviewer_notes": "Explicit inability to charge takes precedence over general battery drain.",
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 254686,
+        "conversation_id": 254686,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 125,
+      "tweet_id": 146710,
+      "conversation_id": 146710,
+      "customer_inquiry_text": "Dear @115858 @AppleSupport - this is NOT a full battery. Phone died, put on the charger and went from 1% to 100% in 2 minutes...SORT IT OUT(I have done all the battery optimisation stuff already AND a full restore) 11.1.2 is SHITE... https://t.co/7kVeLAKAQR",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "human_decision": "ACCEPT",
+      "human_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "is_ambiguous": false,
+      "focal_grievance": "Battery percentage/reporting behaves abnormally",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 146710,
+        "conversation_id": 146710,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 126,
+      "tweet_id": 2020080,
+      "conversation_id": 2020080,
+      "customer_inquiry_text": "Ever since my phone automatically updated itself, its been shit, crashes, lags, have to restart it most days... thanks @AppleSupport @115858",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "human_decision": "ACCEPT",
+      "human_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "is_ambiguous": false,
+      "focal_grievance": "The phone crashes, freezes, and requires frequent restarts after the update.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2020080,
+        "conversation_id": 2020080,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 127,
+      "tweet_id": 371467,
+      "conversation_id": 371467,
+      "customer_inquiry_text": ".@115858 my phone is running mighty slow and experience about 4-5 crashes a day after this “update” tf Bruh?",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "human_decision": "ACCEPT",
+      "human_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "is_ambiguous": false,
+      "focal_grievance": "Frequent device crashes after update",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 371467,
+        "conversation_id": 371467,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 128,
+      "tweet_id": 2082034,
+      "conversation_id": 2082034,
+      "customer_inquiry_text": "@AppleSupport My iPhone has been extremely slow ever since I updated my phone. It will constantly freeze &amp; turn off on its own. Why is this?",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "human_decision": "ACCEPT",
+      "human_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "is_ambiguous": false,
+      "focal_grievance": "Device freezes and turns off after update",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2082034,
+        "conversation_id": 2082034,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 129,
+      "tweet_id": 1000235,
+      "conversation_id": 1000235,
+      "customer_inquiry_text": "@AppleSupport updated my phone the other day and it keeps freezing so I have to restart it. Then it’s really slow. Sort it out.",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "human_decision": "ACCEPT",
+      "human_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "is_ambiguous": false,
+      "focal_grievance": "Device repeatedly freezes and requires restart",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1000235,
+        "conversation_id": 1000235,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 130,
+      "tweet_id": 1265821,
+      "conversation_id": 1265821,
+      "customer_inquiry_text": "@116333 the the most recent update is so bad I sold my @115858 stock. Slow/ glitch/ freezing. Please stop running company into ground!!!!!",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "human_decision": "ACCEPT",
+      "human_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "is_ambiguous": false,
+      "focal_grievance": "Device freezes and glitches after update",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1265821,
+        "conversation_id": 1265821,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 131,
+      "tweet_id": 388043,
+      "conversation_id": 388043,
+      "customer_inquiry_text": "@AppleSupport - Is there an iOS 11.0.3 out soon or something? My Mail app crashes and needs a phone reboot twice daily at the moment. PITA.",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "APP_SPECIFIC_MALFUNCTION",
+      "human_decision": "ACCEPT",
+      "human_intent": "APP_SPECIFIC_MALFUNCTION",
+      "is_ambiguous": false,
+      "focal_grievance": "Mail app crashes repeatedly",
+      "reviewer_notes": "Named app is primary; reboot is a consequence.",
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 388043,
+        "conversation_id": 388043,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 132,
+      "tweet_id": 324534,
+      "conversation_id": 324534,
+      "customer_inquiry_text": "@AppleSupport updated my 7plus to 11.0.2 - cannot run more than one non-system app at a time. Apps crash, phone becomes unresponsive 😐",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "APP_SPECIFIC_MALFUNCTION",
+      "human_decision": "REJECT",
+      "human_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "is_ambiguous": false,
+      "focal_grievance": "Phone becomes unresponsive with multiple apps crashing",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 324534,
+        "conversation_id": 324534,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 133,
+      "tweet_id": 1967961,
+      "conversation_id": 1967961,
+      "customer_inquiry_text": "@115858 @AppleSupport my new iPhone 8 is giving me no end of grief. Whenever the camera is on (photo or snapchat)it either freezes or restart",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "APP_SPECIFIC_MALFUNCTION",
+      "human_decision": "REJECT",
+      "human_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "is_ambiguous": false,
+      "focal_grievance": "Device freezes/restarts when using apps",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1967961,
+        "conversation_id": 1967961,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 134,
+      "tweet_id": 804109,
+      "conversation_id": 804109,
+      "customer_inquiry_text": "@115858 @AppleSupport I can’t believe how my iphone works since iOS 11.0.2. Every app crash my phone. What the hell?! FIX IT!!!! 😠😠 #iOSCrash",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "APP_SPECIFIC_MALFUNCTION",
+      "human_decision": "REJECT",
+      "human_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "is_ambiguous": false,
+      "focal_grievance": "Phone crashes across apps",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 804109,
+        "conversation_id": 804109,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 135,
+      "tweet_id": 2925629,
+      "conversation_id": 2925629,
+      "customer_inquiry_text": "@115858 needs to update their shit my phone keeps freezing and safari is slower than dirt it’s ridiculous",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "APP_SPECIFIC_MALFUNCTION",
+      "human_decision": "REJECT",
+      "human_intent": "DEVICE_FREEZE_CRASH_REBOOT",
+      "is_ambiguous": false,
+      "focal_grievance": "Phone keeps freezing",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2925629,
+        "conversation_id": 2925629,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 136,
+      "tweet_id": 2790678,
+      "conversation_id": 2790678,
+      "customer_inquiry_text": "@AppleSupport since my contacts are on iCloud shouldn’t they automatically sync. Suppose I delete on the phone it should go from iPad too?",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "DATA_LOSS_RECOVERY",
+      "human_decision": "REJECT",
+      "human_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "is_ambiguous": false,
+      "focal_grievance": "This is an informational iCloud Contacts synchronization question, not an observed malfunction with a dedicated taxonomy intent.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2790678,
+        "conversation_id": 2790678,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 137,
+      "tweet_id": 2082705,
+      "conversation_id": 2082705,
+      "customer_inquiry_text": "Hello @AppleSupport , I can't login to my iCloud account [with right password], I also can't backup my contacts and I've lost them.",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "DATA_LOSS_RECOVERY",
+      "human_decision": "ACCEPT",
+      "human_intent": "DATA_LOSS_RECOVERY",
+      "is_ambiguous": false,
+      "focal_grievance": "The linked AppleSupport response focuses on the iCloud login error; inability to sign in is the direct access blocker.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2082705,
+        "conversation_id": 2082705,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 138,
+      "tweet_id": 2732870,
+      "conversation_id": 2732870,
+      "customer_inquiry_text": "@AppleSupport please help forgot iPhone backup password. Many iphones crashed . All my data has gone",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "DATA_LOSS_RECOVERY",
+      "human_decision": "ACCEPT",
+      "human_intent": "DATA_LOSS_RECOVERY",
+      "is_ambiguous": false,
+      "focal_grievance": "The customer reports that data has gone after crashes and asks for help with backup recovery.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2732870,
+        "conversation_id": 2732870,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 139,
+      "tweet_id": 1948006,
+      "conversation_id": 1948006,
+      "customer_inquiry_text": "@AppleSupport Since downloading IOS11.03 most of my photos have gone from my photo roll and won't re download from icloud. please help.",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "DATA_LOSS_RECOVERY",
+      "human_decision": "ACCEPT",
+      "human_intent": "DATA_LOSS_RECOVERY",
+      "is_ambiguous": false,
+      "focal_grievance": "Photos have disappeared from the photo roll and cannot be re-downloaded from iCloud.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1948006,
+        "conversation_id": 1948006,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 140,
+      "tweet_id": 2271745,
+      "conversation_id": 2271745,
+      "customer_inquiry_text": "@115858 I recently updated to 11.1.2, backed up BEFORE the update, and now I’m missing 3 years worth of photos from my iPhone.  I see that I can’t restore from previous backup (iOS 10).  What is my fix for this issue?",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "DATA_LOSS_RECOVERY",
+      "human_decision": "ACCEPT",
+      "human_intent": "DATA_LOSS_RECOVERY",
+      "is_ambiguous": false,
+      "focal_grievance": "Three years of photos are missing after an update and the customer cannot restore the previous backup.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2271745,
+        "conversation_id": 2271745,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 141,
+      "tweet_id": 1631296,
+      "conversation_id": 1631296,
+      "customer_inquiry_text": "Hey @115858, iOS 11 is a piece of SHIT. Black screen, pressing home or power does nothing &amp; have to hard reset to get back into my iPhone 6s.",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "SCREEN_DISPLAY_TOUCH_BIOMETRICS",
+      "human_decision": "ACCEPT",
+      "human_intent": "SCREEN_DISPLAY_TOUCH_BIOMETRICS",
+      "is_ambiguous": false,
+      "focal_grievance": "The phone is stuck on a black screen and requires a hard reset to become usable.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1631296,
+        "conversation_id": 1631296,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 142,
+      "tweet_id": 643243,
+      "conversation_id": 643243,
+      "customer_inquiry_text": "@AppleSupport I have the new iPhone 8+ and sometimes when accessing the camera from the lock screen, I get a black screen with the spinner.",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "SCREEN_DISPLAY_TOUCH_BIOMETRICS",
+      "human_decision": "REJECT",
+      "human_intent": "APP_SPECIFIC_MALFUNCTION",
+      "is_ambiguous": false,
+      "focal_grievance": "The black-screen spinner occurs specifically while accessing the Camera from the lock screen; the named app/function is the focal issue.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 643243,
+        "conversation_id": 643243,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 143,
+      "tweet_id": 234621,
+      "conversation_id": 234621,
+      "customer_inquiry_text": ".@AppleSupport since the update to #iOS11 my #iPhone 6s’ touch screen has been becoming unresponsive at times. Other times it seems as if the calibration is off. Happens 3-4 times per day and requires a reset to temp. fix it each time. @115858",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "SCREEN_DISPLAY_TOUCH_BIOMETRICS",
+      "human_decision": "ACCEPT",
+      "human_intent": "SCREEN_DISPLAY_TOUCH_BIOMETRICS",
+      "is_ambiguous": false,
+      "focal_grievance": "The touchscreen becomes unresponsive and its calibration appears wrong.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 234621,
+        "conversation_id": 234621,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 144,
+      "tweet_id": 545151,
+      "conversation_id": 545151,
+      "customer_inquiry_text": "Dear @AppleSupport please fix the 'black screen-spinning wheel' problem ASAP.\nThe whole world got affected. #iPhone",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "SCREEN_DISPLAY_TOUCH_BIOMETRICS",
+      "human_decision": "ACCEPT",
+      "human_intent": "SCREEN_DISPLAY_TOUCH_BIOMETRICS",
+      "is_ambiguous": false,
+      "focal_grievance": "The device has a black screen with a spinning wheel, indicating a system-level stuck state.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 545151,
+        "conversation_id": 545151,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 145,
+      "tweet_id": 1733796,
+      "conversation_id": 1733796,
+      "customer_inquiry_text": "@AppleSupport I’m stuck with my iPhone the white screen with logo won’t go, I did a hard restart already and iTunes restore, nothing works",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "SCREEN_DISPLAY_TOUCH_BIOMETRICS",
+      "human_decision": "ACCEPT",
+      "human_intent": "SCREEN_DISPLAY_TOUCH_BIOMETRICS",
+      "is_ambiguous": false,
+      "focal_grievance": "The iPhone is stuck on the white Apple-logo screen despite restart and restore attempts.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1733796,
+        "conversation_id": 1733796,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 146,
+      "tweet_id": 1481887,
+      "conversation_id": 1481887,
+      "customer_inquiry_text": "@115858 I'm being charged $1.50 /mth for extra iCloud storage but my account still shows only 5gb so phone won't backup. Help!",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "ACCOUNT_APPLE_ID_ACCESS",
+      "human_decision": "ACCEPT",
+      "human_intent": "ACCOUNT_APPLE_ID_ACCESS",
+      "is_ambiguous": false,
+      "focal_grievance": "The customer is being charged for extra iCloud storage but is not receiving the paid storage entitlement.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1481887,
+        "conversation_id": 1481887,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 147,
+      "tweet_id": 2949572,
+      "conversation_id": 2949572,
+      "customer_inquiry_text": "@115858 keeps charging me $1 a month for icloud storage but my iphone still hasn’t backed up in 92 weeks... what’s going on here 🤔",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "ACCOUNT_APPLE_ID_ACCESS",
+      "human_decision": "ACCEPT",
+      "human_intent": "ACCOUNT_APPLE_ID_ACCESS",
+      "is_ambiguous": false,
+      "focal_grievance": "The customer is repeatedly charged for iCloud storage while the paid service does not work.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2949572,
+        "conversation_id": 2949572,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 148,
+      "tweet_id": 619390,
+      "conversation_id": 619390,
+      "customer_inquiry_text": "@AppleSupport won't let me log in I want to cancel subscriptions. The verifications codes I keep being sent aren't working",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "ACCOUNT_APPLE_ID_ACCESS",
+      "human_decision": "REJECT",
+      "human_intent": "ACCOUNT_APPLE_ID_ACCESS",
+      "is_ambiguous": false,
+      "focal_grievance": "The immediate blocker is Apple ID login/verification codes; the subscription cancellation is downstream.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 619390,
+        "conversation_id": 619390,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 149,
+      "tweet_id": 397476,
+      "conversation_id": 397476,
+      "customer_inquiry_text": "@AppleSupport I need to cancel a subscription but when I tap my Apple ID, this happens! Can you help? https://t.co/MsBiiOaPlJ",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "ACCOUNT_APPLE_ID_ACCESS",
+      "human_decision": "REJECT",
+      "human_intent": "BILLING_CHARGE_REFUND_DISPUTE",
+      "is_ambiguous": false,
+      "focal_grievance": "The actionable request is cancellation of a subscription; the Apple ID UI problem blocks that billing action.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 397476,
+        "conversation_id": 397476,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 150,
+      "tweet_id": 846969,
+      "conversation_id": 846969,
+      "customer_inquiry_text": "@AppleSupport got double charged for something but when I try to log in to report a problem it just keeps bringing up the login screen",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "ACCOUNT_APPLE_ID_ACCESS",
+      "human_decision": "ACCEPT",
+      "human_intent": "ACCOUNT_APPLE_ID_ACCESS",
+      "is_ambiguous": false,
+      "focal_grievance": "The customer explicitly reports being double charged and wants to report the charge.",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 846969,
+        "conversation_id": 846969,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 151,
+      "tweet_id": 1153873,
+      "conversation_id": 1153873,
+      "customer_inquiry_text": "@AppleSupport my phone is so slow so the new iOS update? Only on text messages though? Why is this?",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "APP_SPECIFIC_MALFUNCTION",
+      "human_decision": "ACCEPT",
+      "human_intent": "APP_SPECIFIC_MALFUNCTION",
+      "is_ambiguous": false,
+      "focal_grievance": "Messages app is slow after update",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1153873,
+        "conversation_id": 1153873,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 152,
+      "tweet_id": 32416,
+      "conversation_id": 32416,
+      "customer_inquiry_text": "@AppleSupport iOS 11 is so slow on my iPhone 5S. For example the camera app takes 5-10 seconds before it can take a photo. What gives?🤦‍♂️",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "APP_SPECIFIC_MALFUNCTION",
+      "human_decision": "REJECT",
+      "human_intent": "PERFORMANCE_SLOWDOWN_LATENCY",
+      "is_ambiguous": false,
+      "focal_grievance": "Whole iPhone is slow after iOS 11",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 32416,
+        "conversation_id": 32416,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 153,
+      "tweet_id": 713785,
+      "conversation_id": 713785,
+      "customer_inquiry_text": "@AppleSupport  app store downloads have been impossibly slow for the last week since iOS11 &amp; I mean impossible",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "APP_SPECIFIC_MALFUNCTION",
+      "human_decision": "ACCEPT",
+      "human_intent": "APP_SPECIFIC_MALFUNCTION",
+      "is_ambiguous": false,
+      "focal_grievance": "App Store downloads are extremely slow",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 713785,
+        "conversation_id": 713785,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 154,
+      "tweet_id": 613149,
+      "conversation_id": 613149,
+      "customer_inquiry_text": "@115858 @AppleSupport my iPhone 5s has many problems, the camera stopped working, and with each software update is slow, should give me a new one",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "APP_SPECIFIC_MALFUNCTION",
+      "human_decision": "REJECT",
+      "human_intent": "PERFORMANCE_SLOWDOWN_LATENCY",
+      "is_ambiguous": false,
+      "focal_grievance": "iPhone becomes slow after software updates",
+      "reviewer_notes": "Broader device slowdown is primary.",
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 613149,
+        "conversation_id": 613149,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 155,
+      "tweet_id": 255793,
+      "conversation_id": 255793,
+      "customer_inquiry_text": "Hi @AppleSupport, are there issues with the App Store? App Updates are EXTREMELY slow...",
+      "part": "PART_2_BOUNDARY_CASES",
+      "candidate_intent": "APP_SPECIFIC_MALFUNCTION",
+      "human_decision": "ACCEPT",
+      "human_intent": "APP_SPECIFIC_MALFUNCTION",
+      "is_ambiguous": false,
+      "focal_grievance": "App Store updates are extremely slow",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 255793,
+        "conversation_id": 255793,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 156,
+      "tweet_id": 1392452,
+      "conversation_id": 1392452,
+      "customer_inquiry_text": "Say hello to the future. Pre-order iPhone X.",
+      "part": "PART_3_UNKNOWN_CASES",
+      "candidate_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "human_decision": "ACCEPT",
+      "human_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "is_ambiguous": false,
+      "focal_grievance": "Promotional/product-launch content without a support request",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1392452,
+        "conversation_id": 1392452,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 157,
+      "tweet_id": 2726010,
+      "conversation_id": 2726010,
+      "customer_inquiry_text": "To all my incredibly talented coworkers, congratulations on the launch of iPhone X! Thanks @63269 for celebrating with us! https://t.co/Jhg31JPIzN",
+      "part": "PART_3_UNKNOWN_CASES",
+      "candidate_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "human_decision": "ACCEPT",
+      "human_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "is_ambiguous": false,
+      "focal_grievance": "Promotional/product-launch content without a support request",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2726010,
+        "conversation_id": 2726010,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 158,
+      "tweet_id": 996645,
+      "conversation_id": 996645,
+      "customer_inquiry_text": "Say hello to the future. iPhone X available now.",
+      "part": "PART_3_UNKNOWN_CASES",
+      "candidate_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "human_decision": "ACCEPT",
+      "human_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "is_ambiguous": false,
+      "focal_grievance": "Promotional/product-launch content without a support request",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 996645,
+        "conversation_id": 996645,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 159,
+      "tweet_id": 1990611,
+      "conversation_id": 1990611,
+      "customer_inquiry_text": "@278601 Thanks for joining the #AppleEvent. Say hello to the future. iPhone X.\nhttps://t.co/qtR0VeO3eI",
+      "part": "PART_3_UNKNOWN_CASES",
+      "candidate_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "human_decision": "ACCEPT",
+      "human_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "is_ambiguous": false,
+      "focal_grievance": "Promotional/product-launch content without a support request",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1990611,
+        "conversation_id": 1990611,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 160,
+      "tweet_id": 1713710,
+      "conversation_id": 1713710,
+      "customer_inquiry_text": "@AppleSupport help",
+      "part": "PART_3_UNKNOWN_CASES",
+      "candidate_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "human_decision": "ACCEPT",
+      "human_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "is_ambiguous": false,
+      "focal_grievance": "Insufficient context about the support issue",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1713710,
+        "conversation_id": 1713710,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 161,
+      "tweet_id": 52273,
+      "conversation_id": 52273,
+      "customer_inquiry_text": "@AppleSupport can you please help me",
+      "part": "PART_3_UNKNOWN_CASES",
+      "candidate_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "human_decision": "ACCEPT",
+      "human_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "is_ambiguous": false,
+      "focal_grievance": "Insufficient context about the support issue",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 52273,
+        "conversation_id": 52273,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 162,
+      "tweet_id": 167286,
+      "conversation_id": 167286,
+      "customer_inquiry_text": "@AppleSupport can you check your dm please",
+      "part": "PART_3_UNKNOWN_CASES",
+      "candidate_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "human_decision": "ACCEPT",
+      "human_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "is_ambiguous": false,
+      "focal_grievance": "Insufficient context about the support issue",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 167286,
+        "conversation_id": 167286,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 163,
+      "tweet_id": 408455,
+      "conversation_id": 408455,
+      "customer_inquiry_text": "@AppleSupport i need help pls DM!?",
+      "part": "PART_3_UNKNOWN_CASES",
+      "candidate_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "human_decision": "ACCEPT",
+      "human_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "is_ambiguous": false,
+      "focal_grievance": "Insufficient context about the support issue",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 408455,
+        "conversation_id": 408455,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 164,
+      "tweet_id": 1196063,
+      "conversation_id": 1196063,
+      "customer_inquiry_text": "@AppleSupport #iphone #ios #iosupdate https://t.co/chXShYks5b",
+      "part": "PART_3_UNKNOWN_CASES",
+      "candidate_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "human_decision": "ACCEPT",
+      "human_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "is_ambiguous": false,
+      "focal_grievance": "Insufficient context; media/link only",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1196063,
+        "conversation_id": 1196063,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 165,
+      "tweet_id": 2485671,
+      "conversation_id": 2485671,
+      "customer_inquiry_text": "@115858 wtf?? #HighSierra #MoreLikeSierraIsHigh https://t.co/JiPVNHp8UU",
+      "part": "PART_3_UNKNOWN_CASES",
+      "candidate_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "human_decision": "ACCEPT",
+      "human_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "is_ambiguous": false,
+      "focal_grievance": "Unspecified frustration without a diagnostic symptom",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2485671,
+        "conversation_id": 2485671,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 166,
+      "tweet_id": 543643,
+      "conversation_id": 543643,
+      "customer_inquiry_text": "@AppleSupport https://t.co/8nlHMnzgx0",
+      "part": "PART_3_UNKNOWN_CASES",
+      "candidate_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "human_decision": "ACCEPT",
+      "human_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "is_ambiguous": false,
+      "focal_grievance": "Insufficient context; media/link only",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 543643,
+        "conversation_id": 543643,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 167,
+      "tweet_id": 162838,
+      "conversation_id": 162838,
+      "customer_inquiry_text": "Lol look @AppleSupport https://t.co/RggSZH4i9S",
+      "part": "PART_3_UNKNOWN_CASES",
+      "candidate_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "human_decision": "ACCEPT",
+      "human_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "is_ambiguous": false,
+      "focal_grievance": "Insufficient context; media/link only",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 162838,
+        "conversation_id": 162838,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 168,
+      "tweet_id": 1302379,
+      "conversation_id": 1302379,
+      "customer_inquiry_text": "I literally hate the new @115858 update.",
+      "part": "PART_3_UNKNOWN_CASES",
+      "candidate_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "human_decision": "ACCEPT",
+      "human_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "is_ambiguous": false,
+      "focal_grievance": "Unspecified frustration about an update",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 1302379,
+        "conversation_id": 1302379,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 169,
+      "tweet_id": 2072151,
+      "conversation_id": 2072151,
+      "customer_inquiry_text": "FIX THIS SHIT @AppleSupport",
+      "part": "PART_3_UNKNOWN_CASES",
+      "candidate_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "human_decision": "ACCEPT",
+      "human_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "is_ambiguous": false,
+      "focal_grievance": "Unspecified complaint without a concrete symptom",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 2072151,
+        "conversation_id": 2072151,
+        "verbatim_verified": true
+      }
+    },
+    {
+      "case_id": 170,
+      "tweet_id": 863983,
+      "conversation_id": 863983,
+      "customer_inquiry_text": "I️ hate this update.",
+      "part": "PART_3_UNKNOWN_CASES",
+      "candidate_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "human_decision": "ACCEPT",
+      "human_intent": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "is_ambiguous": false,
+      "focal_grievance": "Unspecified frustration about an update",
+      "reviewer_notes": null,
+      "turn_count": 1,
+      "provenance": {
+        "dataset": "applesupport_conversations.parquet",
+        "root_tweet_id": 863983,
+        "conversation_id": 863983,
+        "verbatim_verified": true
+      }
+    }
+  ]
+}

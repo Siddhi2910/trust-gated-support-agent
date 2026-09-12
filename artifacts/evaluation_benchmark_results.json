@@ -1,0 +1,60 @@
+{
+  "metadata": {
+    "timestamp": "2026-09-12T07:55:30Z",
+    "elapsed_seconds": 0.22,
+    "total_benchmark_cases": 170,
+    "part_1_stratified_count": 120,
+    "part_2_boundary_count": 35,
+    "part_3_unknown_count": 15
+  },
+  "human_ground_truth_evaluation": {
+    "recovered_cases_evaluated": 1,
+    "unreviewed_cases_remaining": 169,
+    "accuracy": 1.0,
+    "cases": [
+      {
+        "case_id": 5,
+        "text": "Pourquoi mon iPhone 7 est si lent ?\n\nHey @AppleSupport why is my iPhone 7 so slow ? And battery draining quite fast.",
+        "ground_truth_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+        "predicted_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+        "is_correct": true,
+        "decision": "ESCALATE_TO_HUMAN",
+        "confidence_score": 0.33
+      }
+    ],
+    "limitation_statement": "Human ground-truth evaluation is strictly restricted to genuinely recovered human annotations. Unreviewed cases are explicitly tracked as unadjudicated and never filled with synthetic labels."
+  },
+  "system_comparisons": {
+    "TRUST_GATED_DUAL_TRACK": {
+      "total": 170,
+      "auto_resolved": 33,
+      "escalated": 137,
+      "part1_candidate_agreement": 55,
+      "part2_boundary_ambiguity_flagged": 3,
+      "part3_unknown_abstained": 15,
+      "mean_groundedness": 1.0,
+      "total_claims_verified": 0,
+      "hallucinations_detected": 0
+    },
+    "BASELINE_1_NAIVE_KEYWORD": {
+      "total": 170,
+      "auto_resolved": 170,
+      "escalated": 0,
+      "part1_candidate_agreement": 55,
+      "part2_boundary_ambiguity_flagged": 0,
+      "part3_unknown_abstained": 15,
+      "mean_groundedness": 0.0,
+      "hallucinations_detected": 0
+    },
+    "BASELINE_2_STANDARD_RAG": {
+      "total": 170,
+      "auto_resolved": 170,
+      "escalated": 0,
+      "part1_candidate_agreement": 55,
+      "part2_boundary_ambiguity_flagged": 0,
+      "part3_unknown_abstained": 15,
+      "mean_groundedness": 0.0,
+      "hallucinations_detected": 0
+    }
+  }
+}

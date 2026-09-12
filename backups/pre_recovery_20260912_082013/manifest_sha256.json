@@ -1,0 +1,36 @@
+{
+  "backup_timestamp": "20260912_082013",
+  "backup_dir": "backups/pre_recovery_20260912_082013",
+  "files": {
+    "human_review_labels.json": {
+      "original_path": "artifacts/human_review_labels.json",
+      "backup_path": "backups/pre_recovery_20260912_082013/human_review_labels.json",
+      "sha256": "6e6edd734f91565167b5a175e160fb3220538ea4f2a89ae047d445e9e06f1a61",
+      "size_bytes": 103938
+    },
+    "recovered_human_labels.json": {
+      "original_path": "artifacts/recovered_human_labels.json",
+      "backup_path": "backups/pre_recovery_20260912_082013/recovered_human_labels.json",
+      "sha256": "04e94d21f13fd49999863a83724c5f72ba98b0bc6248949f7fa406138e580ead",
+      "size_bytes": 4581
+    },
+    "taxonomy_human_review_sample.json": {
+      "original_path": "artifacts/taxonomy_human_review_sample.json",
+      "backup_path": "backups/pre_recovery_20260912_082013/taxonomy_human_review_sample.json",
+      "sha256": "d5369583898c9355482dba5d1488a1b0d720ffdc6ed01fa6e9bce82137db7327",
+      "size_bytes": 62344
+    },
+    "taxonomy_v1_candidate.json": {
+      "original_path": "artifacts/taxonomy_v1_candidate.json",
+      "backup_path": "backups/pre_recovery_20260912_082013/taxonomy_v1_candidate.json",
+      "sha256": "0b25e984c5acdf50810b6bac9aa6c55827c9b6fdaffcad75babc282e851cb2ca",
+      "size_bytes": 33676
+    },
+    "server.ts": {
+      "original_path": "server.ts",
+      "backup_path": "backups/pre_recovery_20260912_082013/server.ts",
+      "sha256": "27bef2a4801ac8f7702d0260b25e49129c01b1447d2318e07c98cae622117b29",
+      "size_bytes": 28870
+    }
+  }
+}

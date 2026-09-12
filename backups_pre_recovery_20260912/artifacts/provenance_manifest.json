@@ -1,0 +1,46 @@
+{
+  "manifest_version": "1.0.0",
+  "target_brand": "AppleSupport",
+  "include_full_context": true,
+  "raw_dataset": {
+    "path": "data/raw/twcs.csv",
+    "sha256": "cd297fcfa1bf6f99938be242e8e578980bc6d1b96adc8691abec9a39175b03c0",
+    "sha256_unchanged": true,
+    "size_bytes": 516508641,
+    "total_rows": 2811774
+  },
+  "derived_dataset": {
+    "path": "data/processed/applesupport_subset.parquet",
+    "sha256": "e2c9fa78701c6b5aff4bf669f2d24587267e15f99d7bdcaa3216c9d915c9e72f",
+    "size_bytes": 21703776,
+    "size_mb": 20.7,
+    "total_rows": 237941,
+    "unique_conversation_ids": 80391,
+    "columns": [
+      "tweet_id",
+      "author_id",
+      "inbound",
+      "created_at",
+      "text",
+      "response_tweet_id",
+      "in_response_to_tweet_id",
+      "conversation_id"
+    ],
+    "compression": "snappy"
+  },
+  "reduction_metrics": {
+    "raw_total_rows": 2811774,
+    "derived_total_rows": 237941,
+    "reduction_ratio": 11.8171,
+    "retention_percentage": "8.46%"
+  },
+  "provenance_integrity": {
+    "all_derived_tweet_ids_in_raw": true,
+    "verified_tweet_count": 237941,
+    "raw_dataset_immutable": true
+  },
+  "execution_metadata": {
+    "elapsed_wall_seconds": 24.97,
+    "timestamp": "2026-09-11 09:20:24 UTC"
+  }
+}

@@ -1,0 +1,669 @@
+{
+  "description": "Candidate Intent Taxonomy v1 specification for Trust-Gated Customer Support Agent",
+  "version": "1.0-candidate",
+  "taxonomy_frozen": false,
+  "total_intents": 15,
+  "intents": [
+    {
+      "intent_id": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "human_readable_name": "Battery Drain and Power Consumption",
+      "definition": "Customer reports abnormal battery depletion, sudden percentage drops, overheating while discharging, or power longevity degradation.",
+      "inclusion_criteria": "Mentions battery life, fast discharge, battery health, overheating while in use, or phone dying quickly.",
+      "exclusion_criteria": "Inability to charge with a cable/adapter (classify as HARDWARE_CHARGING_POWER_CABLE).",
+      "boundary_cases": [
+        "See PAIR_01_BATTERY_VS_CHARGING"
+      ],
+      "representative_examples": [
+        {
+          "tweet_id": 767,
+          "conversation_id": 767,
+          "text": "I just need @115858 to do something about the battery life because it sucks ass"
+        },
+        {
+          "tweet_id": 1761,
+          "conversation_id": 1761,
+          "text": "iOS 11 is killing my battery @115858. Fix it."
+        },
+        {
+          "tweet_id": 2616,
+          "conversation_id": 2616,
+          "text": "@AppleSupport why is my battery life short? I updated to 11.1, my battery is poor. Wife didn\u2019t she likes her battery life"
+        },
+        {
+          "tweet_id": 2628,
+          "conversation_id": 2628,
+          "text": "Question- @249 @115858 my iPhone6 dies very quick (have to charge it 3 times a day) my iPhone5 battery was faulty. Could this be the same?"
+        },
+        {
+          "tweet_id": 3767,
+          "conversation_id": 3767,
+          "text": "@AppleSupport I\u2019m no expert in battery life  but 40% doesn\u2019t go to 7% in 5minutes"
+        }
+      ],
+      "prevalence_and_count": {
+        "inbound_opening_inquiries_count": 7010,
+        "inbound_opening_inquiries_prevalence_pct": 8.74,
+        "denominator": 80250
+      },
+      "annotation_rule": "If battery drain and general software update are both mentioned, assign BATTERY_DRAIN_POWER_CONSUMPTION as primary.",
+      "known_ambiguity": "Customers frequently conflate battery drain with background app refresh or CPU throttling after updates."
+    },
+    {
+      "intent_id": "DEVICE_FREEZE_CRASH_REBOOT",
+      "human_readable_name": "Device Freeze Crash and Boot Loop",
+      "definition": "Customer reports system-wide freeze, spontaneous reboot, black screen of death, boot loop on Apple logo, or total device lockup.",
+      "inclusion_criteria": "Device reboots unexpectedly, becomes totally unresponsive, stuck on Apple logo/spinning gear, or black screen.",
+      "exclusion_criteria": "Minor interface lag where system still responds (classify as PERFORMANCE_SLOWDOWN_LATENCY); isolated single-app crash (classify as APP_SPECIFIC_MALFUNCTION).",
+      "boundary_cases": [
+        "See PAIR_02_CRASH_FREEZE_VS_SLOWDOWN",
+        "See PAIR_03_APP_MALFUNCTION_VS_OS_CRASH"
+      ],
+      "representative_examples": [
+        {
+          "tweet_id": 18892,
+          "conversation_id": 18892,
+          "text": "@AppleSupport \n@115858 \n\nMy iphone 7 stuck on apple logo and keep rebooting , What can i do to fix it without losing any data !"
+        },
+        {
+          "tweet_id": 50615,
+          "conversation_id": 50615,
+          "text": "@115858 @AppleSupport y\u2019all really bout to piss me off with this dumbass update. My phone keeps crashing and shutting off"
+        },
+        {
+          "tweet_id": 62250,
+          "conversation_id": 62250,
+          "text": "Hey @115858 the new iOS update is garbage and my phone keeps restarting itself. Get your shit together, Carol."
+        },
+        {
+          "tweet_id": 165814,
+          "conversation_id": 165814,
+          "text": "yeah cool, i just love when my phone randomly restarts wtf \ud83d\ude44 @115858"
+        },
+        {
+          "tweet_id": 6928,
+          "conversation_id": 6928,
+          "text": "@AppleSupport my iPhone is a fully up to date so why does my phone keep freezing \ud83d\ude43???"
+        }
+      ],
+      "prevalence_and_count": {
+        "inbound_opening_inquiries_count": 6319,
+        "inbound_opening_inquiries_prevalence_pct": 7.87,
+        "denominator": 80250
+      },
+      "annotation_rule": "Prioritize over PERFORMANCE_SLOWDOWN_LATENCY if device requires a forced restart.",
+      "known_ambiguity": "Users use 'freeze' colloquially for both brief 2-second UI pauses and total hardware hard-locks."
+    },
+    {
+      "intent_id": "KEYBOARD_TYPING_AUTOCORRECT_ISSUE",
+      "human_readable_name": "Keyboard Typing and Autocorrect Malfunction",
+      "definition": "Customer reports keyboard malfunction, autocorrect substituting unintended characters (notably the iOS 11 letter 'I' glitch), predictive text failure, or virtual keyboard failing to pop up.",
+      "inclusion_criteria": "Mentions keyboard, autocorrect, typing glitches, letter 'I' symbol bug, predictive text bar, or dictation.",
+      "exclusion_criteria": "Hardware physical keyboard failure on MacBook (classify as UNKNOWN_INSUFFICIENT_CONTEXT).",
+      "boundary_cases": [
+        "See Special Case Analysis 1"
+      ],
+      "representative_examples": [
+        {
+          "tweet_id": 700,
+          "conversation_id": 700,
+          "text": "@AppleSupport why are my I\ufe0f\u2019s changing not showing up correctly on any of my social media platforms? https://t.co/GyRvpyVnkE"
+        },
+        {
+          "tweet_id": 711,
+          "conversation_id": 711,
+          "text": "What is up with this \u201c I\ufe0f \u201c"
+        },
+        {
+          "tweet_id": 714,
+          "conversation_id": 714,
+          "text": "Hey @AppleSupport and anyone else who upgraded to ios11.1, are y\u2019all having issues with capital \u201cI\ufe0f\u201d in the Mail app? As it puts in \u201cA\u201d?"
+        },
+        {
+          "tweet_id": 719,
+          "conversation_id": 719,
+          "text": "Tf is wrong with my keyboard @115858"
+        },
+        {
+          "tweet_id": 730,
+          "conversation_id": 730,
+          "text": "Hello, internet. Can someone explain why this symbol keeps appearing on my phone and when I\ufe0f try to type the letter I\ufe0f? Also @AppleSupport https://t.co/QKwvTLtiN7"
+        }
+      ],
+      "prevalence_and_count": {
+        "inbound_opening_inquiries_count": 13507,
+        "inbound_opening_inquiries_prevalence_pct": 16.83,
+        "denominator": 80250
+      },
+      "annotation_rule": "Encompasses both the historical iOS 11.1 letter 'I' glitch and generalized onscreen keyboard glitches.",
+      "known_ambiguity": "High concentration of near-duplicate tweets during October-November 2017 bug window."
+    },
+    {
+      "intent_id": "PERFORMANCE_SLOWDOWN_LATENCY",
+      "human_readable_name": "Performance Slowdown and System Latency",
+      "definition": "Customer reports general system sluggishness, UI lag, slow app launching, delayed touch responses, or stuttering animations.",
+      "inclusion_criteria": "Mentions slow phone, lag, sluggish, delayed response, frame drops, stutter, or slow after update.",
+      "exclusion_criteria": "Hard freeze or crash requiring reboot (classify as DEVICE_FREEZE_CRASH_REBOOT).",
+      "boundary_cases": [
+        "See PAIR_02_CRASH_FREEZE_VS_SLOWDOWN"
+      ],
+      "representative_examples": [
+        {
+          "tweet_id": 481805,
+          "conversation_id": 481805,
+          "text": "My phone is running so slow after I updated it....@115858 wanna explain?"
+        },
+        {
+          "tweet_id": 6919,
+          "conversation_id": 6919,
+          "text": "@AppleSupport I installed the iOS 10.0 , 10.0.1 and 10.0.2 and makes my iPhone 6 very slow and doesn\u2019t work properly can you help me?"
+        },
+        {
+          "tweet_id": 8299,
+          "conversation_id": 8299,
+          "text": "@AppleSupport DL the latest iOS today. Very laggy 6s. Phone is running like hammered dog shit since the DL."
+        },
+        {
+          "tweet_id": 11992,
+          "conversation_id": 11992,
+          "text": "@115858 @AppleSupport your latest iOS update had made my phone slower and apps like iMessage are slow to open and load.  What\u2019s up with this?"
+        },
+        {
+          "tweet_id": 14322,
+          "conversation_id": 14322,
+          "text": "@AppleSupport No typing lag fix on iOS 11.1 Not cool hah"
+        }
+      ],
+      "prevalence_and_count": {
+        "inbound_opening_inquiries_count": 2647,
+        "inbound_opening_inquiries_prevalence_pct": 3.3,
+        "denominator": 80250
+      },
+      "annotation_rule": "Assign when device functions continuously but at noticeably degraded operational speed.",
+      "known_ambiguity": "Subjective boundary between 'slow' and 'momentarily frozen'."
+    },
+    {
+      "intent_id": "CONNECTIVITY_WIFI_BLUETOOTH",
+      "human_readable_name": "Network Wifi Bluetooth and Cellular Connectivity",
+      "definition": "Customer reports failure to connect to Wi-Fi networks, Bluetooth pairing dropping, AirDrop failures, cellular data loss, or 'No Service' status.",
+      "inclusion_criteria": "Mentions Wi-Fi, Bluetooth, cellular, LTE, 4G, No Service, AirDrop, Personal Hotspot, or dropped calls.",
+      "exclusion_criteria": "Internet connection working but specific website/app down (classify as APP_SPECIFIC_MALFUNCTION).",
+      "boundary_cases": [
+        "Distinguishable by network interface focus"
+      ],
+      "representative_examples": [
+        {
+          "tweet_id": 2642,
+          "conversation_id": 2642,
+          "text": "@AppleSupport still no reliable Bluetooth on my iPhone 8+."
+        },
+        {
+          "tweet_id": 2659,
+          "conversation_id": 2659,
+          "text": "Is anyone else having problems with there iPhone 7 saying no service? @115858 @115714"
+        },
+        {
+          "tweet_id": 2487136,
+          "conversation_id": 2487136,
+          "text": "@AppleSupport Airdrop not working on my iPhone X.  Help."
+        },
+        {
+          "tweet_id": 1049927,
+          "conversation_id": 1049927,
+          "text": "@AppleSupport My WIFI button was greyed out and cannot connect to WIFI since update.  Any ideas how to fix? #thanks"
+        },
+        {
+          "tweet_id": 5849,
+          "conversation_id": 5849,
+          "text": "I updated to iOS 11 and my iPhone 6 stopped connecting to wi-fi. Already restored the phone and the network connections @AppleSupport"
+        }
+      ],
+      "prevalence_and_count": {
+        "inbound_opening_inquiries_count": 3365,
+        "inbound_opening_inquiries_prevalence_pct": 4.19,
+        "denominator": 80250
+      },
+      "annotation_rule": "Assign when communication protocol or wireless radio connection fails.",
+      "known_ambiguity": "Carrier outages vs Apple device antenna issues."
+    },
+    {
+      "intent_id": "APP_SPECIFIC_MALFUNCTION",
+      "human_readable_name": "Application Specific Malfunction or App Store Bug",
+      "definition": "Customer reports failure, crash, error, or unexpected behavior in a specific first-party or third-party application.",
+      "inclusion_criteria": "Names an app (App Store, Safari, Apple Music, Spotify, WhatsApp, Camera, Mail) having an isolated issue.",
+      "exclusion_criteria": "System-wide reboot or failure affecting all apps (classify as DEVICE_FREEZE_CRASH_REBOOT).",
+      "boundary_cases": [
+        "See PAIR_03_APP_MALFUNCTION_VS_OS_CRASH"
+      ],
+      "representative_examples": [
+        {
+          "tweet_id": 520207,
+          "conversation_id": 520207,
+          "text": "@AppleSupport Safari keeps crashing over and over today. I deleted ~/Library/Safari to start anew, but the problem persists -  sigh"
+        },
+        {
+          "tweet_id": 400396,
+          "conversation_id": 400396,
+          "text": "Anybody else having issues with iPhone ios11.0.2? App Store won't download &amp; won\u2019t update any apps! @115858 @118936 @AppleSupport #appstore"
+        },
+        {
+          "tweet_id": 765,
+          "conversation_id": 765,
+          "text": "After update #ios1103 no spotify on my lock screen?@AppleSupport"
+        },
+        {
+          "tweet_id": 546608,
+          "conversation_id": 546608,
+          "text": "@AppleSupport Help needed Safari keeps crashing on my MacBook ? It\u2019s annoying ! Any help appreciated"
+        },
+        {
+          "tweet_id": 8340,
+          "conversation_id": 8340,
+          "text": "@AppleSupport only 8 attempts to open the twitter app and complain about the iOS 11 messing up my iPhone 7 - this is slowing down my life :("
+        }
+      ],
+      "prevalence_and_count": {
+        "inbound_opening_inquiries_count": 5088,
+        "inbound_opening_inquiries_prevalence_pct": 6.34,
+        "denominator": 80250
+      },
+      "annotation_rule": "App Store download/update errors belong here unless tied to payment method failure.",
+      "known_ambiguity": "Third-party developer responsibility vs Apple iOS platform bug."
+    },
+    {
+      "intent_id": "DATA_LOSS_RECOVERY",
+      "human_readable_name": "Data Loss and Recovery",
+      "definition": "Customer reports unexpected disappearance, deletion, or loss of user content (photos, contacts, notes, text history) and seeks recovery.",
+      "inclusion_criteria": "Lost contacts, missing photos, deleted notes, text messages disappeared, or failed iCloud restore.",
+      "exclusion_criteria": "Storage space issues without missing data (classify as PERFORMANCE_SLOWDOWN_LATENCY or UNKNOWN_INSUFFICIENT_CONTEXT).",
+      "boundary_cases": [
+        "See PAIR_04_DATA_LOSS_VS_ACCOUNT_ACCESS"
+      ],
+      "representative_examples": [
+        {
+          "tweet_id": 304074,
+          "conversation_id": 304074,
+          "text": "I lost all my contacts, I hate @115858"
+        },
+        {
+          "tweet_id": 2656,
+          "conversation_id": 2656,
+          "text": "My iPhone has erased and re-added emails dating back from 2013 til now twice in the past 24 hours. Wth??? @AppleSupport"
+        },
+        {
+          "tweet_id": 5845,
+          "conversation_id": 5845,
+          "text": "@AppleSupport Updated iPad Pro to 11.1.  Worked on draft email. None of changes saved. Started new email. Saved but disappeared. Help please"
+        },
+        {
+          "tweet_id": 588082,
+          "conversation_id": 588082,
+          "text": "most of my photos disappeared from the camera roll !!!! i have iphone 6s. help?! @AppleSupport"
+        },
+        {
+          "tweet_id": 11666,
+          "conversation_id": 11666,
+          "text": "Tried to update my phone to the new IOS system, and my phone died while 'charging' &amp; now I lost everything. Thanks @115858."
+        }
+      ],
+      "prevalence_and_count": {
+        "inbound_opening_inquiries_count": 2170,
+        "inbound_opening_inquiries_prevalence_pct": 2.7,
+        "denominator": 80250
+      },
+      "annotation_rule": "High-urgency customer state; prioritize when content disappearance is the focal grievance.",
+      "known_ambiguity": "Distinguishing permanent data loss from hidden albums or iCloud sync latency."
+    },
+    {
+      "intent_id": "SCREEN_DISPLAY_TOUCH_BIOMETRICS",
+      "human_readable_name": "Screen Display, Touch Digitizer, and Biometric Sensor Symptom",
+      "definition": "Customer reports physical or graphical screen anomalies including dead pixels, vertical lines, flickering, touch digitizer unresponsiveness, ghost touch, or biometric sensor failures (Touch ID, Face ID, Home button sensor).",
+      "inclusion_criteria": "Mentions display panel, touch screen unresponsive, ghost touch, screen flickering, colored lines on OLED, cracked glass, Face ID, Touch ID, fingerprint scanner, or home button sensor defect.",
+      "exclusion_criteria": "Software UI lag without digitizer failure (classify as PERFORMANCE_SLOWDOWN_LATENCY); system freeze with black screen and boot loop (classify as DEVICE_FREEZE_CRASH_REBOOT).",
+      "boundary_cases": [
+        "See PAIR_05_SCREEN_DISPLAY_VS_DEVICE_FREEZE"
+      ],
+      "representative_examples": [
+        {
+          "tweet_id": 34646,
+          "conversation_id": 34646,
+          "text": "My 6 month old IPhone 6 touch screen is unresponsive. @AppleSupport please help!"
+        },
+        {
+          "tweet_id": 852981,
+          "conversation_id": 852981,
+          "text": "@AppleSupport can i ask something? why my iphone 6s has ghost touch issue since i updated it to ios 11.0.3 the parts is still original tho"
+        },
+        {
+          "tweet_id": 1084004,
+          "conversation_id": 1084004,
+          "text": "@AppleSupport I updated my SE to IOS.0.3 and my touch screen is unresponsive,  thanks in advance"
+        },
+        {
+          "tweet_id": 11134,
+          "conversation_id": 11134,
+          "text": "@AppleSupport My Touch ID failed when I restarted my phone. Now it\u2019s not working at all"
+        },
+        {
+          "tweet_id": 6483,
+          "conversation_id": 6483,
+          "text": "Hello @115858 @AppleSupport what\u2019s happening to my screen https://t.co/GTNXT4VoKd"
+        }
+      ],
+      "prevalence_and_count": {
+        "inbound_opening_inquiries_count": 3606,
+        "inbound_opening_inquiries_prevalence_pct": 4.49,
+        "denominator": 80250
+      },
+      "annotation_rule": "Assign when the display panel, touch digitizer, or biometric authentication sensor (Touch ID/Face ID) is the customer's focal hardware symptom.",
+      "known_ambiguity": "Software-induced touch lag vs damaged physical digitizer or sensor."
+    },
+    {
+      "intent_id": "HARDWARE_CHARGING_POWER_CABLE",
+      "human_readable_name": "Hardware Charging Cable and Power Accessory",
+      "definition": "Customer reports inability to charge the device, broken Lightning cable, loose charging port, or wireless charging pad failure.",
+      "inclusion_criteria": "Device won't charge, loose lightning port, frayed cable, power adapter not recognized, wireless charging failing.",
+      "exclusion_criteria": "Battery draining while in use (classify as BATTERY_DRAIN_POWER_CONSUMPTION).",
+      "boundary_cases": [
+        "See PAIR_01_BATTERY_VS_CHARGING"
+      ],
+      "representative_examples": [
+        {
+          "tweet_id": 61330,
+          "conversation_id": 61330,
+          "text": "I swear @115858, this charger is broken in an undetectable way."
+        },
+        {
+          "tweet_id": 716075,
+          "conversation_id": 716075,
+          "text": "Now my phone won't charge.....i see what y'all did @115858"
+        },
+        {
+          "tweet_id": 1575146,
+          "conversation_id": 1575146,
+          "text": "Why TF my phone won't charge @115858"
+        },
+        {
+          "tweet_id": 1725056,
+          "conversation_id": 1725056,
+          "text": "Bought a brand new @115858 iPhone 8plus not even a month ago and the brand new charger is broken... already?!?!"
+        },
+        {
+          "tweet_id": 9160,
+          "conversation_id": 9160,
+          "text": "I got my phone yesterday and it\u2019s already not charging thanks @115858 \ud83d\ude43"
+        }
+      ],
+      "prevalence_and_count": {
+        "inbound_opening_inquiries_count": 2456,
+        "inbound_opening_inquiries_prevalence_pct": 3.06,
+        "denominator": 80250
+      },
+      "annotation_rule": "Focuses on the power-intake pathway and physical power accessories.",
+      "known_ambiguity": "Dirty charging port vs dead battery cell."
+    },
+    {
+      "intent_id": "AUDIO_SOUND_SPEAKER_MIC",
+      "human_readable_name": "Audio Sound Speaker Microphone and Volume Issues",
+      "definition": "Customer reports physical speaker distortion, receiver inaudibility on calls, microphone transducer failure, headphone jack/mode anomalies, earbud hardware defects, or volume control and settings anomalies (alarm volume, ringer volume, physical volume buttons).",
+      "inclusion_criteria": "Mentions speaker, receiver, microphone, mic, sound, AirPods audio, distorted audio, caller cannot hear me, ringer volume, alarm volume, volume buttons, or sound too quiet/loud.",
+      "exclusion_criteria": "Bluetooth radio failing to pair or connect generally (classify as CONNECTIVITY_WIFI_BLUETOOTH); system-wide iOS freezing during media playback (classify as DEVICE_FREEZE_CRASH_REBOOT).",
+      "boundary_cases": [
+        "Distinguished by acoustic/audio transducer or sound/volume control symptom"
+      ],
+      "representative_examples": [
+        {
+          "tweet_id": 407520,
+          "conversation_id": 407520,
+          "text": "@AppleSupport after updating my iOS, people can't hear me on calls or it sounds like im in a wind tunnel. please advise, thx"
+        },
+        {
+          "tweet_id": 1781,
+          "conversation_id": 1781,
+          "text": "@AppleSupport why can\u2019t I change ringer volume with the buttons? Whose dumb idea was it to change that and how do they still have a job?"
+        },
+        {
+          "tweet_id": 2682,
+          "conversation_id": 2682,
+          "text": "@AppleSupport ios 11.0.3 on 6s. Cannot adjust alarm volume so waking up all in my house and neighbours despite ringer being set to minimum!"
+        },
+        {
+          "tweet_id": 14326,
+          "conversation_id": 14326,
+          "text": "Updated my phone last night &amp; now its stuck in headphone mode, cant hear anything on video, FaceTime &amp; call sound goes in&amp;out @AppleSupport"
+        },
+        {
+          "tweet_id": 15313,
+          "conversation_id": 15313,
+          "text": "3rd pair of @115858 ear shaped earbuds to go bad in the left side. I am currently deaf in one ear after a workout #SaveMyRightEar"
+        }
+      ],
+      "prevalence_and_count": {
+        "inbound_opening_inquiries_count": 2053,
+        "inbound_opening_inquiries_prevalence_pct": 2.56,
+        "denominator": 80250
+      },
+      "annotation_rule": "Assign when acoustic transmission (speaker/receiver/mic), audio playback level, or sound/volume control (ringer, alarm, volume buttons) is the customer's primary focal grievance.",
+      "known_ambiguity": "Software ringer settings vs broken physical volume rocker buttons."
+    },
+    {
+      "intent_id": "ACCOUNT_APPLE_ID_ACCESS",
+      "human_readable_name": "Account Apple ID Access and Security",
+      "definition": "Customer reports inability to log into Apple ID, account lockout, two-factor authentication code issues, or forgotten passwords.",
+      "inclusion_criteria": "Mentions Apple ID locked, forgot password, 2FA code not received, iCloud account disabled.",
+      "exclusion_criteria": "Billing charge on account (classify as BILLING_CHARGE_REFUND_DISPUTE).",
+      "boundary_cases": [
+        "See PAIR_06_ACCOUNT_ACCESS_VS_BILLING"
+      ],
+      "representative_examples": [
+        {
+          "tweet_id": 1764,
+          "conversation_id": 1764,
+          "text": "@AppleSupport Hello, I need some help regarding the region change on my Apple ID"
+        },
+        {
+          "tweet_id": 392247,
+          "conversation_id": 392247,
+          "text": "@AppleSupport i desperately need to reset my apple id password that i forgot. And i already tried via web, but no result yet. \ud83d\ude11"
+        },
+        {
+          "tweet_id": 8437,
+          "conversation_id": 8437,
+          "text": "@115858 suck! Upgrade phone &amp; I lose my Apple ID. Can\u2019t get new id without old &amp; can\u2019t book Genius bar help appointment without ID!!! #stupid"
+        },
+        {
+          "tweet_id": 43358,
+          "conversation_id": 43358,
+          "text": "locked out of my apple ID bcuz my old phone broke &amp; i had 2 factor authentication on , no one should ever use tht shit @115858"
+        },
+        {
+          "tweet_id": 982064,
+          "conversation_id": 982064,
+          "text": "@AppleSupport hi. Trying to reset my Apple ID password. It doesn\u2019t recognise my trusted phone number. Please help!"
+        }
+      ],
+      "prevalence_and_count": {
+        "inbound_opening_inquiries_count": 1408,
+        "inbound_opening_inquiries_prevalence_pct": 1.75,
+        "denominator": 80250
+      },
+      "annotation_rule": "Customer authentication and identity credential management.",
+      "known_ambiguity": "Device passcode lock vs cloud Apple ID password lock."
+    },
+    {
+      "intent_id": "BILLING_CHARGE_REFUND_DISPUTE",
+      "human_readable_name": "Billing Charge Refund and Subscription Dispute",
+      "definition": "Customer reports unexpected credit card charges, iTunes Store purchase disputes, subscription cancellations, or refund requests.",
+      "inclusion_criteria": "Mentions unexpected charge, refund, cancel Apple Music subscription, charged twice, iTunes receipt.",
+      "exclusion_criteria": "Hardware repair cost estimate question (classify as UNKNOWN_INSUFFICIENT_CONTEXT).",
+      "boundary_cases": [
+        "See PAIR_06_ACCOUNT_ACCESS_VS_BILLING"
+      ],
+      "representative_examples": [
+        {
+          "tweet_id": 148191,
+          "conversation_id": 148191,
+          "text": "@AppleSupport Am finding it impossible to cancel my subscription, it is stuck in a loop, can you PM me please? Thanks"
+        },
+        {
+          "tweet_id": 149947,
+          "conversation_id": 149947,
+          "text": "You charged me for Apple Music but didn\u2019t even tell me my trial was over. I want a refund @AppleSupport"
+        },
+        {
+          "tweet_id": 8579,
+          "conversation_id": 8579,
+          "text": "@AppleSupport I bought 2 iPhones X on Friday, but I don\u2019t see any charge on my credit card. Do I should worry or it\u2019s normal?"
+        },
+        {
+          "tweet_id": 22988,
+          "conversation_id": 22988,
+          "text": "@AppleSupport Trying to download an app to a family member's phone that I purchased as the family group organizer.  Being asked to purchase it, but I don't want to be charged again.  Suggestions? https://t.co/Y730eW0nZe"
+        },
+        {
+          "tweet_id": 255539,
+          "conversation_id": 255539,
+          "text": "@115858  I want a refund on purchases made on the Itunes Store, who do I talk to"
+        }
+      ],
+      "prevalence_and_count": {
+        "inbound_opening_inquiries_count": 1945,
+        "inbound_opening_inquiries_prevalence_pct": 2.42,
+        "denominator": 80250
+      },
+      "annotation_rule": "Applies whenever money, financial transactions, or recurring subscriptions are contested.",
+      "known_ambiguity": "Bank pending hold vs final settled charge."
+    },
+    {
+      "intent_id": "ORDER_PURCHASE_SHIPPING_STATUS",
+      "human_readable_name": "Order Purchase and Delivery Status",
+      "definition": "Customer inquires about Apple Online Store order status, delivery dates, courier tracking (UPS/FedEx), or in-store pickup reservations.",
+      "inclusion_criteria": "Mentions order number, shipping date, delivery delay, tracking UPS, iPhone X preorder delivery.",
+      "exclusion_criteria": "Billing dispute after receiving product (classify as BILLING_CHARGE_REFUND_DISPUTE).",
+      "boundary_cases": [
+        "E-commerce and physical shipment lifecycle"
+      ],
+      "representative_examples": [
+        {
+          "tweet_id": 8422,
+          "conversation_id": 8422,
+          "text": "Dear @115858, I have an online order which I never received - who can I talk to?"
+        },
+        {
+          "tweet_id": 34705,
+          "conversation_id": 34705,
+          "text": "Anyone else secure the 11/3 launch date on their #iPhoneX order only to receive a receipt from @115858 w/ a 3-4 week away delivery date? \ud83d\ude31\ud83d\ude29\ud83d\ude24\ud83d\ude2a"
+        },
+        {
+          "tweet_id": 31436,
+          "conversation_id": 31436,
+          "text": "@115858 trying to cancel an online order, each time I login i'm told I don't have access to the order."
+        },
+        {
+          "tweet_id": 31482,
+          "conversation_id": 31482,
+          "text": "@AppleSupport Help!! I need to update the payment method for my iPhone X pre-order. It won\u2019t let me do it online"
+        },
+        {
+          "tweet_id": 617135,
+          "conversation_id": 617135,
+          "text": "@AppleSupport so if your site gives you a date range for delivery, when would you guys know the exact delivery date?"
+        }
+      ],
+      "prevalence_and_count": {
+        "inbound_opening_inquiries_count": 894,
+        "inbound_opening_inquiries_prevalence_pct": 1.11,
+        "denominator": 80250
+      },
+      "annotation_rule": "Order processing and fulfillment logistics.",
+      "known_ambiguity": "Apple Store reservation vs carrier shipment."
+    },
+    {
+      "intent_id": "SECURITY_PHISHING_SUSPICIOUS_CONTACT",
+      "human_readable_name": "Security Phishing and Fraudulent Contact",
+      "definition": "Customer reports suspicious email, phishing SMS text message claiming to be Apple, account compromise alert, or malware/scam inquiry.",
+      "inclusion_criteria": "Mentions phishing, suspicious text, fake Apple email, scam, hacked, or asks 'is this email real'.",
+      "exclusion_criteria": "Forgotten password on real account (classify as ACCOUNT_APPLE_ID_ACCESS).",
+      "boundary_cases": [
+        "Safety-critical classification"
+      ],
+      "representative_examples": [
+        {
+          "tweet_id": 12586,
+          "conversation_id": 12586,
+          "text": "@AppleSupport What do you make of this? (Top left corner) I am a US customer, and I think my phone has been hacked. https://t.co/5JE0SUCx90"
+        },
+        {
+          "tweet_id": 12596,
+          "conversation_id": 12596,
+          "text": "@AppleSupport Seems I have a virus, I\u2019ve been getting these pop-ups: https://t.co/RMppEqEQSq"
+        },
+        {
+          "tweet_id": 35223,
+          "conversation_id": 35223,
+          "text": "#phishing \nFake, fake, fake.\nThis adress is trying to take my @115858 account\n\u203c\ufe0fCheck adress mail sender https://t.co/6ifjy91pM7"
+        },
+        {
+          "tweet_id": 41653,
+          "conversation_id": 41653,
+          "text": "Hey @AppleSupport either your grammar is going down hill, or someone\u2019s gone #phishing https://t.co/8BHfuw5Tdq"
+        },
+        {
+          "tweet_id": 44569,
+          "conversation_id": 44569,
+          "text": "@AppleSupport I\u2019ve just received this text message... is it a scam? https://t.co/iIz6799AeL"
+        }
+      ],
+      "prevalence_and_count": {
+        "inbound_opening_inquiries_count": 484,
+        "inbound_opening_inquiries_prevalence_pct": 0.6,
+        "denominator": 80250
+      },
+      "annotation_rule": "Safety-critical intent: retain even with low frequency to ensure appropriate escalation gating.",
+      "known_ambiguity": "Legitimate Apple security notification vs counterfeit phishing copy."
+    },
+    {
+      "intent_id": "UNKNOWN_INSUFFICIENT_CONTEXT",
+      "human_readable_name": "Unknown, Insufficient Context, or Out-of-Scope Content",
+      "definition": "Messages containing no actionable technical diagnostic symptom, comprising Category A (commercial marketing spam, keynote broadcast retweets, bot promotions, non-support commentary) and Category B (genuine customer inquiries directed to AppleSupport with zero diagnostic symptom, bare help cries, bare greetings/pings, image-only links, or pure symptomless frustration rants).",
+      "inclusion_criteria": "Commercial keynote/event marketing retweets, bot giveaway spam, bare help cries ('help', 'please help me'), conversational greetings/pings ('hello?'), image links with no textual symptom, or pure symptomless emotional venting ('this update sucks', 'fix your phone').",
+      "exclusion_criteria": "Any inquiry identifying a technical symptom, component, or failure mode even if tersely or colloquially phrased (e.g. 'battery dying', 'screen unresponsive', 'phone is slow', 'update failed', 'letter I bug'). Must be classified into diagnostic Intents 1\u201314.",
+      "boundary_cases": [
+        "Strict separation between non-diagnostic/out-of-scope contacts and vague but classifiable diagnostic complaints"
+      ],
+      "representative_examples": [
+        {
+          "tweet_id": 857698,
+          "conversation_id": 857698,
+          "text": "Join us September 12 at 10am PT to watch the #AppleEvent live at https://t.co/xi6CRXgQPH. Retweet for updates from @115858. https://t.co/QYyd7HNoGL"
+        },
+        {
+          "tweet_id": 302954,
+          "conversation_id": 302954,
+          "text": "@AppleSupport help"
+        },
+        {
+          "tweet_id": 40543,
+          "conversation_id": 40543,
+          "text": "@115858 @AppleSupport HELP https://t.co/8gsmO5JXRL"
+        },
+        {
+          "tweet_id": 50875,
+          "conversation_id": 50875,
+          "text": "help @AppleSupport https://t.co/Kk9NjhJNtI"
+        },
+        {
+          "tweet_id": 170347,
+          "conversation_id": 170347,
+          "text": "@AppleSupport wtf https://t.co/aBsrPrmu0P"
+        }
+      ],
+      "prevalence_and_count": {
+        "inbound_opening_inquiries_count": 522,
+        "inbound_opening_inquiries_prevalence_pct": 0.65,
+        "denominator": 80250
+      },
+      "annotation_rule": "Route here only when the message is completely non-support (Category A) or lacks any named diagnostic symptom, hardware component, or actionable failure mode (Category B). Never use as a fallback for difficult technical complaints.",
+      "known_ambiguity": "Extremely brief customer tweets with image links lacking symptom description."
+    }
+  ]
+}

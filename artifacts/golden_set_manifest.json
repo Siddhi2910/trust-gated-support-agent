@@ -1,0 +1,39 @@
+{
+  "manifest_version": "1.0.0",
+  "created_at": "2026-09-12T09:16:11.054042Z",
+  "source_dataset": {
+    "identifier": "artifacts/taxonomy_human_review_sample.json",
+    "records_total": 170,
+    "sha256": "d5369583898c9355482dba5d1488a1b0d720ffdc6ed01fa6e9bce82137db7327"
+  },
+  "taxonomy": {
+    "version": "1.0.0-frozen",
+    "frozen": true,
+    "sha256": "0c05662bcea30cf59833733d51151db8efd0e6b64c1be5a683690713ad774a7f",
+    "total_intents": 15
+  },
+  "human_review": {
+    "reviewer_count": 1,
+    "reviewer_identity": "human_project_owner",
+    "total_reviewed": 170,
+    "accept_count": 115,
+    "reject_count": 55,
+    "uncertain_count": 0,
+    "label_change_count": 55
+  },
+  "golden_set": {
+    "total_selected": 170,
+    "deterministic_subset_count": 170,
+    "ambiguous_subset_count": 0,
+    "selection_methodology": "Complete 170-case human evaluation pack representing 15 intents (120 cases), 7 boundary pairs (35 cases), and 4 UNKNOWN categories (15 cases)",
+    "exclusions": [
+      {
+        "subset": "UNCERTAIN cases from deterministic accuracy",
+        "count": 0,
+        "rationale": "Retained in Golden Set for abstention/ambiguity evaluation, but excluded from 1-of-N deterministic classification metrics."
+      }
+    ],
+    "provenance_coverage_pct": 100.0,
+    "verbatim_match_pct": 100.0
+  }
+}

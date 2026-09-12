@@ -1,0 +1,42 @@
+{
+  "target_brand": "AppleSupport",
+  "outbound_volume": {
+    "applesupport_outbound_tweet_count": 106860,
+    "sufficient_volume_check": true
+  },
+  "linked_conversation_volume": {
+    "total_linked_inbound_customer_tweets": 119895,
+    "responded_inbound_customer_tweets": 106623,
+    "direct_parent_tweets_replied_by_apple": 106696
+  },
+  "response_coverage": {
+    "metric_definition": "Fraction of AppleSupport-linked inbound customer inquiries that received at least one direct AppleSupport outbound reply (verified via parent_map or children_map linkage).",
+    "responded_inbound_count": 106623,
+    "total_linked_inbound_count": 119895,
+    "response_coverage_rate": 0.8893,
+    "response_coverage_percentage": "88.93%",
+    "coverage_threshold_met": true
+  },
+  "reply_length_stats": {
+    "mean_char_length": 136.61,
+    "median_char_length": 129,
+    "min_char_length": 16,
+    "max_char_length": 310
+  },
+  "pii_heuristic_indicators": {
+    "disclaimer": "Heuristic regex pattern match only, not exhaustive or definitive legal PII classification.",
+    "inbound_with_email_pattern": 0,
+    "inbound_with_phone_pattern": 258,
+    "inbound_with_any_pii_pattern": 258,
+    "pii_indicator_rate": 0.0022,
+    "pii_indicator_percentage": "0.22%"
+  },
+  "brand_verification_decision": {
+    "decision": "GO",
+    "reason": "AppleSupport has 106,860 outbound tweets and 88.93% response coverage across 119,895 linked inbound customer tweets. Exceeds volume and coverage requirements."
+  },
+  "execution_metadata": {
+    "elapsed_wall_seconds": 23.31,
+    "timestamp": "2026-09-10 22:29:47 UTC"
+  }
+}

@@ -1,0 +1,212 @@
+[
+  {
+    "action": "SUBMIT_CANDIDATE",
+    "evidence_id": "EVID-CAND-0015",
+    "actor": "test_harvester",
+    "timestamp": "2026-09-12T07:46:08.053812Z",
+    "status": "PENDING_HUMAN_PROMOTION"
+  },
+  {
+    "action": "PROMOTE_TO_VERIFIED",
+    "evidence_id": "EVID-CAND-0015",
+    "actor": "human_domain_expert",
+    "timestamp": "2026-09-12T07:46:08.054683Z",
+    "notes": "Verified against engineering standard",
+    "resulting_status": "VERIFIED"
+  },
+  {
+    "action": "SUBMIT_CANDIDATE",
+    "evidence_id": "EVID-CAND-0016",
+    "actor": "test_harvester",
+    "timestamp": "2026-09-12T07:46:13.842234Z",
+    "status": "PENDING_HUMAN_PROMOTION"
+  },
+  {
+    "action": "PROMOTE_TO_VERIFIED",
+    "evidence_id": "EVID-CAND-0016",
+    "actor": "human_domain_expert",
+    "timestamp": "2026-09-12T07:46:13.842803Z",
+    "notes": "Verified against engineering standard",
+    "resulting_status": "VERIFIED"
+  },
+  {
+    "action": "SUBMIT_CANDIDATE",
+    "evidence_id": "EVID-CAND-0017",
+    "actor": "test_harvester",
+    "timestamp": "2026-09-12T07:46:22.511722Z",
+    "status": "PENDING_HUMAN_PROMOTION"
+  },
+  {
+    "action": "PROMOTE_TO_VERIFIED",
+    "evidence_id": "EVID-CAND-0017",
+    "actor": "human_domain_expert",
+    "timestamp": "2026-09-12T07:46:22.512358Z",
+    "notes": "Verified against engineering standard",
+    "resulting_status": "VERIFIED"
+  },
+  {
+    "action": "SUBMIT_CANDIDATE",
+    "evidence_id": "EVID-CAND-0018",
+    "actor": "test_harvester",
+    "timestamp": "2026-09-12T07:46:25.213676Z",
+    "status": "PENDING_HUMAN_PROMOTION"
+  },
+  {
+    "action": "PROMOTE_TO_VERIFIED",
+    "evidence_id": "EVID-CAND-0018",
+    "actor": "human_domain_expert",
+    "timestamp": "2026-09-12T07:46:25.214318Z",
+    "notes": "Verified against engineering standard",
+    "resulting_status": "VERIFIED"
+  },
+  {
+    "action": "SUBMIT_CANDIDATE",
+    "evidence_id": "EVID-CAND-0019",
+    "actor": "test_harvester",
+    "timestamp": "2026-09-12T07:54:13.426757Z",
+    "status": "REVIEW_REQUIRED"
+  },
+  {
+    "action": "PROMOTE_TO_VERIFIED",
+    "evidence_id": "EVID-CAND-0019",
+    "actor": "human_domain_expert",
+    "timestamp": "2026-09-12T07:54:13.427548Z",
+    "notes": "Verified against engineering standard",
+    "resulting_status": "TRUSTED"
+  },
+  {
+    "action": "SUBMIT_CANDIDATE",
+    "evidence_id": "EVID-CAND-0020",
+    "actor": "test_harvester",
+    "timestamp": "2026-09-12T07:54:37.936192Z",
+    "status": "REVIEW_REQUIRED"
+  },
+  {
+    "action": "PROMOTE_TO_VERIFIED",
+    "evidence_id": "EVID-CAND-0020",
+    "actor": "human_domain_expert",
+    "timestamp": "2026-09-12T07:54:37.936868Z",
+    "notes": "Verified against engineering standard",
+    "resulting_status": "VERIFIED"
+  },
+  {
+    "action": "SUBMIT_CANDIDATE",
+    "evidence_id": "EVID-CAND-0021",
+    "actor": "test_harvester",
+    "timestamp": "2026-09-12T08:29:45.810030Z",
+    "status": "REVIEW_REQUIRED"
+  },
+  {
+    "action": "PROMOTE_TO_VERIFIED",
+    "evidence_id": "EVID-CAND-0021",
+    "actor": "human_domain_expert",
+    "timestamp": "2026-09-12T08:29:45.811725Z",
+    "notes": "Verified against engineering standard",
+    "resulting_status": "VERIFIED"
+  },
+  {
+    "action": "SUBMIT_CANDIDATE",
+    "evidence_id": "EVID-CAND-0022",
+    "actor": "test_harvester",
+    "timestamp": "2026-09-12T08:31:10.756651Z",
+    "status": "REVIEW_REQUIRED"
+  },
+  {
+    "action": "PROMOTE_TO_VERIFIED",
+    "evidence_id": "EVID-CAND-0022",
+    "actor": "human_domain_expert",
+    "timestamp": "2026-09-12T08:31:10.757438Z",
+    "notes": "Verified against engineering standard",
+    "resulting_status": "VERIFIED"
+  },
+  {
+    "action": "SUBMIT_CANDIDATE",
+    "evidence_id": "EVID-CAND-0023",
+    "actor": "test_harvester",
+    "timestamp": "2026-09-12T08:31:35.898097Z",
+    "status": "REVIEW_REQUIRED"
+  },
+  {
+    "action": "PROMOTE_TO_VERIFIED",
+    "evidence_id": "EVID-CAND-0023",
+    "actor": "human_domain_expert",
+    "timestamp": "2026-09-12T08:31:35.899181Z",
+    "notes": "Verified against engineering standard",
+    "resulting_status": "VERIFIED"
+  },
+  {
+    "action": "SUBMIT_CANDIDATE",
+    "evidence_id": "EVID-CAND-0024",
+    "actor": "test_harvester",
+    "timestamp": "2026-09-12T08:52:41.997562Z",
+    "status": "REVIEW_REQUIRED"
+  },
+  {
+    "action": "PROMOTE_TO_VERIFIED",
+    "evidence_id": "EVID-CAND-0024",
+    "actor": "human_domain_expert",
+    "timestamp": "2026-09-12T08:52:41.998862Z",
+    "notes": "Verified against engineering standard",
+    "resulting_status": "VERIFIED"
+  },
+  {
+    "action": "SUBMIT_CANDIDATE",
+    "evidence_id": "EVID-CAND-0025",
+    "actor": "test_harvester",
+    "timestamp": "2026-09-12T09:09:57.279468Z",
+    "status": "REVIEW_REQUIRED"
+  },
+  {
+    "action": "PROMOTE_TO_VERIFIED",
+    "evidence_id": "EVID-CAND-0025",
+    "actor": "human_domain_expert",
+    "timestamp": "2026-09-12T09:09:57.280804Z",
+    "notes": "Verified against engineering standard",
+    "resulting_status": "VERIFIED"
+  },
+  {
+    "action": "SUBMIT_CANDIDATE",
+    "evidence_id": "EVID-CAND-0026",
+    "actor": "test_harvester",
+    "timestamp": "2026-09-12T09:14:04.495969Z",
+    "status": "REVIEW_REQUIRED"
+  },
+  {
+    "action": "PROMOTE_TO_VERIFIED",
+    "evidence_id": "EVID-CAND-0026",
+    "actor": "human_domain_expert",
+    "timestamp": "2026-09-12T09:14:04.496995Z",
+    "notes": "Verified against engineering standard",
+    "resulting_status": "VERIFIED"
+  },
+  {
+    "action": "SUBMIT_CANDIDATE",
+    "evidence_id": "EVID-CAND-0027",
+    "actor": "test_harvester",
+    "timestamp": "2026-09-12T09:16:35.746885Z",
+    "status": "REVIEW_REQUIRED"
+  },
+  {
+    "action": "PROMOTE_TO_VERIFIED",
+    "evidence_id": "EVID-CAND-0027",
+    "actor": "human_domain_expert",
+    "timestamp": "2026-09-12T09:16:35.748505Z",
+    "notes": "Verified against engineering standard",
+    "resulting_status": "VERIFIED"
+  },
+  {
+    "action": "SUBMIT_CANDIDATE",
+    "evidence_id": "EVID-CAND-0028",
+    "actor": "test_harvester",
+    "timestamp": "2026-09-12T09:16:39.520030Z",
+    "status": "REVIEW_REQUIRED"
+  },
+  {
+    "action": "PROMOTE_TO_VERIFIED",
+    "evidence_id": "EVID-CAND-0028",
+    "actor": "human_domain_expert",
+    "timestamp": "2026-09-12T09:16:39.521116Z",
+    "notes": "Verified against engineering standard",
+    "resulting_status": "VERIFIED"
+  }
+]

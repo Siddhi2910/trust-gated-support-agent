@@ -1,0 +1,125 @@
+{
+  "description": "Intent boundary definitions and tie-breaking rules for confusable intent pairs",
+  "pairs_evaluated": 7,
+  "confusable_pairs": [
+    {
+      "pair_id": "PAIR_01_BATTERY_VS_CHARGING",
+      "intent_a": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "intent_b": "HARDWARE_CHARGING_POWER_CABLE",
+      "distinguishing_rule": "If the customer complains about how quickly the battery discharges or depletes during usage, classify as BATTERY_DRAIN_POWER_CONSUMPTION. If the customer complains about inability to replenish power, charger cable damage, or charging port defects, classify as HARDWARE_CHARGING_POWER_CABLE.",
+      "positive_example": {
+        "tweet_id": 31869,
+        "conversation_id": 31869,
+        "text": "@AppleSupport Battery draining in recent updates of iOS 11.1 on my iPhone 6s. Why please fix it as soon as possible"
+      },
+      "counterexample": {
+        "tweet_id": 35265,
+        "conversation_id": 35265,
+        "text": "@AppleSupport why is my iphone not charging? i don\u2019t got time for this shit dawg"
+      },
+      "tie_breaker": "Customer's focal grievance / actionable need first: if the customer specifically asks how to charge the phone or reports a physical cable/port defect, classify as HARDWARE_CHARGING_POWER_CABLE. If the phone charges normally but drains rapidly during use, classify as BATTERY_DRAIN_POWER_CONSUMPTION. When both symptoms are listed equally without an explicit focal demand, invoke the priority ladder as tie-breaker (HARDWARE_CHARGING_POWER_CABLE > BATTERY_DRAIN_POWER_CONSUMPTION)."
+    },
+    {
+      "pair_id": "PAIR_02_CRASH_FREEZE_VS_SLOWDOWN",
+      "intent_a": "DEVICE_FREEZE_CRASH_REBOOT",
+      "intent_b": "PERFORMANCE_SLOWDOWN_LATENCY",
+      "distinguishing_rule": "If the device undergoes binary termination (black screen, reboot loop, crash to home screen, or complete unresponsiveness requiring a hard reset), classify as DEVICE_FREEZE_CRASH_REBOOT. If the device continues operating but exhibits sluggishness, delayed typing, frame drops, or animation lag, classify as PERFORMANCE_SLOWDOWN_LATENCY.",
+      "positive_example": {
+        "tweet_id": 50615,
+        "conversation_id": 50615,
+        "text": "@115858 @AppleSupport y\u2019all really bout to piss me off with this dumbass update. My phone keeps crashing and shutting off"
+      },
+      "counterexample": {
+        "tweet_id": 481805,
+        "conversation_id": 481805,
+        "text": "My phone is running so slow after I updated it....@115858 wanna explain?"
+      },
+      "tie_breaker": "Customer's focal grievance / actionable need first: if the user's primary actionable complaint is total system lockup, kernel crash, or spontaneous restart, classify as DEVICE_FREEZE_CRASH_REBOOT. If the device remains operational with sluggish UI responsiveness, classify as PERFORMANCE_SLOWDOWN_LATENCY. When both are listed without a single dominant grievance, invoke the priority ladder as tie-breaker (DEVICE_FREEZE_CRASH_REBOOT > PERFORMANCE_SLOWDOWN_LATENCY)."
+    },
+    {
+      "pair_id": "PAIR_03_APP_MALFUNCTION_VS_OS_CRASH",
+      "intent_a": "APP_SPECIFIC_MALFUNCTION",
+      "intent_b": "DEVICE_FREEZE_CRASH_REBOOT",
+      "distinguishing_rule": "If only one specific application crashes or fails to open while the rest of iOS functions normally, classify as APP_SPECIFIC_MALFUNCTION. If the entire phone reboots, freezes system-wide, or locks up all apps, classify as DEVICE_FREEZE_CRASH_REBOOT.",
+      "positive_example": {
+        "tweet_id": 520207,
+        "conversation_id": 520207,
+        "text": "@AppleSupport Safari keeps crashing over and over today. I deleted ~/Library/Safari to start anew, but the problem persists -  sigh"
+      },
+      "counterexample": {
+        "tweet_id": 50615,
+        "conversation_id": 50615,
+        "text": "@115858 @AppleSupport y\u2019all really bout to piss me off with this dumbass update. My phone keeps crashing and shutting off"
+      },
+      "tie_breaker": "Customer's focal grievance / actionable need first: if the issue is restricted to a single named application, classify as APP_SPECIFIC_MALFUNCTION. If whole-device instability or reboot loop is reported, classify as DEVICE_FREEZE_CRASH_REBOOT. If an app crash causes a total OS panic/reboot, focal grievance is the device reboot (DEVICE_FREEZE_CRASH_REBOOT)."
+    },
+    {
+      "pair_id": "PAIR_04_DATA_LOSS_VS_ACCOUNT_ACCESS",
+      "intent_a": "DATA_LOSS_RECOVERY",
+      "intent_b": "ACCOUNT_APPLE_ID_ACCESS",
+      "distinguishing_rule": "If customer user-generated records (photos, contacts, notes, message history) are missing or deleted and customer seeks recovery, classify as DATA_LOSS_RECOVERY. If customer is unable to authenticate, locked out of their Apple ID, waiting for two-factor recovery, or unable to sign into iCloud services, classify as ACCOUNT_APPLE_ID_ACCESS.",
+      "positive_example": {
+        "tweet_id": 320924,
+        "conversation_id": 320924,
+        "text": "All my messages are gone. @AppleSupport real cute, sis."
+      },
+      "counterexample": {
+        "tweet_id": 6554,
+        "conversation_id": 6554,
+        "text": "@AppleSupport how long does it take usually for account recovery to get back to you? It\u2019s been about a week now."
+      },
+      "tie_breaker": "Customer's focal grievance / actionable need first: if the customer's primary blocker is an account lockout preventing access, classify as ACCOUNT_APPLE_ID_ACCESS; if account access is intact but synced user data has disappeared, classify as DATA_LOSS_RECOVERY. When an account lockout and data loss are equally presented without explicit focus, invoke the priority ladder (ACCOUNT_APPLE_ID_ACCESS > DATA_LOSS_RECOVERY)."
+    },
+    {
+      "pair_id": "PAIR_05_SCREEN_DISPLAY_VS_DEVICE_FREEZE",
+      "intent_a": "SCREEN_DISPLAY_TOUCH_BIOMETRICS",
+      "intent_b": "DEVICE_FREEZE_CRASH_REBOOT",
+      "distinguishing_rule": "Physical display panel anomalies (flicker, dead pixels, lines, touch digitizer unresponsive) and biometric sensor defects (Touch ID, Face ID) belong to SCREEN_DISPLAY_TOUCH_BIOMETRICS. System-wide freeze with black screen, forced reboot, or boot loop belongs to DEVICE_FREEZE_CRASH_REBOOT.",
+      "positive_example": {
+        "tweet_id": 34646,
+        "conversation_id": 34646,
+        "text": "My 6 month old IPhone 6 touch screen is unresponsive. @AppleSupport please help!"
+      },
+      "counterexample": {
+        "tweet_id": 50615,
+        "conversation_id": 50615,
+        "text": "@115858 @AppleSupport y\u2019all really bout to piss me off with this dumbass update. My phone keeps crashing and shutting off"
+      },
+      "tie_breaker": "When display/biometric defect occurs simultaneously with an OS crash, customer focal grievance takes precedence; if tied, DEVICE_FREEZE_CRASH_REBOOT (priority rank 3) breaks tie over SCREEN_DISPLAY_TOUCH_BIOMETRICS (priority rank 7)."
+    },
+    {
+      "pair_id": "PAIR_06_ACCOUNT_ACCESS_VS_BILLING",
+      "intent_a": "ACCOUNT_APPLE_ID_ACCESS",
+      "intent_b": "BILLING_CHARGE_REFUND_DISPUTE",
+      "distinguishing_rule": "If issue involves inability to log into Apple ID, 2FA codes, forgotten passwords, or account disabling, classify as ACCOUNT_APPLE_ID_ACCESS. If issue involves money, credit card charges, iTunes invoices, or subscriptions, classify as BILLING_CHARGE_REFUND_DISPUTE.",
+      "positive_example": {
+        "tweet_id": 43358,
+        "conversation_id": 43358,
+        "text": "locked out of my apple ID bcuz my old phone broke &amp; i had 2 factor authentication on , no one should ever use tht shit @115858"
+      },
+      "counterexample": {
+        "tweet_id": 149947,
+        "conversation_id": 149947,
+        "text": "You charged me for Apple Music but didn\u2019t even tell me my trial was over. I want a refund @AppleSupport"
+      },
+      "tie_breaker": "Customer's focal grievance / actionable need first: if customer's explicit request is for a refund or subscription cancellation, classify as BILLING_CHARGE_REFUND_DISPUTE; if customer's primary blocker is logging into their Apple ID, classify as ACCOUNT_APPLE_ID_ACCESS. When an account lockout is triggered by a disputed charge and customer asks to resolve the charge, focal need is BILLING_CHARGE_REFUND_DISPUTE."
+    },
+    {
+      "pair_id": "PAIR_07_APP_MALFUNCTION_VS_SLOWDOWN",
+      "intent_a": "APP_SPECIFIC_MALFUNCTION",
+      "intent_b": "PERFORMANCE_SLOWDOWN_LATENCY",
+      "distinguishing_rule": "If performance lag, crashing, or errors are isolated to a single named application (e.g. Safari, Mail, Twitter, Spotify), classify as APP_SPECIFIC_MALFUNCTION. If the entire device UI, typing, navigation, and overall system response is slow or sluggish across all apps, classify as PERFORMANCE_SLOWDOWN_LATENCY.",
+      "positive_example": {
+        "tweet_id": 520207,
+        "conversation_id": 520207,
+        "text": "@AppleSupport Safari keeps crashing over and over today. I deleted ~/Library/Safari to start anew, but the problem persists -  sigh"
+      },
+      "counterexample": {
+        "tweet_id": 481805,
+        "conversation_id": 481805,
+        "text": "My phone is running so slow after I updated it....@115858 wanna explain?"
+      },
+      "tie_breaker": "Customer's focal grievance / actionable need first: if sluggishness is reported generally across the OS, classify as PERFORMANCE_SLOWDOWN_LATENCY; if customer focuses on a single app failing to respond, classify as APP_SPECIFIC_MALFUNCTION. When tied without focal demand, invoke priority ladder (APP_SPECIFIC_MALFUNCTION > PERFORMANCE_SLOWDOWN_LATENCY)."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "file_info": {
+    "path": "data/raw/twcs.csv",
+    "size_bytes": 516508641,
+    "sha256": "cd297fcfa1bf6f99938be242e8e578980bc6d1b96adc8691abec9a39175b03c0",
+    "columns": [
+      "tweet_id",
+      "author_id",
+      "inbound",
+      "created_at",
+      "text",
+      "response_tweet_id",
+      "in_response_to_tweet_id"
+    ],
+    "column_count": 7
+  },
+  "row_counts": {
+    "total_rows": 2811774,
+    "inbound_count": 1537843,
+    "outbound_count": 1273931,
+    "invalid_inbound_flags": 0
+  },
+  "integrity_checks": {
+    "unique_tweet_ids": 2811774,
+    "duplicate_tweet_id_count": 0,
+    "duplicate_tweet_id_check_passed": true,
+    "exact_duplicate_row_count": 0,
+    "exact_duplicate_row_check_passed": true,
+    "unique_author_count": 702777
+  },
+  "linkage_fields": {
+    "null_in_response_to_count": 794335,
+    "malformed_in_response_to_count": 0,
+    "null_response_tweet_id_count": 1040629,
+    "malformed_response_tweet_id_count": 0
+  },
+  "execution_metadata": {
+    "elapsed_wall_seconds": 18.4,
+    "timestamp": "2026-09-10 22:27:28 UTC"
+  }
+}

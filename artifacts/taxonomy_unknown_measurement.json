@@ -1,0 +1,187 @@
+{
+  "intent_id": "UNKNOWN_INSUFFICIENT_CONTEXT",
+  "human_readable_name": "Unknown, Insufficient Context, or Out-of-Scope Content",
+  "status": "CORPUS_DISCOVERY_ESTIMATE_PENDING_HUMAN_REVIEW",
+  "measurement_metadata": {
+    "source_corpus": "data/processed/applesupport_conversations.parquet",
+    "corpus_filter": "root_inbound == True",
+    "denominator": 80250,
+    "total_unknown_count": 522,
+    "total_unknown_pct": 0.65
+  },
+  "category_breakdown": {
+    "CATEGORY_A_OUT_OF_SCOPE_NON_SUPPORT": {
+      "count": 5,
+      "pct": 0.0062,
+      "description": "Commercial keynote promotions, marketing broadcast retweets, bot giveaways, crypto spam, non-support commentary.",
+      "representative_examples": [
+        {
+          "tweet_id": 857698,
+          "conversation_id": 857698,
+          "text": "Join us September 12 at 10am PT to watch the #AppleEvent live at https://t.co/xi6CRXgQPH. Retweet for updates from @115858. https://t.co/QYyd7HNoGL"
+        },
+        {
+          "tweet_id": 996645,
+          "conversation_id": 996645,
+          "text": "Say hello to the future. iPhone X available now."
+        },
+        {
+          "tweet_id": 1500005,
+          "conversation_id": 1500005,
+          "text": "Say hello to the future. iPhone X available now."
+        },
+        {
+          "tweet_id": 1990611,
+          "conversation_id": 1990611,
+          "text": "@278601 Thanks for joining the #AppleEvent. Say hello to the future. iPhone X.\nhttps://t.co/qtR0VeO3eI"
+        },
+        {
+          "tweet_id": 2008210,
+          "conversation_id": 2008210,
+          "text": "Say hello to the future. iPhone X available now."
+        }
+      ]
+    },
+    "CATEGORY_B_GENUINE_SUPPORT_INSUFFICIENT_CONTEXT": {
+      "total_count": 517,
+      "total_pct": 0.64,
+      "description": "Inbound support requests directed to AppleSupport lacking diagnostic symptoms, component names, or failure descriptions.",
+      "subtypes": {
+        "CATEGORY_B1_BARE_PLEA_PING": {
+          "count": 159,
+          "pct": 0.2,
+          "description": "Bare cries for help, conversational pings, greetings, or DM requests without symptom context.",
+          "representative_examples": [
+            {
+              "tweet_id": 26714,
+              "conversation_id": 26714,
+              "text": "@115948 @AppleSupport help? https://t.co/jq11xG12w0"
+            },
+            {
+              "tweet_id": 39677,
+              "conversation_id": 39677,
+              "text": "@AppleSupport hello?"
+            },
+            {
+              "tweet_id": 40543,
+              "conversation_id": 40543,
+              "text": "@115858 @AppleSupport HELP https://t.co/8gsmO5JXRL"
+            },
+            {
+              "tweet_id": 50875,
+              "conversation_id": 50875,
+              "text": "help @AppleSupport https://t.co/Kk9NjhJNtI"
+            },
+            {
+              "tweet_id": 61078,
+              "conversation_id": 61078,
+              "text": "@AppleSupport  check your DMs!"
+            }
+          ]
+        },
+        "CATEGORY_B2_MEDIA_LINK_ONLY": {
+          "count": 329,
+          "pct": 0.41,
+          "description": "Image or URL attachments with no accompanying textual symptom or only single-word exclamation.",
+          "representative_examples": [
+            {
+              "tweet_id": 17351,
+              "conversation_id": 17351,
+              "text": "@AppleSupport @118721 https://t.co/1mCyCovQam"
+            },
+            {
+              "tweet_id": 26714,
+              "conversation_id": 26714,
+              "text": "@115948 @AppleSupport help? https://t.co/jq11xG12w0"
+            },
+            {
+              "tweet_id": 36020,
+              "conversation_id": 36020,
+              "text": "\u306f\u3002\u3053\u306e\u30d0\u30b0\u76f4\u3057\u3066\u30fc\u30fc\u30fc\n\n@AppleSupport https://t.co/h089ruD8tv"
+            },
+            {
+              "tweet_id": 38857,
+              "conversation_id": 38857,
+              "text": "Wtf? @115858 https://t.co/GiyvXiC3s3"
+            },
+            {
+              "tweet_id": 40543,
+              "conversation_id": 40543,
+              "text": "@115858 @AppleSupport HELP https://t.co/8gsmO5JXRL"
+            }
+          ]
+        },
+        "CATEGORY_B3_SYMPTOMLESS_RANT": {
+          "count": 76,
+          "pct": 0.09,
+          "description": "Vague emotional frustration rants with zero diagnostic symptom or component identified.",
+          "representative_examples": [
+            {
+              "tweet_id": 11661,
+              "conversation_id": 11661,
+              "text": "@AppleSupport fix it"
+            },
+            {
+              "tweet_id": 53536,
+              "conversation_id": 53536,
+              "text": "@Applesupport fix this update! \ud83d\ude21\ud83d\udd95\ud83c\udffd"
+            },
+            {
+              "tweet_id": 94766,
+              "conversation_id": 94766,
+              "text": "@AppleSupport @115858 @115858 \nwhat is this? https://t.co/US4QPxbVR5"
+            },
+            {
+              "tweet_id": 94792,
+              "conversation_id": 94792,
+              "text": "@AppleSupport  what is this https://t.co/b2Oj7Et67B"
+            },
+            {
+              "tweet_id": 123056,
+              "conversation_id": 123056,
+              "text": "@AppleSupport what is this? https://t.co/gVOWWXqaVA"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "counterexamples_vague_but_classifiable_category_c": [
+    {
+      "tweet_id": 1761,
+      "assigned_intent": "BATTERY_DRAIN_POWER_CONSUMPTION",
+      "text": "iOS 11 is killing my battery @115858. Fix it.",
+      "reason": "Contains emotional anger (Fix it) but explicitly names battery drain."
+    },
+    {
+      "tweet_id": 50068,
+      "assigned_intent": "KEYBOARD_TYPING_AUTOCORRECT_ISSUE",
+      "text": "@115858 fix this I\ufe0f",
+      "reason": "Terse demand (fix this) but explicitly demonstrates the iOS 11 capital I autocorrect glitch."
+    },
+    {
+      "tweet_id": 352636,
+      "assigned_intent": "HARDWARE_CHARGING_POWER_CABLE",
+      "text": "@115858 my charger broke",
+      "reason": "Colloquial brief complaint but explicitly identifies hardware charger failure."
+    },
+    {
+      "tweet_id": 481805,
+      "assigned_intent": "PERFORMANCE_SLOWDOWN_LATENCY",
+      "text": "My phone is running so slow after I updated it....@115858 wanna explain?",
+      "reason": "Informal challenge but explicitly specifies performance slowdown."
+    },
+    {
+      "tweet_id": 34646,
+      "assigned_intent": "SCREEN_DISPLAY_TOUCH_BIOMETRICS",
+      "text": "My 6 month old IPhone 6 touch screen is unresponsive. @AppleSupport please help!",
+      "reason": "Identifies touch digitizer unresponsiveness."
+    },
+    {
+      "tweet_id": 407520,
+      "assigned_intent": "AUDIO_SOUND_SPEAKER_MIC",
+      "text": "@AppleSupport after updating my iOS, people can't hear me on calls or it sounds like im in a wind tunnel. please advise, thx",
+      "reason": "Identifies microphone distortion and caller inaudibility."
+    }
+  ]
+}
