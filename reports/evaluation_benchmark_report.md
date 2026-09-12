@@ -1,9 +1,9 @@
 # Customer Support Dual-Track System: Benchmark & Evaluation Report
 
-**Evaluation Timestamp:** `2026-09-12T21:06:18Z`  
+**Evaluation Timestamp:** `2026-09-12T21:13:50Z`  
 **Evaluation Scope:** Canonical 170 Inquiries Benchmark Pack  
 **Human Ground Truth N:** `1 / 170` (Zero fabricated human labels)  
-**Elapsed Runtime:** `0.23s`  
+**Elapsed Runtime:** `2.11s`  
 
 ---
 

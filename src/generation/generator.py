@@ -20,13 +20,20 @@ class EvidenceGroundedGenerator:
         "A senior Apple Support safety specialist is being notified and will take over this case directly."
     )
 
+    TROUBLESHOOTING_ESCALATION_TEMPLATE = (
+        "We understand that the previous troubleshooting steps did not resolve your issue. "
+        "To prevent further disruption, we are transferring your case directly to an Apple Support specialist "
+        "for diagnostic examination."
+    )
+
     def generate(
         self,
         query_text: str,
         predicted_intent: str,
         evidence_items: List[Dict[str, Any]],
         risk_evaluation: Optional[Dict[str, Any]] = None,
-        gates_evaluation: Optional[Dict[str, Any]] = None
+        gates_evaluation: Optional[Dict[str, Any]] = None,
+        session_context: Optional[Dict[str, Any]] = None,
     ) -> Dict[str, Any]:
         """Generate response with citations or appropriate clarification/escalation."""
         # 1. Critical safety escalation check
@@ -40,7 +47,18 @@ class EvidenceGroundedGenerator:
                 "abstention_reason": risk_evaluation.get("reason", "Critical hazard detected")
             }
 
-        # 2. Abstention / clarification for UNKNOWN or insufficient evidence
+        # 2. Multi-turn troubleshooting failure escalation
+        if session_context and session_context.get("is_troubleshooting_failure"):
+            return {
+                "response_text": self.TROUBLESHOOTING_ESCALATION_TEMPLATE,
+                "generation_mode": "MULTI_TURN_ESCALATION",
+                "evidence_used": [],
+                "citations": [],
+                "is_abstention": True,
+                "abstention_reason": "Customer reported prior troubleshooting step failed; transferred to human specialist"
+            }
+
+        # 3. Abstention / clarification for UNKNOWN or insufficient evidence
         if predicted_intent == "UNKNOWN_INSUFFICIENT_CONTEXT" or not evidence_items:
             return {
                 "response_text": self.CLARIFICATION_TEMPLATE,

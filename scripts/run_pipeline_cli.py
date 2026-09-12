@@ -19,9 +19,15 @@ def main():
         text = input_data.get("text", "")
         cid = input_data.get("conversation_id")
         tid = input_data.get("tweet_id")
+        in_resp_id = input_data.get("in_response_to_tweet_id") or input_data.get("parent_tweet_id")
 
         pipeline = TrustGatedPipeline()
-        result = pipeline.process(query_text=text, conversation_id=cid, tweet_id=tid)
+        result = pipeline.process(
+            query_text=text,
+            conversation_id=cid,
+            tweet_id=tid,
+            in_response_to_tweet_id=in_resp_id,
+        )
         print(json.dumps(result, indent=2))
     except Exception as e:
         print(json.dumps({"error": str(e)}), file=sys.stderr)

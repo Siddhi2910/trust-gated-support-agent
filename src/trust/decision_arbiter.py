@@ -22,7 +22,8 @@ class DecisionArbiter:
         intent_result: Dict[str, Any],
         gates_result: Dict[str, Any],
         risk_result: Dict[str, Any],
-        claim_result: Dict[str, Any]
+        claim_result: Dict[str, Any],
+        session_context: Optional[Dict[str, Any]] = None,
     ) -> Dict[str, Any]:
         """Make definitive routing decision (AUTO_RESOLVE vs ESCALATE_TO_HUMAN)."""
         reasons = []
@@ -88,6 +89,10 @@ class DecisionArbiter:
         if claim_result.get("hallucination_detected", False):
             reasons.append("Potential hallucination detected in generated response")
 
+        # 5. Multi-Turn Session / Repeated Troubleshooting Failure Gate
+        if session_context and session_context.get("is_troubleshooting_failure"):
+            reasons.append("Customer reported prior troubleshooting attempt failed in multi-turn conversation; escalated to human specialist")
+
         # Decision synthesis
         if not reasons:
             # All gates passed with high confidence
@@ -102,7 +107,12 @@ class DecisionArbiter:
             }
         else:
             queue = risk_result.get("escalation_queue", "GENERAL_HUMAN_TIER2")
-            if "ACCOUNT" in predicted_intent or "SECURITY" in predicted_intent:
+            if session_context and session_context.get("is_troubleshooting_failure"):
+                if any(k in predicted_intent for k in ["HARDWARE", "BATTERY", "SCREEN", "AUDIO", "CAMERA", "OVERHEATING"]):
+                    queue = "HARDWARE_SUPPORT"
+                else:
+                    queue = "GENERAL_HUMAN_TIER2"
+            elif "ACCOUNT" in predicted_intent or "SECURITY" in predicted_intent:
                 queue = "SECURITY_SPECIALIST"
             elif "BILLING" in predicted_intent or "ORDER" in predicted_intent:
                 queue = "COMMERCE_SPECIALIST"

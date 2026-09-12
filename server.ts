@@ -711,7 +711,12 @@ app.post('/api/config', (req, res) => {
 });
 
 // Helper to execute customer inquiries through real Python Trust-Gated Pipeline
-function executePythonPipeline(payload: { text: string; conversation_id?: number; tweet_id?: number }): Promise<any> {
+function executePythonPipeline(payload: {
+  text: string;
+  conversation_id?: number | string;
+  tweet_id?: number | string;
+  in_response_to_tweet_id?: number | string;
+}): Promise<any> {
   return new Promise((resolve, reject) => {
     const py = spawn('python3', ['scripts/run_pipeline_cli.py']);
     let stdout = '';
@@ -842,13 +847,54 @@ app.get(['/api/benchmark/summary', '/api/benchmark/summary/'], (req, res) => {
 app.post(['/api/pipeline/process', '/api/pipeline/process/'], async (req, res) => {
   try {
     res.setHeader('Content-Type', 'application/json');
-    const { text, conversation_id, tweet_id } = req.body;
+    const { text, conversation_id, tweet_id, in_response_to_tweet_id } = req.body;
     if (!text) {
       return res.status(400).json({ error: 'text is required' });
     }
 
-    const result = await executePythonPipeline({ text, conversation_id, tweet_id });
+    const result = await executePythonPipeline({ text, conversation_id, tweet_id, in_response_to_tweet_id });
     res.json(result);
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// GET /api/conversations/:id - retrieve stored conversation session state
+app.get('/api/conversations/:id', (req, res) => {
+  try {
+    res.setHeader('Content-Type', 'application/json');
+    const cid = req.params.id;
+    const sessionPath = path.join(__dirname, 'artifacts', 'conversation_sessions.json');
+    if (!fs.existsSync(sessionPath)) {
+      return res.status(404).json({ error: 'No active sessions found' });
+    }
+    const data = JSON.parse(fs.readFileSync(sessionPath, 'utf-8'));
+    const session = data.sessions ? data.sessions[cid] : null;
+    if (!session) {
+      return res.status(404).json({ error: `Conversation ${cid} not found` });
+    }
+    res.json(session);
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// DELETE /api/conversations/:id - clear a conversation session state
+app.delete('/api/conversations/:id', (req, res) => {
+  try {
+    res.setHeader('Content-Type', 'application/json');
+    const cid = req.params.id;
+    const sessionPath = path.join(__dirname, 'artifacts', 'conversation_sessions.json');
+    if (fs.existsSync(sessionPath)) {
+      const data = JSON.parse(fs.readFileSync(sessionPath, 'utf-8'));
+      if (data.sessions && data.sessions[cid]) {
+        delete data.sessions[cid];
+        data.active_sessions_count = Object.keys(data.sessions).length;
+        fs.writeFileSync(sessionPath, JSON.stringify(data, null, 2), 'utf-8');
+        return res.json({ status: 'cleared', conversation_id: cid });
+      }
+    }
+    res.json({ status: 'not_found', conversation_id: cid });
   } catch (err: any) {
     res.status(500).json({ error: err.message });
   }
